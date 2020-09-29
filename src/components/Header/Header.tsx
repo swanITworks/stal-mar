@@ -1,10 +1,10 @@
-import React from "react"
+import React, { Component } from "react"
 import SideDrawerButton from "../../UI/Buttons/SideDrawerButton"
 
-const Header: React.ReactNode = () => {
+const Header = (): JSX.Element => {
   return (
     <div>
-      <SideDrawerButton isOpen={false} />
+      <SideDrawerButton isOpen={true} />
     </div>
   )
 }

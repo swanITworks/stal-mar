@@ -5,8 +5,13 @@ interface MyProps {
   children: React.ReactNode
 }
 
-const Layout: React.FC<MyProps> = ({ children }) => {
-  return <>{children}</>
+const Layout = (props: MyProps): JSX.Element => {
+  return (
+    <>
+      <Header />
+      {props.children}
+    </>
+  )
 }
 
 export default Layout

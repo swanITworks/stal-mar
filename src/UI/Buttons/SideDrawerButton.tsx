@@ -5,26 +5,26 @@ interface MyProps {
   isOpen: boolean
 }
 
-const SideDrawerButton: React.ReactNode = ({ isOpen }: MyProps) => {
-  //   let closedButton: React.ReactNode = (
-  //     <div className={styles.button}>
-  //       <div className={styles.lineClosed}></div>
-  //       <div className={styles.lineClosed}></div>
-  //     </div>
-  //   )
+const SideDrawerButton = (props: MyProps): JSX.Element => {
+  const closedButton: JSX.Element = (
+    <div className={styles.button}>
+      <div className={styles.lineClosed}></div>
+      <div className={styles.lineClosed}></div>
+    </div>
+  )
 
-  //   let openButtons: React.ReactNode = (
-  //     <div className={styles.button}>
-  //       <div className={styles.line}></div>
-  //       <div className={styles.line}></div>
-  //       <div className={styles.line}></div>
-  //     </div>
-  //   )
+  const openButtons: JSX.Element = (
+    <div className={styles.button}>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
+    </div>
+  )
 
-  //   if (isOpen) {
-  //     return closedButton
-  //   } else return openButtons
-  return <div>button sideBara</div>
+  if (props.isOpen) {
+    return closedButton
+  }
+  return openButtons
 }
 
 export default SideDrawerButton
