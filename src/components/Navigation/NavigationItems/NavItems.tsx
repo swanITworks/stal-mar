@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const NavBar: React.FC = () => {
+const NavItems: React.FC = () => {
   return (
     <nav>
       <ul>
@@ -25,4 +25,4 @@ const NavBar: React.FC = () => {
   )
 }
 
-export default NavBar
+export default NavItems

@@ -6,5 +6,18 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-typescript`, "gatsby-plugin-scss-typescript"],
+  plugins: [
+    `gatsby-plugin-typescript`,
+    'gatsby-plugin-scss-typescript',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `banerImages`,
+        path: `${__dirname}/src/images/baner`,
+      },
+    },
+  ],
 }

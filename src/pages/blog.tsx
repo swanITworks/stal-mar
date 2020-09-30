@@ -1,6 +1,6 @@
-import React from "react"
-import { PageProps } from "gatsby"
-import Layout from "../components/Layout/Layout"
+import React from 'react'
+import { PageProps } from 'gatsby'
+import Layout from '../hoc/Layout/Layout'
 
 const blog: React.FC<PageProps> = () => {
   return (
