@@ -16,21 +16,21 @@ const getFile = graphql`
     }
     fence: file(name: { eq: "fence" }) {
       childImageSharp {
-        fluid(maxWidth: 200) {
+        fluid(maxWidth: 100) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     cutSteel: file(name: { eq: "cutSteel" }) {
       childImageSharp {
-        fluid(maxWidth: 200) {
+        fluid(maxWidth: 100) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     rails: file(name: { eq: "rails" }) {
       childImageSharp {
-        fluid(maxWidth: 200) {
+        fluid(maxWidth: 100) {
           ...GatsbyImageSharpFluid
         }
       }
