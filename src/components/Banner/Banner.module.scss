@@ -1,30 +1,38 @@
 .background {
   color: bisque;
-  height: 500px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 105vw;
+}
+
+.firstColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  .topLeft {
+    width: '100%';
+    overflow: hidden;
+    border-bottom-right-radius: 10%;
+  }
+}
+
+.secondColumn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.firstRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .first {
-    width: '40%';
+  align-items: flex-end;
+  width: 40%;
+  .topRight {
+    width: 85%;
+    overflow: hidden;
+    border-bottom-left-radius: 10%;
   }
-
-  .second {
-    width: '40%';
-  }
-}
-
-.secondRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  .third {
-    width: '40%';
+  .bottomRight {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 10%;
   }
 }

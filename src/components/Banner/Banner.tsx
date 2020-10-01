@@ -23,7 +23,7 @@ const getFile = graphql`
     }
     cutSteel: file(name: { eq: "cutSteel" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -60,24 +60,22 @@ const Banner = (): JSX.Element => {
       className={styles.background}
       backgroundColor={`#040e18`}
     >
-      <div className={styles.firstRow}>
-        <div className={styles.first} style={{ width: '45%' }}>
-          <Image fluid={fence} />
-        </div>
-        <div className={styles.second} style={{ width: '40%' }}>
-          <Image fluid={cutSteel} />
-        </div>
+      <div className={styles.firstColumn} style={{ height: '100%' }}>
+        <Image
+          className={styles.topLeft}
+          style={{ width: '100%' }}
+          fluid={fence}
+        />
       </div>
-      <div className={styles.secondRow}>
-        <div className={styles.third} style={{ width: '60%' }}>
-          <Image fluid={rails} />
-        </div>
+      <div className={styles.secondColumn}>
+        <Image className={styles.topRight} fluid={cutSteel} />
+        <Image className={styles.bottomRight} fluid={rails} />
       </div>
     </BackgroundImage>
   )
 }
 
-const StyledBackgroundSection = styled(Banner)`
+const StyledBackgroundSection: JSX.Element = styled(Banner)`
   width: 100%;
   background-position: bottom center;
   background-repeat: repeat-y;
