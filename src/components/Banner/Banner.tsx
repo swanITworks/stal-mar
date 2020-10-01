@@ -61,15 +61,15 @@ const Banner = (): JSX.Element => {
       backgroundColor={`#040e18`}
     >
       <div className={styles.firstRow}>
-        <div className={styles.first} style={{ width: '40%' }}>
+        <div className={styles.first} style={{ width: '45%' }}>
           <Image fluid={fence} />
         </div>
-        <div className={styles.second} style={{ width: '35%' }}>
+        <div className={styles.second} style={{ width: '40%' }}>
           <Image fluid={cutSteel} />
         </div>
       </div>
       <div className={styles.secondRow}>
-        <div className={styles.third} style={{ width: '50%' }}>
+        <div className={styles.third} style={{ width: '60%' }}>
           <Image fluid={rails} />
         </div>
       </div>

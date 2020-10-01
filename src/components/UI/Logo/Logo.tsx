@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
 const Logo = (): JSX.Element => {
-  return <h1>Stal-Mar</h1>
+  return <h1 style={{ color: '#FFFFFF' }}>Stal-Mar</h1>
 }
 
 export default Logo

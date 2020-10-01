@@ -11,13 +11,21 @@ const ToolBar = (): JSX.Element => {
     setIsSideDrawerOpen(!isSideDrawerOpen)
   }
 
+  let topStyles: string[] = [styles.top, styles.toolBarOpen]
+
+  if (!isSideDrawerOpen) {
+    topStyles = [styles.top]
+  }
+
   return (
     <>
       <section className={styles.toolBar}>
-        <Logo />
-        <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
+        <div className={topStyles.join(' ')}>
+          <Logo />
+          <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
+        </div>
+        {isSideDrawerOpen ? <SideDrawer /> : null}
       </section>
-      {isSideDrawerOpen ? <SideDrawer /> : null}
     </>
   )
 }
