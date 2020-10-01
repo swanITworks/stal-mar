@@ -9,14 +9,14 @@ const getFile = graphql`
   {
     background: file(name: { eq: "background" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     fence: file(name: { eq: "fence" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -30,7 +30,7 @@ const getFile = graphql`
     }
     rails: file(name: { eq: "rails" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 200) {
           ...GatsbyImageSharpFluid
         }
       }
