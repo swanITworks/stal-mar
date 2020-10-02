@@ -1,9 +1,8 @@
 import React from 'react'
-import * as styles from './Photos.module.scss'
+import * as styles from './PhotosSection.module.scss'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import Image from 'gatsby-image'
-import styled from 'styled-components'
 
 const getFile = graphql`
   {
@@ -75,11 +74,4 @@ const Photos = (): JSX.Element => {
   )
 }
 
-const StyledBackgroundSection: JSX.Element = styled(Photos)`
-  width: 100%;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
-`
-
-export default StyledBackgroundSection
+export default Photos

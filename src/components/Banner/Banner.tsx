@@ -1,11 +1,11 @@
 import React from 'react'
-import StyledBackgroundSection from './Photos/Photos'
+import PhotosSection from './PhotosSection/PhotosSection'
 import HelloSection from './HelloSection/HelloSection'
 
 const Banner = (): JSX.Element => {
   return (
     <section>
-      <StyledBackgroundSection />
+      <PhotosSection />
       <HelloSection />
     </section>
   )
