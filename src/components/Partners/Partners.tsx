@@ -9,7 +9,7 @@ const getData = graphql`
     allFile(filter: { relativeDirectory: { eq: "partners" } }) {
       nodes {
         childImageSharp {
-          fluid {
+          fluid(grayscale: true) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -34,7 +34,7 @@ const OurPartners = (): JSX.Element => {
           <article key={index}>
             <Image
               fluid={item.childImageSharp.fluid}
-              style={{ width: '50px' }}
+              style={{ width: '100px' }}
             />
           </article>
         )
