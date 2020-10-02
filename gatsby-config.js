@@ -9,7 +9,10 @@ require('dotenv').config({
 })
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Bramy i ogrodzenia Piła',
+    author: 'SwanITworks',
+  },
   plugins: [
     `gatsby-plugin-typescript`,
     'gatsby-plugin-scss-typescript',
@@ -28,6 +31,13 @@ module.exports = {
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Overpass`, `Overpass \:900`],
+        display: 'swap',
       },
     },
   ],

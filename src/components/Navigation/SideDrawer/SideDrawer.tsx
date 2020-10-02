@@ -5,9 +5,11 @@ import * as styles from './SideDrawer.module.scss'
 const SideDrawer = (): JSX.Element => {
   return (
     <nav className={styles.sideDrawer}>
-      <li>
-        <p>Welcome from Side Drawer</p>
-      </li>
+      <ul>
+        <li>O nas</li>
+        <li>Jak pracujemy</li>
+        <li>Produkty</li>
+      </ul>
     </nav>
   )
 }

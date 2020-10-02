@@ -1,12 +1,20 @@
 .helloSection {
   padding: 10% 4%;
   background-color: #000000;
-  h3 {
-    color: #f07566;
-    text-transform: uppercase;
-  }
-  h1 {
-    color: white;
-    width: 60%;
+  article {
+    margin: 1rem 0rem;
+    h3 {
+      color: #f07566;
+      text-transform: uppercase;
+      font-family: 'Overpass';
+      margin: 1rem 0rem;
+    }
+    h1 {
+      color: white;
+      width: 90%;
+      font-family: 'overpass';
+      line-height: 3.5rem;
+      font-size: 3rem;
+    }
   }
 }
