@@ -1,6 +1,7 @@
 import React from 'react'
 import * as styles from './Achivements.module.scss'
 import AchivementsItem from './AchivementsItem/AchivementsItem'
+import { faCoffee, faIndustry } from '@fortawesome/free-solid-svg-icons'
 
 const Achivements = (): JSX.Element => {
   const achivementsData: object[] = [
@@ -29,7 +30,12 @@ const Achivements = (): JSX.Element => {
       </h4>
       {achivementsData.map((item, index) => {
         return (
-          <AchivementsItem key={index} title={item.title} value={item.value}>
+          <AchivementsItem
+            key={index}
+            title={item.title}
+            value={item.value}
+            icon={faIndustry}
+          >
             a1
           </AchivementsItem>
         )
