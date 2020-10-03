@@ -25,8 +25,6 @@ const OurPartners = (): JSX.Element => {
     allFile: { nodes: myPartnersData },
   } = useStaticQuery(getData)
 
-  console.log(myPartnersData)
-
   return (
     <section className={styles.partners}>
       {myPartnersData.map((item, index) => {

@@ -12,6 +12,7 @@ const SideDrawerButton = (props: MyProps): JSX.Element => {
       className={[styles.hamburger, styles.hamburgerSlider].join(' ')}
       type="button"
       onClick={props.click}
+      aria-pressed="false"
     >
       <span className={styles.hamburgerBox}>
         <span className={styles.hamburgerInner}></span>
@@ -28,6 +29,7 @@ const SideDrawerButton = (props: MyProps): JSX.Element => {
       ].join(' ')}
       type="button"
       onClick={props.click}
+      aria-pressed="true"
     >
       <span className={styles.hamburgerBox}>
         <span className={styles.hamburgerInner}></span>

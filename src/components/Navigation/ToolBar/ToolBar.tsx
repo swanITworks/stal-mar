@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle'
 import Logo from '../../UI/Logo/Logo'
 import * as styles from './ToolBar.module.scss'
@@ -6,6 +6,18 @@ import SideDrawer from '../SideDrawer/SideDrawer'
 
 const ToolBar = (): JSX.Element => {
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
+
+  useEffect(() => {
+    const changeStateIsScrolling = (): void => {
+      if (window.pageYOffset === 0) {
+        setIsScrolling(false)
+      } else setIsScrolling(true)
+    }
+    window.addEventListener('scroll', changeStateIsScrolling)
+    return (): void =>
+      window.removeEventListener('scroll', changeStateIsScrolling)
+  }, [])
 
   const onClickHandler = (): void => {
     setIsSideDrawerOpen(!isSideDrawerOpen)
@@ -13,7 +25,7 @@ const ToolBar = (): JSX.Element => {
 
   let topStyles: string[] = [styles.top, styles.toolBarOpen]
 
-  if (!isSideDrawerOpen) {
+  if (!isSideDrawerOpen && !isScrolling) {
     topStyles = [styles.top]
   }
 
