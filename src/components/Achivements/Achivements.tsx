@@ -1,13 +1,19 @@
 import React from 'react'
+import * as styles from './Achivements.module.scss'
+import AchivementsItem from './AchivementsItem/AchivementsItem'
 
 const Achivements = (): JSX.Element => {
   const achivementsData: object[] = [
     {
-      title: 'Zadowolonych Klienów',
+      title: 'Lat na rynku',
+      value: '6',
+    },
+    {
+      title: 'Wykonanych bram',
       value: '139',
     },
     {
-      title: 'Wykonaliśmy km ogrodzenia',
+      title: 'Wykonanych km ogrodzenia',
       value: '139',
     },
     {
@@ -16,9 +22,17 @@ const Achivements = (): JSX.Element => {
     },
   ]
   return (
-    <section>
+    <section className={styles.achivements}>
+      <h4>
+        Behind the word mountains, far from the countries, there live the blind
+        texts.
+      </h4>
       {achivementsData.map((item, index) => {
-        return <div key={index}>a1</div>
+        return (
+          <AchivementsItem key={index} title={item.title} value={item.value}>
+            a1
+          </AchivementsItem>
+        )
       })}
     </section>
   )
