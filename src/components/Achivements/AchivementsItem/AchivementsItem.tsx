@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as styles from './AchivementsItem.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { Icon, InlineIcon } from '@iconify/react'
 
 const AchivementsItem = (props: string): JSX.Element => {
   interface MyProps {
@@ -9,21 +8,24 @@ const AchivementsItem = (props: string): JSX.Element => {
     value: number
   }
 
-  const { title, value, icon } = props
+  const { title, value, icon, unit } = props
 
   return (
     <article className={styles.achivementsItem}>
       <div
         style={{
-          border: '1px solid #F07A3A',
+          border: '2px solid #F07A3A',
           borderRadius: '150px',
           width: '150px',
           height: '150px',
           textAlign: 'center',
-          paddingTop: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '1rem',
         }}
       >
-        <FontAwesomeIcon
+        <Icon
           icon={icon}
           style={{
             width: '100px',
@@ -33,8 +35,11 @@ const AchivementsItem = (props: string): JSX.Element => {
         />
       </div>
 
-      <h6>{value}</h6>
-      <h5>{title}</h5>
+      <h6 className={styles.blob}>
+        {value} {unit}
+      </h6>
+
+      <h5 className={styles.blob}>{title}</h5>
     </article>
   )
 }

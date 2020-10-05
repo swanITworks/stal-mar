@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Overpass`, `Overpass \:900`],
+        fonts: [`Overpass`, `Overpass \:400,900`],
         display: 'swap',
       },
     },
