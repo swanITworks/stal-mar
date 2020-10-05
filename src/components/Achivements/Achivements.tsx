@@ -5,6 +5,7 @@ import gateIcon from '@iconify/icons-mdi/gate'
 import bxsFactory from '@iconify/icons-bx/bxs-factory'
 import fence15 from '@iconify/icons-maki/fence-15'
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging'
+import Counter from './Counter/Counter'
 
 const myData: object[] = [
   {
@@ -109,6 +110,7 @@ const Achivements = (): JSX.Element => {
           )
         })}
       </div>
+      <Counter />
     </section>
   )
 }

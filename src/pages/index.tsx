@@ -8,6 +8,7 @@ const index: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Partners />
+      <Achivements />
     </Layout>
   )
 }
