@@ -30,3 +30,36 @@
 .button:active {
   transform: scale(0.95);
 }
+
+.buttonBlack {
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 1rem 0rem;
+  text-transform: uppercase;
+  font-family: 'Overpass';
+  font-size: 1.1rem;
+  font-weight: 900;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+}
+
+.buttonBlack:hover,
+.buttonBlack:focus {
+  background: #000000;
+}
+
+.buttonBlack:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.buttonBlack:active {
+  transform: scale(0.95);
+}

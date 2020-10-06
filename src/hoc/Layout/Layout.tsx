@@ -14,7 +14,15 @@ const Layout = (props: MyProps): JSX.Element => {
         <ToolBar />
         <Banner />
       </header>
-      <main>{props.children}</main>
+      <main
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
+        {props.children}
+      </main>
       <Footer />
     </>
   )

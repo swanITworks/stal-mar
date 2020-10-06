@@ -1,14 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import * as styles from './AchivementsItem.module.scss'
 import { Icon, InlineIcon } from '@iconify/react'
 
-const AchivementsItem = (props: string): JSX.Element => {
-  interface MyProps {
-    title: string
-    value: number
+const AchivementsItem = (props): JSX.Element => {
+  const { title, max, icon, unit, count, speed, enterSection } = props
+
+  const [intCon, setIntCon] = useState(0)
+  const [enter, setEnter] = useState(false)
+
+  const myInterval = () => {
+    const sesion = setInterval(
+      () => setIntCon(intCon => intCon + count || 1),
+      speed || 100
+    )
+    return sesion
   }
 
-  const { title, value, icon, unit } = props
+  useEffect(() => {
+    let newSesion
+    if (intCon < max && enter) {
+      newSesion = myInterval()
+    }
+    return () => {
+      clearInterval(newSesion)
+    }
+  }, [intCon, enter])
+
+  useEffect(() => {
+    if (enterSection) {
+      setEnter(true)
+    }
+  }, [enterSection])
 
   return (
     <article className={styles.achivementsItem}>
@@ -34,12 +56,10 @@ const AchivementsItem = (props: string): JSX.Element => {
           }}
         />
       </div>
-
       <h6 className={styles.blob}>
-        {value} {unit}
+        {intCon} {unit}
       </h6>
-
-      <h5 className={styles.blob}>{title}</h5>
+      <h5 className={styles.blob}>{title}</h5>,
     </article>
   )
 }

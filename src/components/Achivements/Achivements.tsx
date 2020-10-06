@@ -5,8 +5,6 @@ import gateIcon from '@iconify/icons-mdi/gate'
 import bxsFactory from '@iconify/icons-bx/bxs-factory'
 import fence15 from '@iconify/icons-maki/fence-15'
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging'
-import Counter from './Counter/Counter'
-import IntervalCounter from './IntervalCounter/IntervalCounter'
 
 const myData: object[] = [
   {
@@ -16,6 +14,7 @@ const myData: object[] = [
     unit: 'lat',
     icon: bxsFactory,
     delay: 500,
+    count: 1,
   },
   {
     title: 'Wykonanych bram',
@@ -23,7 +22,8 @@ const myData: object[] = [
     recentValue: 0,
     unit: 'szt',
     icon: gateIcon,
-    delay: 50,
+    delay: 30,
+    count: 1,
   },
   {
     title: 'Waga najciezszej bramy',
@@ -32,6 +32,7 @@ const myData: object[] = [
     unit: 'kg',
     icon: weightHanging,
     delay: 10,
+    count: 1,
   },
   {
     title: 'Wykonanych ogrodzeń',
@@ -40,31 +41,22 @@ const myData: object[] = [
     unit: 'km',
     icon: fence15,
     delay: 20,
+    count: 1,
   },
 ]
 
 const Achivements = (props): JSX.Element => {
   const [achivementsData, setachivementsData] = useState(myData)
-  const [windowWidth, setWindowWidt] = useState()
   const [enterSection, setEnterSecion] = useState(false)
-
-  useEffect(() => {
-    const sizeHandler = () => {
-      setWindowWidt(window.innerWidth)
-    }
-    sizeHandler()
-    window.addEventListener('resize', sizeHandler)
-    return () => {
-      window.removeEventListener('resize', sizeHandler)
-    }
-  }, [])
 
   return (
     <section
       onMouseEnter={() => {
         setEnterSecion(true)
       }}
-      onTouch
+      onTouchMove={() => {
+        setEnterSecion(true)
+      }}
       className={styles.achivements}
     >
       <h4>
@@ -74,7 +66,7 @@ const Achivements = (props): JSX.Element => {
       <div className={styles.elements}>
         {achivementsData.map((item, index) => {
           return (
-            <IntervalCounter
+            <AchivementsItem
               key={index}
               title={item.title}
               max={item.value}
@@ -82,9 +74,8 @@ const Achivements = (props): JSX.Element => {
               icon={item.icon}
               speed={item.delay}
               count={1}
-              windowWidth={windowWidth}
               enterSection={enterSection}
-            ></IntervalCounter>
+            ></AchivementsItem>
           )
         })}
       </div>
