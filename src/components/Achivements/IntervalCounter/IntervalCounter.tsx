@@ -77,12 +77,14 @@ const IntervalCounter = (props): JSX.Element => {
           }}
         />
       </div>
-
-      <h6 className={styles.blob}>
-        {intCon} {unit}
-      </h6>
-
-      <h5 className={styles.blob}>{title}</h5>
+      {intCon > 0
+        ? [
+            <h6 className={styles.blob}>
+              {intCon} {unit}
+            </h6>,
+            <h5 className={styles.blob}>{title}</h5>,
+          ]
+        : null}
     </article>
   )
 }

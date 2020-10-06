@@ -45,7 +45,7 @@ const myData: object[] = [
 
 const Achivements = (props): JSX.Element => {
   const [achivementsData, setachivementsData] = useState(myData)
-  const [windowWidth, setWindowWidt] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidt] = useState()
   const [enterSection, setEnterSecion] = useState(false)
 
   useEffect(() => {
@@ -60,17 +60,17 @@ const Achivements = (props): JSX.Element => {
   }, [])
 
   return (
-    <section className={styles.achivements}>
+    <section
+      onMouseEnter={() => {
+        setEnterSecion(true)
+      }}
+      className={styles.achivements}
+    >
       <h4>
         Behind the word mountains, far from the countries, there live the blind
         texts.
       </h4>
-      <div
-        onMouseEnter={() => {
-          setEnterSecion(true)
-        }}
-        className={styles.elements}
-      >
+      <div className={styles.elements}>
         {achivementsData.map((item, index) => {
           return (
             <IntervalCounter
