@@ -36,25 +36,13 @@ const IntervalCounter = (props): JSX.Element => {
   }, [intCon, enter])
 
   useEffect(() => {
-    if (windowWidth >= 715 && enterSection) {
+    if (enterSection) {
       setEnter(true)
     }
-  }, [enterSection, windowWidth])
+  }, [enterSection])
 
   return (
-    <article
-      className={styles.achivementsItem}
-      onMouseEnter={() => {
-        if (windowWidth < 715) {
-          setEnter(true)
-        }
-      }}
-      onTouchMove={() => {
-        if (windowWidth < 715) {
-          setEnter(true)
-        }
-      }}
-    >
+    <article className={styles.achivementsItem}>
       <div
         style={{
           border: '2px solid #F07A3A',

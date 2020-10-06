@@ -64,6 +64,7 @@ const Achivements = (props): JSX.Element => {
       onMouseEnter={() => {
         setEnterSecion(true)
       }}
+      onTouch
       className={styles.achivements}
     >
       <h4>
