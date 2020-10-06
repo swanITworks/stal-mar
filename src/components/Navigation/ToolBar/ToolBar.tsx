@@ -4,7 +4,7 @@ import Logo from '../../UI/Logo/Logo'
 import * as styles from './ToolBar.module.scss'
 import SideDrawer from '../SideDrawer/SideDrawer'
 
-const ToolBar = (): JSX.Element => {
+const ToolBar = (props): JSX.Element => {
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
 

@@ -21,7 +21,7 @@ const Counter = (): JSX.Element => {
   return (
     <div
       onMouseEnter={() => setCounterValue(counterValue => counterValue + 1)}
-      style={{ width: '100px' }}
+      style={{ width: '100px', height: '200px', border: '1px solid black' }}
     >
       wartosc: {counterValue}
     </div>

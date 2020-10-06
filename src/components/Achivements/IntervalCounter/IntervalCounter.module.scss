@@ -1,0 +1,42 @@
+.achivementsItem {
+  background-color: #f8f8f8;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-width: 250px;
+  h6 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
+  h5 {
+    font-weight: 400;
+  }
+}
+
+.blob {
+  color: black;
+
+  text-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
