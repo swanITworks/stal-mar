@@ -52,8 +52,8 @@ const Achivements = (props): JSX.Element => {
     const sizeHandler = () => {
       setWindowWidt(window.innerWidth)
     }
+    sizeHandler()
     window.addEventListener('resize', sizeHandler)
-
     return () => {
       window.removeEventListener('resize', sizeHandler)
     }
