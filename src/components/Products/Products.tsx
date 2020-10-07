@@ -70,18 +70,21 @@ const Products = (): JSX.Element => {
           live in Bookmarksgrove right at the coast.
         </p>
       </article>
-      {ourProducts.map((product, index) => {
-        if (index === productToShow - 1) {
-          return (
-            <ProductsItem
-              key={product.node.title}
-              title={product.node.title}
-              number={'0' + (index + 1)}
-              imageData={product.node.photo.fluid}
-            />
-          )
-        }
-      })}
+      <div>
+        {ourProducts.map((product, index) => {
+          if (index === productToShow - 1) {
+            return (
+              <ProductsItem
+                key={product.node.title}
+                title={product.node.title}
+                number={'0' + (index + 1)}
+                imageData={product.node.photo.fluid}
+              />
+            )
+          }
+        })}
+      </div>
+
       <article className={styles.buttons}>
         <ChangeButton click={() => changeHandler('minus')} type={'left'} />
         {productToShow}/{ourProducts.length}

@@ -1,0 +1,23 @@
+.button {
+  background-color: #f07a3a;
+  color: #ffffff;
+  border-radius: 50px;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  div.right {
+    min-width: 10px;
+    min-height: 10px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    transform: translateX(-1px) rotate(45deg);
+  }
+
+  div.left {
+    min-width: 10px;
+    min-height: 10px;
+    border-top: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    transform: translateX(1px) rotate(-135deg);
+  }
+}

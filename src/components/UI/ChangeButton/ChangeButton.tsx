@@ -1,11 +1,20 @@
 import React from 'react'
+import * as styles from './ChangeButton.module.scss'
 
 const ChangeButton = ({ type, click }): JSX.Element => {
   switch (type) {
     case 'right':
-      return <button onClick={click}>right</button>
+      return (
+        <button className={styles.button} onClick={click}>
+          <div className={styles.right}></div>
+        </button>
+      )
     case 'left':
-      return <button onClick={click}>left</button>
+      return (
+        <button className={styles.button} onClick={click}>
+          <div className={styles.left}></div>
+        </button>
+      )
   }
 }
 

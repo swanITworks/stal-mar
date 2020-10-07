@@ -2,6 +2,9 @@
   width: 100%;
   background-color: #f07a3a;
   padding: 10% 4% 10% 4%;
+  display: flex;
+  flex-direction: column;
+
   h2 {
     font-family: 'Overpass';
     font-size: 1rem;
@@ -25,7 +28,13 @@
     margin-bottom: 1.5rem;
   }
   .buttons {
+    width: 25%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Overpass';
+    align-self: center;
+    margin-top: 2rem;
   }
 }
