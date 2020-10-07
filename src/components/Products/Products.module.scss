@@ -1,4 +1,4 @@
-.aboutUs {
+.products {
   width: 100%;
   background-color: #f07a3a;
   padding: 10% 4% 10% 4%;
@@ -23,5 +23,9 @@
     margin-bottom: 1rem;
     line-height: 1.7rem;
     margin-bottom: 1.5rem;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }

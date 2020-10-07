@@ -49,52 +49,49 @@ const AboutUs = (): JSX.Element => {
     },
   } = useStaticQuery(getData)
 
-  console.log(man)
-
   return (
-    <>
-      <section className={styles.aboutUs}>
-        <h1>About US</h1>
-        <h3>Industrial & Factory Solutions</h3>
-        <article>
-          <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast.
-          </p>
-        </article>
-        <Button type="black" />
-        <article
+    <section className={styles.aboutUs}>
+      <h2>About US</h2>
+      <h3>Industrial & Factory Solutions</h3>
+      <article>
+        <p>
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts. Separated they
+          live in Bookmarksgrove right at the coast.
+        </p>
+      </article>
+      <Button type="black" />
+      <article
+        style={{
+          padding: '10%',
+          position: 'relative',
+          minHeight: '320px',
+          marginTop: '2.5rem',
+        }}
+      >
+        <Image
+          fluid={man}
           style={{
-            padding: '10%',
-            position: 'relative',
-            minHeight: '320px',
+            position: 'absolute',
+            width: '50%',
+            zIndex: 1,
+            right: 0,
+            bottom: 0,
           }}
-        >
-          <Image
-            fluid={man}
-            style={{
-              position: 'absolute',
-              width: '200px',
-              zIndex: 1,
-              right: 0,
-              bottom: 0,
-            }}
-          />
-          <Image
-            fluid={workshop}
-            style={{
-              position: 'absolute',
-              width: '250px',
-              zIndex: 1,
-              left: 0,
-              top: 0,
-            }}
-          />
-          <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
-        </article>
-      </section>
-    </>
+        />
+        <Image
+          fluid={workshop}
+          style={{
+            position: 'absolute',
+            width: '75%',
+            zIndex: 1,
+            left: 0,
+            top: 0,
+          }}
+        />
+        <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
+      </article>
+    </section>
   )
 }
 

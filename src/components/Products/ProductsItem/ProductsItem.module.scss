@@ -1,0 +1,26 @@
+.background {
+  background-color: #000000;
+  padding: 10% 10%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  h3.number {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  h2.title {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    width: 50%;
+    text-align: right;
+    word-break: keep-all;
+    height: 3.5rem;
+  }
+  .productImage {
+    width: 90%;
+    align-self: start;
+  }
+}
