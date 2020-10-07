@@ -6,6 +6,7 @@ import Achivements from '../components/Achivements/Achivements'
 import AboutUs from '../components/AboutUs/AboutUs'
 import Wave from '../assets/waveAbout.svg'
 import Products from '../components/Products/Products'
+import FastContact from '../components/Contact/Contact'
 
 const index: React.FC<PageProps> = props => {
   return (
@@ -15,6 +16,7 @@ const index: React.FC<PageProps> = props => {
       <Wave />
       <AboutUs />
       <Products />
+      <FastContact />
     </Layout>
   )
 }

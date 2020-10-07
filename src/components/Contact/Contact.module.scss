@@ -1,0 +1,38 @@
+.fastContact {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+  width: 100%;
+  .content {
+    position: absolute;
+    z-index: 3;
+    padding: 10% 4% 0% 4%;
+    width: 100%;
+    .contactBox {
+      background-color: #333333;
+      width: 100%;
+      padding: 10% 4% 0% 4%;
+      border-radius: 5px;
+      h2.title {
+        color: #f07566;
+        z-index: 3;
+        text-transform: uppercase;
+        font-family: 'Overpass';
+      }
+      p.info {
+        font-family: 'Overpass';
+        color: #ffffff;
+      }
+    }
+  }
+
+  .secondBackground {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #f07a3a;
+    height: 150px;
+    z-index: 2;
+  }
+}
