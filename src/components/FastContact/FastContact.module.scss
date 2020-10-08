@@ -12,13 +12,14 @@
     .contactBox {
       background-color: #333333;
       width: 100%;
-      padding: 10% 4% 0% 4%;
+      padding: 10% 8% 0% 8%;
       border-radius: 5px;
       h2.title {
         color: #f07566;
         z-index: 3;
         text-transform: uppercase;
         font-family: 'Overpass';
+        margin-bottom: 1rem;
       }
       p.info {
         font-family: 'Overpass';

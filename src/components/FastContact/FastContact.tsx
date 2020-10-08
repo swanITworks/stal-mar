@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../UI/Button/Button'
-import * as styles from './Contact.module.scss'
+import * as styles from './FastContact.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -27,7 +27,7 @@ const FastContact = () => {
         <article className={styles.contactBox}>
           <h2 className={styles.title}>{fastContact.title}</h2>
           <p className={styles.info}>{fastContact.info}</p>
-          <Button />
+          <Button text={'Kontakt'} />
           <Img fluid={fastContact.personPhoto.fluid} />
         </article>
       </div>
