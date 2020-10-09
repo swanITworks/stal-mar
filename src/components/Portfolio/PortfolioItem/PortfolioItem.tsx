@@ -1,10 +1,14 @@
 import React from 'react'
 import * as styles from './PortfolioItem.module.scss'
+import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
-const PortfolioItem = () => {
+const PortfolioItem = ({title, mainPhoto}) => {
   return (
     <article className={styles.portfolioItem}>
-      <h3>My Porfolio Item</h3>
+      <BackgroundImage className={styles.test} fluid={mainPhoto}>
+        <h3 className={styles.title}>{title}</h3>
+      </BackgroundImage>   
     </article>
   )
 }

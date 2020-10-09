@@ -1,41 +1,52 @@
 import React from 'react'
 import Button from '../UI/Button/Button'
 import PortfolioItem from './PortfolioItem/PortfolioItem'
-import * as styles from './Portfolio.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import SectName from '../UI/SectName/SectName'
+import SectTitle from '../UI/SectTittle/sectTitle'
+import SectInfo from '../UI/SectInfo/SectInfo'
+import Section from '../../hoc/Section/Section'
 
 const getData = graphql`
   {
-    fastContact: contentfulFastContact {
-      personPhoto {
+    portfolio:contentfulPortfolioSection {
+      title
+      info
+      name
+    }
+    portfolioItems:allContentfulPortfolioItems {
+    nodes {
+      title
+      info {
+        info
+      }
+      mainPhoto{
         fluid {
           ...GatsbyContentfulFluid
         }
       }
-      title
-      info
+      photos {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
     }
   }
+  }
 `
-
 const Portfolio = () => {
-  const { fastContact } = useStaticQuery(getData)
+  const { portfolio, portfolioItems:{nodes: items }} = useStaticQuery(getData)
+
+  console.log(items);
 
   return (
-    <section className={styles.portfolio}>
-      <h2>Portfolio</h2>
-      <h3>The Latest & Greatest Industrial Projects</h3>
-      <article>
-        <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts. Separated they
-          live in Bookmarksgrove right at the coast.
-        </p>
-      </article>
+    <Section type={'dark'}>
+      <SectName text={portfolio.name} type={'orange'}/>
+      <SectTitle text={portfolio.title}/>
+      <SectInfo type={'transparent'} text={portfolio.info}/>
       <Button text={'Wiecej'} type={'orange'} />
-      <PortfolioItem />
-    </section>
+      { items.map( (item,index) => <PortfolioItem key={index} mainPhoto={item.mainPhoto.fluid}title={item.title}/>)}
+    </Section>
   )
 }
 
