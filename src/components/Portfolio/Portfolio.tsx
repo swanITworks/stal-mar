@@ -3,7 +3,7 @@ import Button from '../UI/Button/Button'
 import PortfolioItem from './PortfolioItem/PortfolioItem'
 import { graphql, useStaticQuery } from 'gatsby'
 import SectName from '../UI/SectName/SectName'
-import SectTitle from '../UI/SectTittle/sectTitle'
+import SectTitle from '../UI/SectTittle/SectTitle'
 import SectInfo from '../UI/SectInfo/SectInfo'
 import Section from '../../hoc/Section/Section'
 
