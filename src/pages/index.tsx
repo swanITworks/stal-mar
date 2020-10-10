@@ -8,6 +8,7 @@ import Wave from '../assets/waveAbout.svg'
 import Products from '../components/Products/Products'
 import FastContact from '../components/FastContact/FastContact'
 import Portfolio from '../components/Portfolio/Portfolio'
+import VideoSection from '../components/VideoSection/VideoSection'
 
 const index: React.FC<PageProps> = props => {
   return (
@@ -19,6 +20,7 @@ const index: React.FC<PageProps> = props => {
       <Products />
       <FastContact />
       <Portfolio />
+      <VideoSection />
     </Layout>
   )
 }

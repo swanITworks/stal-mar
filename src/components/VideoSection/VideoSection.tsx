@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../UI/Button/Button'
-import * as styles from './FastContact.module.scss'
+import * as styles from './VideoSection.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -18,7 +18,7 @@ const getData = graphql`
   }
 `
 
-const FastContact = () => {
+const VideoSection = () => {
   const { fastContact } = useStaticQuery(getData)
 
   return (
@@ -36,4 +36,4 @@ const FastContact = () => {
   )
 }
 
-export default FastContact
+export default VideoSection
