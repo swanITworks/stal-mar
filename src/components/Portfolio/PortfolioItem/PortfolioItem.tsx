@@ -6,9 +6,12 @@ import BackgroundImage from 'gatsby-background-image'
 const PortfolioItem = ({title, mainPhoto}) => {
   return (
     <article className={styles.portfolioItem}>
-      <BackgroundImage className={styles.test} fluid={mainPhoto}>
-        <h3 className={styles.title}>{title}</h3>
-      </BackgroundImage>   
+      <Img className={styles.image} fluid={mainPhoto}>
+      </Img>
+      <div className={styles.textArea}>
+        <h2 className={styles.category}>Category</h2>
+        <h3>{title}</h3>
+      </div>
     </article>
   )
 }

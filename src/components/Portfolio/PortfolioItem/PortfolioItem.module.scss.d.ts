@@ -1,3 +1,4 @@
 export const portfolioItem: string;
-export const test: string;
-export const title: string;
+export const image: string;
+export const textArea: string;
+export const category: string;

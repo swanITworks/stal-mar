@@ -6,6 +6,8 @@ import SectName from '../UI/SectName/SectName'
 import SectTitle from '../UI/SectTittle/SectTitle'
 import SectInfo from '../UI/SectInfo/SectInfo'
 import Section from '../../hoc/Section/Section'
+import ChangeButton from '../UI/ChangeButton/ChangeButton'
+import * as styles from './Portfolio.module.scss'
 
 const getData = graphql`
   {
@@ -21,7 +23,7 @@ const getData = graphql`
         info
       }
       mainPhoto{
-        fluid {
+        fluid(maxHeight:500) {
           ...GatsbyContentfulFluid
         }
       }
@@ -46,6 +48,10 @@ const Portfolio = () => {
       <SectInfo type={'transparent'} text={portfolio.info}/>
       <Button text={'Wiecej'} type={'orange'} />
       { items.map( (item,index) => <PortfolioItem key={index} mainPhoto={item.mainPhoto.fluid}title={item.title}/>)}
+      <div className={styles.buttons}>
+        <ChangeButton type={'left'}/>
+        <ChangeButton type={'right'}/>
+      </div>
     </Section>
   )
 }

@@ -1,1 +1,1 @@
-export const portfolio: string;
+export const buttons: string;
