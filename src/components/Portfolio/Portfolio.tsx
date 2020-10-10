@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../UI/Button/Button'
 import PortfolioItem from './PortfolioItem/PortfolioItem'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -18,6 +18,7 @@ const getData = graphql`
     }
     portfolioItems:allContentfulPortfolioItems {
     nodes {
+      category
       title
       info {
         info
@@ -38,8 +39,25 @@ const getData = graphql`
 `
 const Portfolio = () => {
   const { portfolio, portfolioItems:{nodes: items }} = useStaticQuery(getData)
+  const [indexToShow,setIndexToShow] = useState(0)
 
-  console.log(items);
+  const changePhotoHandler = ( type ) =>{
+    switch (type) {
+      case 'plus':
+        if (indexToShow !== (items.length -1)) 
+          {
+            setIndexToShow(indexToShow => indexToShow + 1)
+          } else setIndexToShow(0);
+        break;
+
+      case 'minus':
+        if ( indexToShow !== 0) 
+        {
+          setIndexToShow(indexToShow => indexToShow - 1)
+        } else setIndexToShow(items.length-1);
+        break;
+    }
+  }
 
   return (
     <Section type={'dark'}>
@@ -47,10 +65,21 @@ const Portfolio = () => {
       <SectTitle text={portfolio.title}/>
       <SectInfo type={'transparent'} text={portfolio.info}/>
       <Button text={'Wiecej'} type={'orange'} />
-      { items.map( (item,index) => <PortfolioItem key={index} mainPhoto={item.mainPhoto.fluid}title={item.title}/>)}
+      {
+        items.map(
+          (item,index) =>
+            {
+              if (index === indexToShow){
+                return (
+                  <PortfolioItem key={index} mainPhoto={item.mainPhoto.fluid} title={item.title} category={item.category}/>
+                  )
+                }
+            }
+        )
+      }
       <div className={styles.buttons}>
-        <ChangeButton type={'left'}/>
-        <ChangeButton type={'right'}/>
+        <ChangeButton type={'left'} click={()=>changePhotoHandler('minus')}/>
+        <ChangeButton type={'right'} click={()=>changePhotoHandler('plus')}/>
       </div>
     </Section>
   )

@@ -4,15 +4,13 @@
   position: relative;
   margin-top: 2rem;
 }
-
 .image {
   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 95%);
   mask-image: linear-gradient(to top, transparent 5%, black 95%);
   border-radius: 5px;
   overflow: hidden;
-  max-height: 500px;
+  height: 500px;
 }
-
 .textArea {
   z-index: 3;
   position: absolute;
@@ -27,5 +25,11 @@
     font-size: 1rem;
     font-weight: 900;
     letter-spacing: 1px;
+  }
+  h3.title {
+    color: #ffffff;
+    font-family: 'Overpass';
+    line-height: 2rem;
+    font-size: 1.5rem;
   }
 }
