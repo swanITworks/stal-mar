@@ -1,4 +1,4 @@
-.fastContact {
+.videoSection {
   background-color: #f07a3a;
   position: relative;
   z-index: 1;
@@ -9,24 +9,29 @@
     z-index: 3;
     padding: 10% 4% 0% 4%;
     width: 100%;
-    .contactBox {
+    .videoBox {
       background-color: #333333;
       width: 100%;
-      padding: 10% 8% 0% 8%;
+      z-index: 4;
+      position: relative;
       border-radius: 5px;
       h2.title {
         color: #f07566;
-        z-index: 3;
+        z-index: 5;
         text-transform: uppercase;
         font-family: 'Overpass';
         margin-bottom: 1rem;
+        position: absolute;
+        top: 0px;
       }
       p.info {
         font-family: 'Overpass';
         color: #ffffff;
       }
-      .image {
+      .video {
+        position: relative;
         max-width: 80vh;
+        z-index: 1;
       }
     }
   }
