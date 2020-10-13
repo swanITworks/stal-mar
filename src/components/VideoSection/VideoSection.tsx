@@ -15,7 +15,7 @@ const VideoSection = (): JSX.Element => {
               vidRef.current.play()
             }}
           />
-          <video ref={vidRef} loop muted>
+          <video ref={vidRef} loop muted preload="auto">
             <source src={meshMP4} type="video/mp4" />
             <source src={meshWEBM} type="vide/webm" />
           </video>
