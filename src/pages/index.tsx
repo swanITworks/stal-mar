@@ -9,6 +9,7 @@ import Products from '../components/Products/Products'
 import FastContact from '../components/FastContact/FastContact'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
+import HowWeWork from '../components/HowWeWork/howWeWork'
 
 const index: React.FC<PageProps> = props => {
   return (
@@ -21,6 +22,7 @@ const index: React.FC<PageProps> = props => {
       <FastContact />
       <Portfolio />
       <VideoSection />
+      <HowWeWork />
     </Layout>
   )
 }
