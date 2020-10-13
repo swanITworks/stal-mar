@@ -1,20 +1,26 @@
 .videoSection {
   background-color: #f07a3a;
-  position: relative;
   z-index: 1;
-  min-height: 85vh;
   width: 100%;
+  position: relative;
+  padding: 10% 4% 10% 4%;
+
   .content {
-    position: absolute;
-    z-index: 3;
-    padding: 10% 4% 0% 4%;
-    width: 100%;
+    margin-top: 10px;
+    height: 100%;
     .videoBox {
-      background-color: #333333;
-      width: 100%;
-      z-index: 4;
+      background-color: #f07a3a;
+      z-index: 2;
       position: relative;
+      overflow: hidden;
+      height: 80vh;
       border-radius: 5px;
+
+      video.myVideo {
+        position: absolute;
+        bottom: 0px;
+      }
+
       h2.title {
         color: #f07566;
         z-index: 5;
@@ -22,26 +28,45 @@
         font-family: 'Overpass';
         margin-bottom: 1rem;
         position: absolute;
-        top: 0px;
+        font-size: 1.6rem;
+        top: 40%;
+        left: 10%;
+        font-weight: 900;
+        text-shadow: 1px 1px 1px #000000;
       }
       p.info {
         font-family: 'Overpass';
         color: #ffffff;
+        position: absolute;
+        font-size: 2.3rem;
+        top: 50%;
+        left: 10%;
+        z-index: 5;
+        max-width: 80%;
+        line-height: 3rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 2px #000000;
       }
-      .video {
-        position: relative;
-        max-width: 80vh;
-        z-index: 1;
+      button.myButton {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        z-index: 5;
       }
     }
   }
-
   .secondBackground {
     width: 100%;
     position: absolute;
     top: 0px;
+    left: 0px;
     background-color: black;
     height: 150px;
-    z-index: 2;
+  }
+  video {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 3;
   }
 }
