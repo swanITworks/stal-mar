@@ -13,7 +13,7 @@
       z-index: 2;
       position: relative;
       overflow: hidden;
-      height: 80vh;
+      max-height: 75vh;
       border-radius: 5px;
 
       video.myVideo {
@@ -47,7 +47,7 @@
         font-weight: 900;
         text-shadow: 2px 2px 2px #000000;
       }
-      button.myButton {
+      button {
         position: absolute;
         top: 20%;
         left: 40%;
