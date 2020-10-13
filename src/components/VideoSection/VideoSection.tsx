@@ -26,8 +26,6 @@ const VideoSection = (): JSX.Element => {
     },
   } = useStaticQuery(getData)
 
-  console.log(photo)
-
   return (
     <section className={styles.videoSection}>
       <article className={styles.content}>

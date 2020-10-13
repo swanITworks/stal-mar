@@ -4,8 +4,9 @@
   border-radius: 50px;
   box-shadow: none;
   border: 1px solid #f07a3a;
-  padding: 1rem;
-  width: 55px;
+  padding: 1.2rem;
+  width: 65px;
+  height: 65px;
   display: flex;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.84);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.84);
@@ -15,9 +16,9 @@
   div.right {
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #ffffff;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #ffffff;
     transform: translateX(8px);
   }
 }
