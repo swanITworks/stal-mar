@@ -1,11 +1,14 @@
 import React from 'react'
 import * as styles from './SectTitle.module.scss'
 
-const SectTitle = ({text}):JSX.Element =>{
+const SectTitle = ({ text, type }): JSX.Element => {
+  let sectionStyles: string[] = [styles.sectTitle]
 
-  return (
-  <h3 className={styles.sectTitle}>{text}</h3>
-  )
+  if (type === 'dark') {
+    sectionStyles.push(styles.darkColor)
   }
+
+  return <h3 className={sectionStyles.join(' ')}>{text}</h3>
+}
 
 export default SectTitle

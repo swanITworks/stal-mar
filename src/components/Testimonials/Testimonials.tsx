@@ -68,8 +68,16 @@ const Testimonials = (): JSX.Element => {
         }
       })}
       <div className={styles.buttons}>
-        <ChangeButton type={'left'} click={() => changePhotoHandler('minus')} />
-        <ChangeButton type={'right'} click={() => changePhotoHandler('plus')} />
+        <ChangeButton
+          style={'light'}
+          type={'left'}
+          click={() => changePhotoHandler('minus')}
+        />
+        <ChangeButton
+          style={'light'}
+          type={'right'}
+          click={() => changePhotoHandler('plus')}
+        />
       </div>
     </Section>
   )
