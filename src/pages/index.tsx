@@ -9,7 +9,7 @@ import Products from '../components/Products/Products'
 import FastContact from '../components/FastContact/FastContact'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
-import HowWeWork from '../components/HowWeWork/howWeWork'
+import HowWeWork from '../components/HowWeWork/HowWeWork'
 
 const index: React.FC<PageProps> = props => {
   return (

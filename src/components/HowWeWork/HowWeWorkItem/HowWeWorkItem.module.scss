@@ -1,3 +1,45 @@
 .howWeWorkItem {
   background-color: #ffffff;
+  max-width: 85%;
+  margin: 1.5rem 0;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 2;
+  position: relative;
+
+  h3.number {
+    color: #f07566;
+    margin: 1rem 0;
+    font-family: 'Overpass';
+    font-size: 2rem;
+    letter-spacing: 2px;
+    z-index: 2;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    text-shadow: 1px 1px 1px #000000;
+    font-weight: 900;
+  }
+
+  h2.title {
+    font-family: 'Overpass';
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    margin: 2rem 0;
+    z-index: 2;
+  }
+  p.info {
+    font-family: 'Overpass';
+    font-size: 1rem;
+    color: #333333;
+    opacity: 0.5;
+    line-height: 1.7rem;
+    z-index: 2;
+  }
+
+  .photo {
+    border-radius: 5px;
+    overflow: hidden;
+  }
 }
