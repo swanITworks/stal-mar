@@ -1,10 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import * as styles from './NavItems.module.scss'
 
 const NavItems: React.FC = () => {
   return (
     <nav>
-      <ul>
+      <ul className={styles.list}>
         <li>
           <Link to="/">Start</Link>
         </li>

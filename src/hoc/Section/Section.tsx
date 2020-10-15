@@ -1,7 +1,7 @@
 import React from 'react'
 import * as styles from './Section.module.scss'
 
-const Section = ({ children, type }): JSX.Element => {
+const Section = ({ children, type, style }): JSX.Element => {
   let sectionStyles: string[] = [styles.section]
 
   if (type === 'dark') {
@@ -12,7 +12,11 @@ const Section = ({ children, type }): JSX.Element => {
     sectionStyles.push(styles.almostDark)
   } else sectionStyles.push(styles.light)
 
-  return <section className={sectionStyles.join(' ')}>{children}</section>
+  return (
+    <section className={sectionStyles.join(' ')} style={{ ...style }}>
+      {children}
+    </section>
+  )
 }
 
 export default Section
