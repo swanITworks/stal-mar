@@ -1,0 +1,33 @@
+.contactItem {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  .icon {
+    margin-right: 1.5rem;
+    border: 1px solid #f07a3a;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  .infoArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .contactData {
+      color: #ffffff;
+      font-family: 'Overpass';
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+    }
+    .adittionalInfo {
+      color: #ffffff;
+      opacity: 0.5;
+      font-family: 'Overpass';
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.blogItem {
+  width: 100%;
+  .date {
+    color: #333333;
+    opacity: 0.5;
+    font-family: 'Overpass';
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .photo {
+    min-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+  }
+  .title {
+    font-family: 'Overpass';
+    font-size: 1.5rem;
+  }
+}

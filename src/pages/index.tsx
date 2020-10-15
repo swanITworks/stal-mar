@@ -12,6 +12,7 @@ import VideoSection from '../components/VideoSection/VideoSection'
 import HowWeWork from '../components/HowWeWork/HowWeWork'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Blog from '../components/Blog/Blog'
+import Contact from '../components/Contact/Contact'
 
 const index: React.FC<PageProps> = props => {
   return (
@@ -27,6 +28,7 @@ const index: React.FC<PageProps> = props => {
       <HowWeWork />
       <Testimonials />
       <Blog />
+      <Contact />
     </Layout>
   )
 }
