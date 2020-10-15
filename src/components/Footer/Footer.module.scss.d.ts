@@ -1,1 +1,2 @@
-export const footer: string;
+export const title: string;
+export const copyright: string;

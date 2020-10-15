@@ -19,8 +19,9 @@ const Footer = (): JSX.Element => {
       }}
     >
       <Logo />
+      <h3 className={styles.title}>MENU</h3>
       <NavItems />
-      <p>Copyright {year}</p>
+      <p className={styles.copyright}>Copyright {year}</p>
     </Section>
   )
 }
