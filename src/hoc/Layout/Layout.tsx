@@ -8,17 +8,34 @@ interface MyProps {
 }
 
 const Layout = (props: MyProps): JSX.Element => {
+  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false)
+
+  const onClickHandler = (): void => {
+    setIsSideDrawerOpen(!isSideDrawerOpen)
+  }
+
   return (
     <>
       <header>
-        <ToolBar />
-        <Banner />
+        <ToolBar
+          isSideDrawerOpen={isSideDrawerOpen}
+          onClickHandler={onClickHandler}
+          closeSideBar={() => setIsSideDrawerOpen(false)}
+        />
+        <Banner
+          click={() => {
+            setIsSideDrawerOpen(false)
+          }}
+        />
       </header>
       <main
         style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+        }}
+        onClick={() => {
+          setIsSideDrawerOpen(false)
         }}
       >
         {props.children}

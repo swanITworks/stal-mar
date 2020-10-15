@@ -4,8 +4,11 @@ import Logo from '../../UI/Logo/Logo'
 import * as styles from './ToolBar.module.scss'
 import SideDrawer from '../SideDrawer/SideDrawer'
 
-const ToolBar = (props): JSX.Element => {
-  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false)
+const ToolBar = ({
+  isSideDrawerOpen,
+  onClickHandler,
+  closeSideBar,
+}): JSX.Element => {
   const [isScrolling, setIsScrolling] = useState(false)
 
   useEffect(() => {
@@ -18,10 +21,6 @@ const ToolBar = (props): JSX.Element => {
     return (): void =>
       window.removeEventListener('scroll', changeStateIsScrolling)
   }, [])
-
-  const onClickHandler = (): void => {
-    setIsSideDrawerOpen(!isSideDrawerOpen)
-  }
 
   let topStyles: string[] = [styles.top, styles.toolBarOpen]
 
@@ -36,7 +35,7 @@ const ToolBar = (props): JSX.Element => {
           <Logo />
           <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
         </div>
-        {isSideDrawerOpen ? <SideDrawer /> : null}
+        {isSideDrawerOpen ? <SideDrawer closeSideBar={closeSideBar} /> : null}
       </section>
     </>
   )

@@ -2,9 +2,9 @@ import React from 'react'
 import PhotosSection from './PhotosSection/PhotosSection'
 import HelloSection from './HelloSection/HelloSection'
 
-const Banner = (): JSX.Element => {
+const Banner = ({ click }): JSX.Element => {
   return (
-    <section>
+    <section onClick={click}>
       <PhotosSection />
       <HelloSection />
     </section>
