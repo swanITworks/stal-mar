@@ -121,7 +121,7 @@ const Achievements = (): JSX.Element => {
               title={item.title}
               max={item.value}
               unit={item.unit}
-              icon={item.icon}
+              icon={item.icon.file.url}
               speed={item.delay}
               count={1}
               enterSection={enterSection}
