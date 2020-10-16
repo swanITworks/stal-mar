@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import * as styles from './AchivementsItem.module.scss'
+import * as styles from './AchievementsItem.module.scss'
 import { Icon, InlineIcon } from '@iconify/react'
 
-const AchivementsItem = (props): JSX.Element => {
+const AchievementsItem = (props): JSX.Element => {
   const { title, max, icon, unit, count, speed, enterSection } = props
 
   const [intCon, setIntCon] = useState(0)
@@ -42,7 +42,7 @@ const AchivementsItem = (props): JSX.Element => {
   )
 
   return (
-    <article className={styles.achivementsItem}>
+    <article className={styles.achievementsItem}>
       <div
         style={{
           border: '2px solid #F07A3A',
@@ -70,4 +70,4 @@ const AchivementsItem = (props): JSX.Element => {
   )
 }
 
-export default AchivementsItem
+export default AchievementsItem

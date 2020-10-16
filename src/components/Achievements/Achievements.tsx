@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import * as styles from './Achivements.module.scss'
-import AchivementsItem from './AchivementsItem/AchivementsItem'
+import * as styles from './Achievements.module.scss'
+import AchievementsItem from './AchievementsItem/AchievementsItem'
 import gateIcon from '@iconify/icons-mdi/gate'
 import bxsFactory from '@iconify/icons-bx/bxs-factory'
 import fence15 from '@iconify/icons-maki/fence-15'
 import weightHanging from '@iconify/icons-fa-solid/weight-hanging'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const myData: object[] = [
   {
@@ -45,11 +46,37 @@ const myData: object[] = [
   },
 ]
 
-const Achivements = (): JSX.Element => {
-  const [achivementsData, setachivementsData] = useState(myData)
+const getData = graphql`
+  {
+    section: contentfulAchievementsSection {
+      title
+    }
+    items: allContentfulAchievementsItems {
+      nodes {
+        title
+        unit
+        value
+        count
+        delay
+        icon {
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
+`
+const Achievements = (): JSX.Element => {
+  const [achievementsData, setachievementsData] = useState(myData)
   const [enterSection, setEnterSecion] = useState(false)
 
   const sectionRef = useRef(null)
+
+  const {
+    section: { title },
+    items: { nodes: arrayItems },
+  } = useStaticQuery(getData)
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -85,14 +112,11 @@ const Achivements = (): JSX.Element => {
       }}
       className={styles.achivements}
     >
-      <h4>
-        Behind the word mountains, far from the countries, there live the blind
-        texts.
-      </h4>
+      <h4>{title}</h4>
       <div className={styles.elements}>
-        {achivementsData.map((item, index) => {
+        {arrayItems.map((item, index) => {
           return (
-            <AchivementsItem
+            <AchievementsItem
               key={index}
               title={item.title}
               max={item.value}
@@ -101,7 +125,7 @@ const Achivements = (): JSX.Element => {
               speed={item.delay}
               count={1}
               enterSection={enterSection}
-            ></AchivementsItem>
+            ></AchievementsItem>
           )
         })}
       </div>
@@ -109,4 +133,4 @@ const Achivements = (): JSX.Element => {
   )
 }
 
-export default Achivements
+export default Achievements

@@ -10,10 +10,10 @@ const NavItems: React.FC = () => {
           <Link to="/">Start</Link>
         </li>
         <li>
-          <Link to="/about">O nas</Link>
+          <Link to="/o-nas">O nas</Link>
         </li>
         <li>
-          <Link to="/what-we-do/">Oferta</Link>
+          <Link to="/oferta/">Oferta</Link>
         </li>
         <li>
           <Link to="/portfolio/">Portfolio</Link>

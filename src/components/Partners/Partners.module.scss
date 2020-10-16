@@ -1,9 +1,21 @@
 .partners {
   background-color: #f8f8f8;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  padding: 2rem 10% 2rem 10%;
+  .title {
+    font-family: 'Overpass';
+    font-size: 1.5rem;
+    text-align: start;
+    margin: 1rem 1.1rem;
+  }
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
   article {
     margin: 3%;
   }

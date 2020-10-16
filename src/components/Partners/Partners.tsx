@@ -2,15 +2,18 @@ import React from 'react'
 import * as styles from './Partners.module.scss'
 
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import Img from 'gatsby-image'
 
 const getData = graphql`
   {
-    allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+    section: contentfulPartnersSection {
+      title
+    }
+    items: allContentfulPartnersItems {
       nodes {
-        childImageSharp {
-          fluid(grayscale: true) {
-            ...GatsbyImageSharpFluid
+        logo {
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -19,24 +22,25 @@ const getData = graphql`
 `
 
 const OurPartners = (): JSX.Element => {
-  const partnersData: number[] = [1, 2, 3, 4, 5]
-
   const {
-    allFile: { nodes: myPartnersData },
+    section: { title },
+    items: { nodes: arrayItems },
   } = useStaticQuery(getData)
-
   return (
     <section className={styles.partners}>
-      {myPartnersData.map((item, index) => {
-        return (
-          <article key={index}>
-            <Image
-              fluid={item.childImageSharp.fluid}
-              style={{ width: '100px' }}
-            />
-          </article>
-        )
-      })}
+      <h3 className={styles.title}>{title}</h3>
+      <div className={styles.items}>
+        {arrayItems.map((item, index) => {
+          return (
+            <article key={index}>
+              <Img
+                fluid={item.logo.fluid}
+                style={{ width: '100px', filter: `grayscale(100%)` }}
+              />
+            </article>
+          )
+        })}
+      </div>
     </section>
   )
 }
