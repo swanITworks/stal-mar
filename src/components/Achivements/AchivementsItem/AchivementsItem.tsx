@@ -32,6 +32,15 @@ const AchivementsItem = (props): JSX.Element => {
     }
   }, [enterSection])
 
+  const info = (
+    <>
+      <h6 className={styles.blob}>
+        {intCon} {unit}
+      </h6>
+      <h5 className={styles.blob}>{title}</h5>
+    </>
+  )
+
   return (
     <article className={styles.achivementsItem}>
       <div
@@ -56,10 +65,7 @@ const AchivementsItem = (props): JSX.Element => {
           }}
         />
       </div>
-      <h6 className={styles.blob}>
-        {intCon} {unit}
-      </h6>
-      <h5 className={styles.blob}>{title}</h5>,
+      {enter ? info : null}
     </article>
   )
 }

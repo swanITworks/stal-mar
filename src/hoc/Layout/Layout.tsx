@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Banner from '../../components/Banner/Banner'
 import Footer from '../../components/Footer/Footer'
 import ToolBar from '../../components/Navigation/ToolBar/ToolBar'
+import Backdrop from '../../components/UI/Backdrop/Backdrop'
 
 interface MyProps {
   children: React.ReactNode
@@ -27,6 +28,7 @@ const Layout = (props: MyProps): JSX.Element => {
             setIsSideDrawerOpen(false)
           }}
         />
+        {isSideDrawerOpen ? <Backdrop click={onClickHandler} /> : null}
       </header>
       <main
         style={{

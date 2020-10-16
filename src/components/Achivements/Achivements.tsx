@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import * as styles from './Achivements.module.scss'
 import AchivementsItem from './AchivementsItem/AchivementsItem'
 import gateIcon from '@iconify/icons-mdi/gate'
@@ -45,16 +45,42 @@ const myData: object[] = [
   },
 ]
 
-const Achivements = (props): JSX.Element => {
+const Achivements = (): JSX.Element => {
   const [achivementsData, setachivementsData] = useState(myData)
   const [enterSection, setEnterSecion] = useState(false)
 
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (sectionRef.current) {
+        const dimensions = sectionRef.current.getBoundingClientRect()
+        if (
+          dimensions.y < 300 &&
+          dimensions.y + dimensions.height > 0 &&
+          !enterSection
+        ) {
+          setEnterSecion(true)
+        }
+      }
+    }
+    window.addEventListener('scroll', scrollHandler)
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler)
+    }
+  }, [])
+
   return (
     <section
+      ref={sectionRef}
       onMouseEnter={() => {
         setEnterSecion(true)
       }}
       onTouchMove={() => {
+        setEnterSecion(true)
+      }}
+      onTouchStart={() => {
         setEnterSecion(true)
       }}
       className={styles.achivements}

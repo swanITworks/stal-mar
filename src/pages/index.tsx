@@ -13,6 +13,7 @@ import HowWeWork from '../components/HowWeWork/HowWeWork'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Blog from '../components/Blog/Blog'
 import Contact from '../components/Contact/Contact'
+import Backdrop from '../components/UI/Backdrop/Backdrop'
 
 const index: React.FC<PageProps> = props => {
   return (
