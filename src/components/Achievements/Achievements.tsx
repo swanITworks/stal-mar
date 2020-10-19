@@ -1,50 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as styles from './Achievements.module.scss'
 import AchievementsItem from './AchievementsItem/AchievementsItem'
-import gateIcon from '@iconify/icons-mdi/gate'
-import bxsFactory from '@iconify/icons-bx/bxs-factory'
-import fence15 from '@iconify/icons-maki/fence-15'
-import weightHanging from '@iconify/icons-fa-solid/weight-hanging'
 import { useStaticQuery, graphql } from 'gatsby'
-
-const myData: object[] = [
-  {
-    title: 'Na rynku',
-    value: 6,
-    recentValue: 0,
-    unit: 'lat',
-    icon: bxsFactory,
-    delay: 500,
-    count: 1,
-  },
-  {
-    title: 'Wykonanych bram',
-    value: 139,
-    recentValue: 0,
-    unit: 'szt',
-    icon: gateIcon,
-    delay: 30,
-    count: 1,
-  },
-  {
-    title: 'Waga najciezszej bramy',
-    value: 300,
-    recentValue: 0,
-    unit: 'kg',
-    icon: weightHanging,
-    delay: 10,
-    count: 1,
-  },
-  {
-    title: 'Wykonanych ogrodzeń',
-    value: 239,
-    recentValue: 0,
-    unit: 'km',
-    icon: fence15,
-    delay: 20,
-    count: 1,
-  },
-]
 
 const getData = graphql`
   {
@@ -61,6 +18,17 @@ const getData = graphql`
         icon {
           file {
             url
+            fileName
+            contentType
+          }
+          svg {
+            content
+            dataURI
+            absolutePath
+            relativePath
+          }
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -68,9 +36,7 @@ const getData = graphql`
   }
 `
 const Achievements = (): JSX.Element => {
-  const [achievementsData, setachievementsData] = useState(myData)
   const [enterSection, setEnterSecion] = useState(false)
-
   const sectionRef = useRef(null)
 
   const {
@@ -121,7 +87,7 @@ const Achievements = (): JSX.Element => {
               title={item.title}
               max={item.value}
               unit={item.unit}
-              icon={item.icon.file.url}
+              icon={item.icon}
               speed={item.delay}
               count={1}
               enterSection={enterSection}

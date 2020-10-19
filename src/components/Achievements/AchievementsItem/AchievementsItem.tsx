@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import * as styles from './AchievementsItem.module.scss'
-import { Icon, InlineIcon } from '@iconify/react'
-import SVG from 'react-inlinesvg'
+import MyImage from '../../../utils/Image'
 
 const AchievementsItem = (props): JSX.Element => {
   const { title, max, icon, unit, count, speed, enterSection } = props
 
   const [intCon, setIntCon] = useState(0)
   const [enter, setEnter] = useState(false)
-
-  console.log(icon)
 
   const myInterval = () => {
     const sesion = setInterval(
@@ -60,7 +57,12 @@ const AchievementsItem = (props): JSX.Element => {
           fontSize: '50px',
         }}
       >
-        <SVG src={`https:${icon}`} className={styles.check} />
+        <MyImage
+          svg={icon.svg}
+          fluid={icon.fluid}
+          file={icon.file}
+          alt={title}
+        />
       </div>
       {enter ? info : null}
     </article>

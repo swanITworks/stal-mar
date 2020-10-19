@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-inline-svg`,
 
     {
       resolve: `gatsby-source-filesystem`,

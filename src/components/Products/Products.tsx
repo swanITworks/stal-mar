@@ -3,30 +3,25 @@ import * as styles from './Products.module.scss'
 import ProductsItem from './ProductsItem/ProductsItem'
 import { useStaticQuery, graphql } from 'gatsby'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
+import Section from '../../hoc/Section/Section'
+import SectName from '../UI/SectName/SectName'
+import { sectName } from '../UI/SectName/SectName.module.scss'
+import SectTitle from '../UI/SectTittle/SectTitle'
+import SectInfo from '../UI/SectInfo/SectInfo'
 
-const products: object[] = [
-  { title: 'bramy wjazdowe' },
+const getData = graphql`
   {
-    title: 'ogrodzenia',
-  },
-  { title: 'balustrady' },
-  { title: 'poręcze' },
-  { title: 'lekkie konstrukcje stalowe' },
-  { title: 'balkony' },
-  { title: 'elementy małej architektury' },
-  { title: 'elementy meblowe' },
-]
-
-export const getData = graphql`
-  {
-    productsData: allContentfulProducts {
-      edges {
-        node {
-          title
-          photo {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+    section: contentfulProductsSection {
+      title
+      name
+      info
+    }
+    items: allContentfulProductsItems {
+      nodes {
+        title
+        photo {
+          fluid {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -36,7 +31,8 @@ export const getData = graphql`
 
 const Products = (): JSX.Element => {
   const {
-    productsData: { edges: ourProducts },
+    section: { title, name, info },
+    items: { nodes: ourProducts },
   } = useStaticQuery(getData)
 
   const [productToShow, setProductToShow] = useState(1)
@@ -60,37 +56,33 @@ const Products = (): JSX.Element => {
   console.log(ourProducts)
 
   return (
-    <section className={styles.products}>
-      <h2>Produkty</h2>
-      <h3>Reatail & Business Solutions</h3>
-      <article>
-        <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts. Separated they
-          live in Bookmarksgrove right at the coast.
-        </p>
-      </article>
+    <Section
+      type="light"
+      style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
+    >
+      <SectName text={name} />
+      <SectTitle text={title} />
+      <SectInfo text={info} />
       <div>
         {ourProducts.map((product, index) => {
           if (index === productToShow - 1) {
             return (
               <ProductsItem
-                key={product.node.title}
-                title={product.node.title}
+                key={product.title}
+                title={product.title}
                 number={'0' + (index + 1)}
-                imageData={product.node.photo.fluid}
+                imageData={product.photo.fluid}
               />
             )
           }
         })}
       </div>
-
       <article className={styles.buttons}>
         <ChangeButton click={() => changeHandler('minus')} type={'left'} />
         {productToShow}/{ourProducts.length}
         <ChangeButton click={() => changeHandler('plus')} type={'right'} />
       </article>
-    </section>
+    </Section>
   )
 }
 

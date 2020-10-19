@@ -3,9 +3,18 @@ import Button from '../UI/Button/Button'
 import * as styles from './AboutUs.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
+import Section from '../../hoc/Section/Section'
+import SectTitle from '../UI/SectTittle/SectTitle'
+import SectName from '../UI/SectName/SectName'
+import SectInfo from '../UI/SectInfo/SectInfo'
 
 const getData = graphql`
   {
+    section: contentfulAboutSection {
+      title
+      info
+      name
+    }
     man: file(relativeDirectory: { eq: "about" }, name: { eq: "manScrew2" }) {
       childImageSharp {
         fluid {
@@ -38,6 +47,7 @@ const getData = graphql`
 
 const AboutUs = (): JSX.Element => {
   const {
+    section: { title, info, name },
     man: {
       childImageSharp: { fluid: man },
     },
@@ -50,16 +60,10 @@ const AboutUs = (): JSX.Element => {
   } = useStaticQuery(getData)
 
   return (
-    <section className={styles.aboutUs}>
-      <h2>About US</h2>
-      <h3>Industrial & Factory Solutions</h3>
-      <article>
-        <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts. Separated they
-          live in Bookmarksgrove right at the coast.
-        </p>
-      </article>
+    <Section type="light">
+      <SectName text={name} />
+      <SectTitle text={title} />
+      <SectInfo text={info} />
       <Button type="black" />
       <article
         style={{
@@ -91,7 +95,7 @@ const AboutUs = (): JSX.Element => {
         />
         <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
       </article>
-    </section>
+    </Section>
   )
 }
 
