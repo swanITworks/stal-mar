@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import meshMP4 from '../../assets/meshMP4.mp4'
 import meshWEBM from '../../assets/meshWEBM.webm'
 import * as styles from './VideoSection.module.scss'
@@ -26,15 +26,20 @@ const VideoSection = (): JSX.Element => {
     },
   } = useStaticQuery(getData)
 
+  const [isPlaying, setIsPlaying] = useState(false)
+
   return (
     <section className={styles.videoSection}>
       <article className={styles.content}>
         <div className={styles.videoBox}>
-          <PlayButton
-            click={() => {
-              vidRef.current.play()
-            }}
-          />
+          {isPlaying ? null : (
+            <PlayButton
+              click={() => {
+                vidRef.current.play()
+                setIsPlaying(true)
+              }}
+            />
+          )}
           <video
             poster={photo.src}
             ref={vidRef}

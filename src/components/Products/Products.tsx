@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
 import Section from '../../hoc/Section/Section'
 import SectName from '../UI/SectName/SectName'
-import { sectName } from '../UI/SectName/SectName.module.scss'
 import SectTitle from '../UI/SectTittle/SectTitle'
 import SectInfo from '../UI/SectInfo/SectInfo'
 

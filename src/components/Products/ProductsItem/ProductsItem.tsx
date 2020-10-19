@@ -7,8 +7,16 @@ const ProductsItem = ({ number, title, imageData }): JSX.Element => {
     <article className={styles.background}>
       <h3 className={styles.number}>{number}</h3>
       <h2 className={styles.title}>{title}</h2>
-      <div style={{ width: '80%', display: 'inlineBlock' }}>
-        <Img fluid={imageData} style={{ height: '0', paddingBottom: '100%' }} />
+      <div
+        style={{
+          width: '85%',
+          display: 'inlineBlock',
+          borderRadius: '5px',
+          overflow: 'hidden',
+          alignSelf: 'flex-start',
+        }}
+      >
+        <Img fluid={imageData} style={{ height: '0', paddingBottom: '105%' }} />
       </div>
     </article>
   )
