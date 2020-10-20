@@ -52,8 +52,6 @@ const Products = (): JSX.Element => {
     }
   }
 
-  console.log(ourProducts)
-
   return (
     <Section
       type="light"

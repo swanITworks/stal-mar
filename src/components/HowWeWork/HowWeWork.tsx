@@ -31,8 +31,6 @@ const getData = graphql`
 const HowWeWork = (): JSX.Element => {
   const { section, items } = useStaticQuery(getData)
 
-  console.log(items)
-
   return (
     <Section>
       <SectName text={section.name} type={'j'} />
