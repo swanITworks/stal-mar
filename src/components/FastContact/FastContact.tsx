@@ -28,7 +28,19 @@ const FastContact = () => {
           <h2 className={styles.title}>{fastContact.title}</h2>
           <p className={styles.info}>{fastContact.info}</p>
           <Button text={'Kontakt'} />
-          <Img className={styles.image} fluid={fastContact.personPhoto.fluid} />
+          <div
+            style={{
+              display: 'inline-block',
+              width: '100%',
+              overflow: 'hidden',
+              textAlign: 'center',
+            }}
+          >
+            <Img
+              className={styles.image}
+              fluid={fastContact.personPhoto.fluid}
+            />
+          </div>
         </article>
       </div>
       <div className={styles.secondBackground}></div>

@@ -6,23 +6,25 @@ const BlogItem = ({ photoData, date, title }): JSX.Element => {
   const myDate = new Date(date)
 
   const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Styczeń',
+    'Luty',
+    'Marzec',
+    'Kwiecień',
+    'Maj',
+    'Czerwiec',
+    'Lipiec',
+    'Sierpień',
+    'Wrzesień',
+    'Październik',
+    'Listopad',
+    'Grudzień',
   ]
 
   return (
     <article className={styles.blogItem}>
-      <Img className={styles.photo} fluid={photoData} />
+      <div style={{ display: 'inline-block', width: '100%' }}>
+        <Img className={styles.photo} fluid={photoData} />
+      </div>
       <h3 className={styles.date}>{`${myDate.getDate()} ${
         months[myDate.getMonth()]
       } ${myDate.getFullYear()}`}</h3>

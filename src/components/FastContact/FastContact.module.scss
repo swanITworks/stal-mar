@@ -2,18 +2,22 @@
   background-color: black;
   position: relative;
   z-index: 1;
-  min-height: 85vh;
   width: 100%;
+
   .content {
-    position: absolute;
+    position: relative;
     z-index: 3;
     padding: 10% 4% 0% 4%;
     width: 100%;
+
     .contactBox {
       background-color: #333333;
       width: 100%;
       padding: 10% 8% 0% 8%;
       border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+
       h2.title {
         color: #f07566;
         z-index: 3;
@@ -26,7 +30,8 @@
         color: #ffffff;
       }
       .image {
-        max-width: 80vh;
+        height: 0;
+        padding-bottom: 110%;
       }
     }
   }

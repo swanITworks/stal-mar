@@ -10,12 +10,14 @@
     margin-bottom: 1rem;
   }
   .photo {
-    min-width: 100%;
     border-radius: 5px;
     margin-bottom: 3rem;
+    height: 0;
+    padding-bottom: 80%;
   }
   .title {
     font-family: 'Overpass';
     font-size: 1.5rem;
+    min-height: 11vh;
   }
 }

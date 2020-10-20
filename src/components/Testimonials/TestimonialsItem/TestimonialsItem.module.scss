@@ -1,15 +1,18 @@
 .item {
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
   .photo {
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 100%;
     margin-bottom: 1rem;
+    height: 0;
+    padding-bottom: 100%;
   }
 
   .quontation {
     font-family: 'Overpass';
     font-size: 1rem;
-
+    min-height: 20vh;
     line-height: 1.7rem;
     z-index: 2;
     color: #ffffff;
@@ -24,4 +27,8 @@
     color: #ffffff;
     margin-bottom: 1rem;
   }
+}
+
+q {
+  quotes: '„' '“';
 }

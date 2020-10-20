@@ -47,14 +47,14 @@ const Blog = (): JSX.Element => {
   const [indexToShow, setIndexToShow] = useState(0)
 
   const {
-    section,
+    section: { name, title },
     items: { nodes: arrayItems },
   } = useStaticQuery(getData)
 
   return (
     <Section type={'veryLight'}>
-      <SectName type={'orange'} text={'Blog & Nowości'} />
-      <SectTitle type={'dark'} text={'Explore Latest News & Updates'} />
+      <SectName type={'orange'} text={name} />
+      <SectTitle type={'dark'} text={title} />
       <div
         style={{
           width: '100%',
