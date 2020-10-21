@@ -60,16 +60,19 @@ const AboutUs = (): JSX.Element => {
   } = useStaticQuery(getData)
 
   return (
-    <Section type="light">
-      <SectName text={name} />
-      <SectTitle text={title} />
-      <SectInfo text={info} />
+    <Section type="light" flexBox="row">
+      <div className={styles.leftSide}>
+        <SectName text={name} />
+        <SectTitle text={title} />
+        <SectInfo text={info} />
+      </div>
       <article
         style={{
           padding: '10%',
           position: 'relative',
           minHeight: '320px',
           marginTop: '2.5rem',
+          minWidth: '45%',
         }}
       >
         <Image

@@ -1,1 +1,1 @@
-export const aboutUs: string;
+export const leftSide: string;

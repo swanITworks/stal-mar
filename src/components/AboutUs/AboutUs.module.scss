@@ -1,27 +1,15 @@
-.aboutUs {
+.leftSide {
   width: 100%;
-  background-color: #f07a3a;
-  padding: 10% 4% 10% 4%;
-  h2 {
-    font-family: 'Overpass';
-    font-size: 1rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-weight: 400;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .leftSide {
+    max-width: 45%;
   }
-  h3 {
-    font-family: 'Overpass';
-    color: #ffffff;
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-  }
-  p {
-    font-family: 'Overpass';
-    color: #ffffff;
-    margin-bottom: 1rem;
-    line-height: 1.7rem;
-    margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .leftSide {
+    max-width: 45%;
   }
 }
