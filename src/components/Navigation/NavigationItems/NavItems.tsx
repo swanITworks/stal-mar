@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery } from 'gatsby'
 import * as styles from './NavItems.module.scss'
 
 const NavItems: React.FC = () => {
+  const stylesArray = [styles.list, styles.hide]
+
   return (
     <nav>
-      <ul className={styles.list}>
+      <ul className={stylesArray.join(' ')}>
         <li>
           <Link to="/">Start</Link>
         </li>

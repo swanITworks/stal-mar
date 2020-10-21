@@ -20,8 +20,8 @@ const HelloSection = (): JSX.Element => {
   return (
     <section className={styles.helloSection}>
       <article>
-        <h3>{spanTitle}</h3>
-        <h1>{helloText}</h1>
+        <h3 className={styles.name}>{spanTitle}</h3>
+        <h1 className={styles.title}>{helloText}</h1>
       </article>
       <Button />
     </section>

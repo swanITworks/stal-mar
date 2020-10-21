@@ -135,3 +135,9 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
     }
   }
 }
+
+@media only screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
+}

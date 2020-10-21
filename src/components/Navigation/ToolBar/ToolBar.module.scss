@@ -16,5 +16,30 @@
 
 .toolBarOpen {
   background-color: black;
-  color: aqua;
+}
+
+.bGColorWhenScrolling {
+  background-color: black;
+  -webkit-box-shadow: 10px 10px 28px -1px rgba(54, 54, 54, 1);
+  -moz-box-shadow: 10px 10px 28px -1px rgba(54, 54, 54, 1);
+  box-shadow: 10px 10px 28px -1px rgba(54, 54, 54, 1);
+}
+
+.navigation {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .navigation {
+    display: inline-block;
+  }
+  .toolBar {
+    padding: 1rem 3rem;
+  }
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
 }

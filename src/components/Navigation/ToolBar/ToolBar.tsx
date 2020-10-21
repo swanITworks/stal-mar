@@ -3,6 +3,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle'
 import Logo from '../../UI/Logo/Logo'
 import * as styles from './ToolBar.module.scss'
 import SideDrawer from '../SideDrawer/SideDrawer'
+import NavItems from '../NavigationItems/NavItems'
 
 const ToolBar = ({
   isSideDrawerOpen,
@@ -23,17 +24,22 @@ const ToolBar = ({
   }, [])
 
   let topStyles: string[] = [styles.top, styles.toolBarOpen]
+  let sectionStyles: string[] = [styles.toolBar, styles.bGColorWhenScrolling]
 
   if (!isSideDrawerOpen && !isScrolling) {
     topStyles = [styles.top]
+    sectionStyles = [styles.toolBar]
   }
 
   return (
     <>
-      <section className={styles.toolBar}>
+      <section className={sectionStyles.join(' ')}>
         <div className={topStyles.join(' ')}>
           <Logo />
           <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
+          <div className={styles.navigation}>
+            <NavItems />
+          </div>
         </div>
         {isSideDrawerOpen ? <SideDrawer closeSideBar={closeSideBar} /> : null}
       </section>

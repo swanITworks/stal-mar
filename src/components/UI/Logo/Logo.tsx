@@ -1,19 +1,8 @@
 import React from 'react'
+import * as styles from './Logo.module.scss'
 
 const Logo = (): JSX.Element => {
-  return (
-    <h2
-      style={{
-        color: '#FFFFFF',
-        fontFamily: 'overpass',
-        margin: '0rem 0.5rem 0.4rem 0.5rem',
-        textAlign: 'center',
-        display: 'inline',
-      }}
-    >
-      Stal-Mar
-    </h2>
-  )
+  return <h2 className={styles.logo}>Stal-Mar</h2>
 }
 
 export default Logo

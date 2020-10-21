@@ -1,5 +1,5 @@
 .helloSection {
-  padding: 10% 4%;
+  padding: 1rem 1rem;
   background-color: #000000;
   article {
     margin: 1rem 0rem;
@@ -16,5 +16,29 @@
       line-height: 3.5rem;
       font-size: 3rem;
     }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .helloSection {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    h3.name {
+      font-size: 1.2rem;
+    }
+    h1.title {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .helloSection {
+    padding: 10rem 3rem;
   }
 }

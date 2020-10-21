@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './PhotosSection.module.scss'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
-import Image from 'gatsby-image'
+import Img from 'gatsby-image'
 
 const getFile = graphql`
   {
@@ -60,15 +60,15 @@ const Photos = (): JSX.Element => {
       backgroundColor={`#040e18`}
     >
       <div className={styles.firstColumn} style={{ height: '100%' }}>
-        <Image
+        <Img
           className={styles.topLeft}
           style={{ width: '100%' }}
           fluid={fence}
         />
       </div>
       <div className={styles.secondColumn}>
-        <Image className={styles.topRight} fluid={cutSteel} />
-        <Image className={styles.bottomRight} fluid={rails} />
+        <Img className={styles.topRight} fluid={cutSteel} />
+        <Img className={styles.bottomRight} fluid={rails} />
       </div>
     </BackgroundImage>
   )

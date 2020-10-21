@@ -1,0 +1,18 @@
+.logo {
+  color: #ffffff;
+  font-family: 'overpass';
+  margin: 0rem 0.5rem 0.4rem 0.5rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .logo {
+    font-size: 3rem;
+  }
+}
