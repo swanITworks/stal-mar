@@ -64,7 +64,6 @@ const AboutUs = (): JSX.Element => {
       <SectName text={name} />
       <SectTitle text={title} />
       <SectInfo text={info} />
-      <Button type="black" />
       <article
         style={{
           padding: '10%',

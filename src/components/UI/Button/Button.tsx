@@ -1,16 +1,26 @@
 import React from 'react'
 import * as styles from './Button.module.scss'
 
-const Button = ({ type, text }): JSX.Element => {
+const Button = ({ type, text, style }): JSX.Element => {
   switch (type) {
     case 'orange':
-      return <button className={styles.button}>{text ? text : 'Więcej'}</button>
+      return (
+        <button className={styles.button} style={style}>
+          {text ? text : 'Więcej'}
+        </button>
+      )
     case 'black':
       return (
-        <button className={styles.buttonBlack}>{text ? text : 'Więcej'}</button>
+        <button className={styles.buttonBlack} style={style}>
+          {text ? text : 'Więcej'}
+        </button>
       )
     default:
-      return <button className={styles.button}>{text ? text : 'Więcej'}</button>
+      return (
+        <button className={styles.button} style={style}>
+          {text ? text : 'Więcej'}
+        </button>
+      )
   }
 }
 

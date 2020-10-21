@@ -8,6 +8,7 @@ import ProductsItem from '../components/Products/ProductsItem/ProductsItem'
 import { graphql } from 'gatsby'
 import Button from '../components/UI/Button/Button'
 import { Link } from 'gatsby'
+import Section from '../hoc/Section/Section'
 
 const Offer: React.FC<PageProps> = ({ data }) => {
   const {
@@ -18,22 +19,7 @@ const Offer: React.FC<PageProps> = ({ data }) => {
 
   return (
     <Layout>
-      <div>
-        {nodes.map(item => {
-          return (
-            <div>
-              <ProductsItem
-                key={item.title}
-                title={item.title}
-                imageData={item.photo.fluid}
-              />
-              <Link to={`${item.slug}`}>
-                <Button text={'wiecej'} />
-              </Link>
-            </div>
-          )
-        })}
-      </div>
+      <Products type={'more'} />
       <HowWerWork />
     </Layout>
   )
