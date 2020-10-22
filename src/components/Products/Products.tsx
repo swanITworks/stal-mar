@@ -39,7 +39,9 @@ const Products = ({ type }): JSX.Element => {
 
   const [productToShow, setProductToShow] = useState(1)
 
-  const changeHandler = value => {
+  const paggination = 3
+
+  const changeHandlerMin = value => {
     switch (value) {
       case 'plus':
         productToShow < ourProducts.length
@@ -55,12 +57,28 @@ const Products = ({ type }): JSX.Element => {
     }
   }
 
+  const changeHandlerMax = value => {
+    const quantityOfSites = Math.ceil(ourProducts.length / paggination)
+    switch (value) {
+      case 'plus':
+        productToShow + paggination < quantityOfSites * paggination
+          ? setProductToShow(productToShow => productToShow + paggination)
+          : setProductToShow(1)
+        break
+
+      case 'minus':
+        productToShow === 1
+          ? setProductToShow(quantityOfSites * paggination - paggination + 1)
+          : setProductToShow(productToShow =>
+              Math.abs(productToShow - paggination)
+            )
+        break
+    }
+  }
+
   const mainSection = (
     <>
-      <Link to="oferta">
-        <Button type={'black'} />
-      </Link>
-      <div>
+      <div className={styles.productsListMini}>
         {ourProducts.map((product, index) => {
           if (index === productToShow - 1) {
             return (
@@ -75,10 +93,36 @@ const Products = ({ type }): JSX.Element => {
           }
         })}
       </div>
-      <article className={styles.buttons}>
-        <ChangeButton click={() => changeHandler('minus')} type={'left'} />
+      <div className={styles.productsListMax}>
+        {ourProducts.map((product, index) => {
+          if (
+            index === productToShow - 1 ||
+            index === productToShow ||
+            index === productToShow + 1
+          ) {
+            return (
+              <ProductsItem
+                type={type}
+                key={product.title}
+                title={product.title}
+                number={'0' + (index + 1)}
+                imageData={product.photo.fluid}
+              />
+            )
+          }
+        })}
+      </div>
+      {productToShow}
+      <article className={styles.buttonsMini}>
+        <ChangeButton click={() => changeHandlerMin('minus')} type={'left'} />
         {productToShow}/{ourProducts.length}
-        <ChangeButton click={() => changeHandler('plus')} type={'right'} />
+        <ChangeButton click={() => changeHandlerMin('plus')} type={'right'} />
+      </article>
+      <article className={styles.buttonsMax}>
+        <ChangeButton click={() => changeHandlerMax('minus')} type={'left'} />
+        {Math.ceil(productToShow / paggination)}/
+        {Math.ceil(ourProducts.length / paggination)}
+        <ChangeButton click={() => changeHandlerMax('plus')} type={'right'} />
       </article>
     </>
   )
@@ -108,9 +152,21 @@ const Products = ({ type }): JSX.Element => {
       type="light"
       style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
     >
-      <SectName text={name} />
-      <SectTitle text={title} />
-      <SectInfo text={info} />
+      <div className={styles.changeFlexBox}>
+        <div className={styles.leftSide}>
+          <SectName text={name} />
+          <SectTitle text={title} />
+          <SectInfo text={info} />
+        </div>
+        {type === 'more' ? null : (
+          <div className={styles.rightSide}>
+            <Link to="oferta">
+              <Button type={'black'} />
+            </Link>
+          </div>
+        )}
+      </div>
+
       {type === 'more' ? mainSectionMore : mainSection}
     </Section>
   )

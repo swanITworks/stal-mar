@@ -67,12 +67,14 @@ const AboutUs = (): JSX.Element => {
         <SectInfo text={info} />
       </div>
       <article
+        className={styles.rightSide}
         style={{
-          padding: '10%',
+          padding: '2.5rem',
           position: 'relative',
           minHeight: '320px',
           marginTop: '2.5rem',
           minWidth: '45%',
+          maxWidth: '500px',
         }}
       >
         <Image

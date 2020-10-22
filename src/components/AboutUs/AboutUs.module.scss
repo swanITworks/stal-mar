@@ -2,14 +2,15 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+.rightSide {
+  margin: auto;
+}
+
+@media only screen and (min-width: 850px) {
   .leftSide {
     max-width: 45%;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .leftSide {
-    max-width: 45%;
+  .rightSide {
+    margin: 0;
   }
 }
