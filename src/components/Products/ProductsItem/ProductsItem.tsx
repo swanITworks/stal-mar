@@ -13,12 +13,15 @@ const ProductsItem = ({
   features,
 }): JSX.Element => {
   return (
-    <article className={styles.background}>
+    <article className={styles.productItem}>
       <h3 className={styles.number}>{number}</h3>
       <h2 className={styles.title}>{title}</h2>
-      <div className={styles.photo}>
-        <Img fluid={imageData} style={{ height: '0', paddingBottom: '105%' }} />
-      </div>
+
+      <Img
+        fluid={imageData}
+        style={{ height: '0', paddingBottom: '105%', borderRadius: '2%' }}
+      />
+
       {type === 'more' ? (
         <ul
           style={{

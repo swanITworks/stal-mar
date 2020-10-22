@@ -112,7 +112,6 @@ const Products = ({ type }): JSX.Element => {
           }
         })}
       </div>
-      {productToShow}
       <article className={styles.buttonsMini}>
         <ChangeButton click={() => changeHandlerMin('minus')} type={'left'} />
         {productToShow}/{ourProducts.length}

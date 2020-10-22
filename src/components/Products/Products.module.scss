@@ -21,6 +21,10 @@
   display: none;
 }
 
+.productsListMini {
+  width: 100%;
+}
+
 @media only screen and (min-width: 992px) {
   .leftSide {
     width: 50%;
@@ -47,13 +51,14 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 3rem;
   }
   .productsListMax > :only-child {
     margin-left: auto;
     margin-right: auto;
   }
   .buttonsMax {
-    min-width: 45%;
+    min-width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;

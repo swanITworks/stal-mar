@@ -1,4 +1,2 @@
-export const background: string;
-export const number: string;
+export const productItem: string;
 export const title: string;
-export const photo: string;
