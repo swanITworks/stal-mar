@@ -1,4 +1,4 @@
-.toolBar {
+.toolBarNoScrolling {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -33,9 +33,7 @@
   .navigation {
     display: inline-block;
   }
-  .toolBar {
-    padding: 1rem 3rem;
-  }
+
   .top {
     display: flex;
     flex-direction: row;

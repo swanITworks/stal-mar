@@ -1,1 +1,2 @@
-export const list: string;
+export const listNoScrolling: string;
+export const listWhenScrolling: string;

@@ -128,7 +128,13 @@ const Products = ({ type }): JSX.Element => {
 
   const mainSectionMore = (
     <>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          flexWrap: 'wrap',
+        }}
+      >
         {ourProducts.map((product, index) => {
           return (
             <ProductsItem

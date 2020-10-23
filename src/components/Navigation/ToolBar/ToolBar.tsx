@@ -24,21 +24,24 @@ const ToolBar = ({
   }, [])
 
   let topStyles: string[] = [styles.top, styles.toolBarOpen]
-  let sectionStyles: string[] = [styles.toolBar, styles.bGColorWhenScrolling]
+  let sectionStyles: string[] = [
+    styles.toolBarNoScrolling,
+    styles.bGColorWhenScrolling,
+  ]
 
   if (!isSideDrawerOpen && !isScrolling) {
     topStyles = [styles.top]
-    sectionStyles = [styles.toolBar]
+    sectionStyles = [styles.toolBarNoScrolling]
   }
 
   return (
     <>
       <section className={sectionStyles.join(' ')}>
         <div className={topStyles.join(' ')}>
-          <Logo />
+          <Logo isScrolling={isScrolling} />
           <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
           <div className={styles.navigation}>
-            <NavItems />
+            <NavItems isScrolling={isScrolling} />
           </div>
         </div>
         {isSideDrawerOpen ? <SideDrawer closeSideBar={closeSideBar} /> : null}

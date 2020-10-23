@@ -2,8 +2,14 @@ import React from 'react'
 import { Link, useStaticQuery } from 'gatsby'
 import * as styles from './NavItems.module.scss'
 
-const NavItems: React.FC = () => {
-  const stylesArray = [styles.list, styles.hide]
+const NavItems: JSX.Element = ({ isScrolling }) => {
+  let stylesArray: string[] = []
+
+  if ((isScrolling = true)) {
+    stylesArray = [styles.listWhenScrolling]
+  } else {
+    stylesArray = [styles.listNoScrolling]
+  }
 
   return (
     <nav>

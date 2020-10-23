@@ -19,34 +19,43 @@ const ProductsItem = ({
 
       <Img
         fluid={imageData}
-        style={{ height: '0', paddingBottom: '105%', borderRadius: '2%' }}
+        style={{ height: '0', paddingBottom: '90%', borderRadius: '2%' }}
       />
 
       {type === 'more' ? (
-        <ul
+        <div
           style={{
-            color: 'white',
-            textAlign: 'center',
-            width: '85%',
-            alignSelf: 'flex-start',
-            listStyle: 'none',
-            marginTop: '1rem',
-            fontFamily: 'Overpass',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            minHeight: '300px',
           }}
         >
-          {features.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      ) : null}
-      {slug ? (
-        <Link to={slug}>
-          <Button
-            style={{ marginTop: '1rem' }}
-            type={'orange'}
-            text={'Więcej'}
-          />
-        </Link>
+          <ul
+            style={{
+              color: 'white',
+              textAlign: 'center',
+
+              listStyle: 'none',
+              marginTop: '1rem',
+              fontFamily: 'Overpass',
+            }}
+          >
+            {features.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          {slug ? (
+            <Link to={slug}>
+              <Button
+                style={{ marginTop: '1rem' }}
+                type={'orange'}
+                text={'Więcej'}
+              />
+            </Link>
+          ) : null}
+        </div>
       ) : null}
     </article>
   )

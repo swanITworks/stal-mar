@@ -54,21 +54,34 @@
   max-width: 450px;
   margin: auto;
   color: white;
-  padding: 2rem;
-  border-radius: 2%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+
   // h2.title {
   //   width: 200px;
   //   min-height: 4rem;
   // }
+  button {
+    bottom: 0px;
+    left: 0px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .productItem {
     width: 30%;
     margin: 0;
+    text-align: right;
+    margin-bottom: 1rem;
+
     h2.title {
-      width: 200px;
-      min-height: 4rem;
+      min-width: 150px;
+      min-height: 2.5rem;
+      font-size: 1rem;
+    }
+    h3.number {
+      font-size: 1rem;
     }
   }
 }

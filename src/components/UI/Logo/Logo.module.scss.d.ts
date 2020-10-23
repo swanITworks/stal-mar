@@ -1,1 +1,2 @@
-export const logo: string;
+export const logoWithOutScrolling: string;
+export const logoWhenScrolling: string;
