@@ -1,5 +1,43 @@
-.buttons {
+.buttonsMobile {
   width: 28%;
   display: flex;
   justify-content: space-between;
+}
+
+.leftSide {
+  width: 100%;
+}
+.itemsForMobile {
+  display: inline-block;
+}
+.itemsForDevices {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .leftSide {
+    width: 50%;
+  }
+  .rightSide {
+    width: 50%;
+    align-self: flex-end;
+    justify-self: flex-end;
+    text-align: right;
+  }
+  div.changeFlexBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .itemsForDevices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .itemsForMobile {
+    display: none;
+  }
+  .buttonsMobile {
+    display: none;
+  }
 }
