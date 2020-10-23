@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../UI/Button/Button'
-import * as styles from './FastContact.module.scss'
+import * as styles from './FastContactMobile.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -18,16 +18,18 @@ const getData = graphql`
   }
 `
 
-const FastContact = () => {
+const FastContactMobile = () => {
   const { fastContact } = useStaticQuery(getData)
 
   return (
     <section className={styles.fastContact}>
       <div className={styles.content}>
         <article className={styles.contactBox}>
-          <h2 className={styles.title}>{fastContact.title}</h2>
-          <p className={styles.info}>{fastContact.info}</p>
-          <Button text={'Kontakt'} />
+          <div>
+            <h2 className={styles.title}>{fastContact.title}</h2>
+            <p className={styles.info}>{fastContact.info}</p>
+            <Button text={'Kontakt'} />
+          </div>
           <div
             style={{
               display: 'inline-block',
@@ -48,4 +50,4 @@ const FastContact = () => {
   )
 }
 
-export default FastContact
+export default FastContactMobile

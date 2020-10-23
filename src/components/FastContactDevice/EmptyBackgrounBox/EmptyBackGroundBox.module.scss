@@ -1,0 +1,14 @@
+.emptyBackGroundBox {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .emptyBackGroundBox {
+    display: inline-block;
+    width: 100%;
+    background-color: #f07a3a;
+    position: relative;
+    top: 0px;
+    height: 200px;
+  }
+}

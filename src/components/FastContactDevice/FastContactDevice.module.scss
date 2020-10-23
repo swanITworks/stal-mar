@@ -1,0 +1,14 @@
+.fastContactDevice {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .fastContactDevice {
+    display: inline-block;
+    background-color: black;
+    padding: 0rem 7rem 0rem 7rem;
+    border: 1px solid black;
+    position: relative;
+    height: 170px;
+  }
+}

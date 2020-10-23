@@ -1,0 +1,91 @@
+.fastContact {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  .content {
+    position: relative;
+    z-index: 3;
+    padding: 4rem% 0rem 0 0rem;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+
+    .contactBox {
+      background-color: #333333;
+      width: 100%;
+      padding: 4rem 2rem 0% 2rem;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+
+      div {
+        max-width: 350px;
+        align-self: center;
+      }
+
+      h2.title {
+        color: #f07566;
+        z-index: 3;
+        text-transform: uppercase;
+        font-family: 'Overpass';
+        margin-bottom: 1rem;
+      }
+      p.info {
+        font-family: 'Overpass';
+        color: #ffffff;
+      }
+      // .image {
+      //   height: 0;
+      //   padding-bottom: 110%;
+      // }
+    }
+  }
+
+  .secondBackground {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #f07a3a;
+    height: 150px;
+    z-index: 2;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .fastContact {
+    display: none;
+    // .content {
+    //   padding: 0rem 7rem 5rem 7rem;
+    //   .contactBox {
+    //     display: flex;
+    //     flex-direction: row-reverse;
+    //     justify-content: space-evenly;
+    //     padding: 0 8% 0% 8%;
+    //     margin-top: 10rem;
+    //     overflow: visible;
+
+    //     div {
+    //       max-width: 350px;
+    //       align-self: center;
+    //       position: relative;
+    //       z-index: 10;
+    //     }
+    //     .image {
+    //       position: relative;
+    //       top: -20px;
+    //       z-index: 50;
+    //     }
+    //   }
+    // }
+    // .secondBackground {
+    //   width: 100%;
+    //   position: absolute;
+    //   top: 0px;
+    //   background-color: #f07a3a;
+    //   height: 280px;
+    //   z-index: 2;
+    // }
+  }
+}

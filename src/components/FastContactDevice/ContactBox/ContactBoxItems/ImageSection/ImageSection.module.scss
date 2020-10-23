@@ -1,0 +1,9 @@
+.imageSection {
+  width: 50%;
+  z-index: 5;
+  div {
+    margin: auto;
+    width: 350px;
+    transform: translateY(-35px);
+  }
+}
