@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../UI/Button/Button'
-import PortfolioItem from './PortfolioItem/PortfolioItem'
+import PortfolioItem from './PortfolioItems/PortfolioItem/PortfolioItem'
 import { graphql, useStaticQuery } from 'gatsby'
 import SectName from '../UI/SectName/SectName'
 import SectTitle from '../UI/SectTittle/SectTitle'
@@ -8,6 +8,7 @@ import SectInfo from '../UI/SectInfo/SectInfo'
 import Section from '../../hoc/Section/Section'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
 import * as styles from './Portfolio.module.scss'
+import PortfolioItems from './PortfolioItems/ProtfolioItems'
 
 const getData = graphql`
   {
@@ -16,7 +17,9 @@ const getData = graphql`
       info
       name
     }
-    portfolioItems: allContentfulPortfolioItems {
+    portfolioItems: allContentfulPortfolioItems(
+      sort: { fields: title, order: ASC }
+    ) {
       nodes {
         category
         title
@@ -42,9 +45,9 @@ const Portfolio = () => {
     portfolio,
     portfolioItems: { nodes: items },
   } = useStaticQuery(getData)
-  const [indexToShow, setIndexToShow] = useState(0)
+  const [indexToShow, setIndexToShow] = useState(2)
 
-  const changePhotoHandlerMini = type => {
+  const changePhotoHandler = type => {
     switch (type) {
       case 'plus':
         if (indexToShow !== items.length - 1) {
@@ -75,44 +78,11 @@ const Portfolio = () => {
           <Button text={'Wiecej'} type={'orange'} />
         </div>
       </div>
-      <div className={styles.itemsForMobile}>
-        {items.map((item, index) => {
-          if (index === indexToShow) {
-            return (
-              <PortfolioItem
-                key={index}
-                mainPhoto={item.mainPhoto.fluid}
-                title={item.title}
-                category={item.category}
-              />
-            )
-          }
-        })}
-      </div>
-      <div className={styles.itemsForDevices}>
-        {items.map((item, index) => {
-          if (index <= indexToShow + 2 && index >= indexToShow) {
-            return (
-              <PortfolioItem
-                key={index}
-                mainPhoto={item.mainPhoto.fluid}
-                title={item.title}
-                category={item.category}
-              />
-            )
-          } else {
-          }
-        })}
-      </div>
-      <div className={styles.buttonsMobile}>
-        <ChangeButton
-          type={'left'}
-          click={() => changePhotoHandlerMobile('minus')}
-        />
-        <ChangeButton
-          type={'right'}
-          click={() => changePhotoHandlerMobile('plus')}
-        />
+      <PortfolioItems type="mobile" toShow={indexToShow} items={items} />
+      <PortfolioItems type="device" toShow={indexToShow} items={items} />
+      <div className={styles.buttons}>
+        <ChangeButton type={'left'} click={() => changePhotoHandler('minus')} />
+        <ChangeButton type={'right'} click={() => changePhotoHandler('plus')} />
       </div>
     </Section>
   )

@@ -1,0 +1,17 @@
+.itemsForMobile {
+  display: inline-block;
+}
+.itemsForDevices {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .itemsForDevices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .itemsForMobile {
+    display: none;
+  }
+}

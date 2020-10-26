@@ -1,4 +1,4 @@
-.buttonsMobile {
+.buttons {
   width: 28%;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,9 @@
   .itemsForMobile {
     display: none;
   }
-  .buttonsMobile {
-    display: none;
+  .buttons {
+    max-width: 150px;
+    display: flex;
+    justify-content: space-between;
   }
 }
