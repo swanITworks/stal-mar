@@ -1,0 +1,40 @@
+.videoSectionDevices {
+  display: inline-block;
+  background-color: #f07a3a;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-height: 500px;
+  .content {
+    padding: 5rem 7rem 5rem 7rem;
+    z-index: 2;
+
+    .videoBox {
+      max-height: 380px;
+      border-radius: 30px !important;
+      z-index: 3;
+      overflow: hidden;
+
+      .leftSied {
+      }
+
+      video {
+        width: 100%;
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+
+  .dummyBox {
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    height: 280px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+}

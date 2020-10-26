@@ -45,7 +45,7 @@ const Portfolio = () => {
     portfolio,
     portfolioItems: { nodes: items },
   } = useStaticQuery(getData)
-  const [indexToShow, setIndexToShow] = useState(2)
+  const [indexToShow, setIndexToShow] = useState(0)
 
   const changePhotoHandler = type => {
     switch (type) {

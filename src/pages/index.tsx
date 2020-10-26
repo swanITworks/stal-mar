@@ -17,6 +17,7 @@ import Hide from '../hoc/Hide/Hide'
 
 import FastContactMobile from '../components/FastContactMobile/FastContactMobile'
 import FastContactDevice from '../components/FastContactDevice/FastContactDevice'
+import VideSectionDevices from '../components/VideoSectionDevices/VideoSectionDevices'
 
 const index: React.FC<PageProps> = props => {
   return (
@@ -29,8 +30,10 @@ const index: React.FC<PageProps> = props => {
       <FastContactMobile />
       <FastContactDevice />
       <Portfolio />
-      <VideoSection />
+      <VideSectionDevices />
+
       <Hide>
+        <VideoSection />
         <HowWeWork />
         <Testimonials />
         <Wave style={{ transform: 'rotate(180deg)' }} />
