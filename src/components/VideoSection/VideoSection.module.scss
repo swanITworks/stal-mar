@@ -21,7 +21,7 @@
         bottom: 0px;
       }
 
-      h2.title {
+      h2.name {
         color: #f07566;
         z-index: 5;
         text-transform: uppercase;
@@ -34,7 +34,7 @@
         font-weight: 900;
         text-shadow: 1px 1px 1px #000000;
       }
-      p.info {
+      p.title {
         font-family: 'Overpass';
         color: #ffffff;
         position: absolute;
@@ -68,5 +68,11 @@
     width: 100% !important;
     height: auto !important;
     z-index: 3;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .videoSection {
+    display: none;
   }
 }

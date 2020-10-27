@@ -22,3 +22,20 @@
     transform: translateX(8px);
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .button {
+    width: 105px;
+    height: 105px;
+    border-radius: 80px;
+
+    div.right {
+      width: 0px;
+      height: 0px;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-left: 35px solid #ffffff;
+      transform: translateX(19px) translateY(6px);
+    }
+  }
+}

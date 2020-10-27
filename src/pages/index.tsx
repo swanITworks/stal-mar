@@ -31,9 +31,9 @@ const index: React.FC<PageProps> = props => {
       <FastContactDevice />
       <Portfolio />
       <VideSectionDevices />
-
+      <VideoSection />
+      <HowWeWork />
       <Hide>
-        <VideoSection />
         <HowWeWork />
         <Testimonials />
         <Wave style={{ transform: 'rotate(180deg)' }} />

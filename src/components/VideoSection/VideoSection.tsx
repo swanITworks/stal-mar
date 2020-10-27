@@ -14,6 +14,10 @@ const getData = graphql`
         }
       }
     }
+    section: contentfulVideoSection {
+      title
+      name
+    }
   }
 `
 
@@ -24,6 +28,7 @@ const VideoSection = (): JSX.Element => {
     meshPhoto: {
       childImageSharp: { fluid: photo },
     },
+    section: { title, name },
   } = useStaticQuery(getData)
 
   const [isPlaying, setIsPlaying] = useState(false)
@@ -51,10 +56,8 @@ const VideoSection = (): JSX.Element => {
             <source src={meshMP4} type="video/mp4" />
             <source src={meshWEBM} type="vide/webm" />
           </video>
-          <h2 className={styles.title}>Film</h2>
-          <p className={styles.info}>
-            Siatka ogrodzeniowa zobacz jak ją pleciemy.
-          </p>
+          <h2 className={styles.name}>{name}</h2>
+          <p className={styles.title}>{title}</p>
         </div>
       </article>
       <div className={styles.secondBackground}></div>

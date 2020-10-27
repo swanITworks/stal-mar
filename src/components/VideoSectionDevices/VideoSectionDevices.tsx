@@ -14,45 +14,47 @@ const getData = graphql`
         }
       }
     }
+    section: contentfulVideoSection {
+      title
+      name
+    }
   }
 `
 
 const VideoSectionDevices = () => {
+  const vidDevRef = useRef(null)
   const {
     meshPhoto: {
       childImageSharp: { fluid: photo },
     },
+    section: { title, name },
   } = useStaticQuery(getData)
+
+  const [isPlaying, setIsPlaying] = useState(false)
 
   return (
     <section className={styles.videoSectionDevices}>
       <div className={styles.dummyBox}></div>
       <div className={styles.content}>
         <div className={styles.videoBox}>
-          <div className={styles.leftSide}>
-            <p
-              style={{
-                color: 'white',
-                zIndex: 50,
-                position: 'absolute',
+          {isPlaying ? null : (
+            <PlayButton
+              click={() => {
+                vidDevRef.current.play()
+                setIsPlaying(true)
               }}
-            >
-              lefftSide
-            </p>
-          </div>
-          <div className={styles.rightSide}>
-            <p
-              style={{
-                color: 'white',
-                zIndex: 50,
-                position: 'absolute',
-              }}
-            >
-              rightSide
-            </p>
-          </div>
-
-          <video poster={photo.src} playsInline loop muted preload="auto">
+            />
+          )}
+          <h2 className={styles.name}>{name}</h2>
+          <p className={styles.title}>{title}</p>
+          <video
+            poster={photo.src}
+            ref={vidDevRef}
+            playsInline
+            loop
+            muted
+            preload="auto"
+          >
             <source src={meshMP4horizontal} type="video/mp4" />
             <source src={meshWEBMhorizontal} type="vide/webm" />
           </video>

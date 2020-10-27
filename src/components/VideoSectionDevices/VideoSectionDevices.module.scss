@@ -1,40 +1,82 @@
 .videoSectionDevices {
-  display: inline-block;
-  background-color: #f07a3a;
-  text-align: center;
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  min-height: 500px;
-  .content {
-    padding: 5rem 7rem 5rem 7rem;
-    z-index: 2;
+  display: none;
+}
 
-    .videoBox {
-      max-height: 380px;
-      border-radius: 30px !important;
-      z-index: 3;
-      overflow: hidden;
+@media only screen and (min-width: 992px) {
+  .videoSectionDevices {
+    display: inline-block;
+    background-color: #f07a3a;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    min-height: 500px;
+    .content {
+      padding: 8rem 7rem 5rem 7rem;
+      z-index: 2;
 
-      .leftSied {
-      }
+      .videoBox {
+        max-height: 380px;
+        border-radius: 10px !important;
+        z-index: 3;
+        overflow: hidden;
 
-      video {
-        width: 100%;
-        z-index: 2;
         position: relative;
+
+        h2.name {
+          color: #f07566;
+          z-index: 5;
+          text-transform: uppercase;
+          font-family: 'Overpass';
+          margin-bottom: 1rem;
+          position: absolute;
+          font-size: 1.6rem;
+          top: 25%;
+          left: 50%;
+          font-weight: 900;
+          text-shadow: 1px 1px 1px #000000;
+        }
+        p.title {
+          font-family: 'Overpass';
+          color: #ffffff;
+          position: absolute;
+          font-size: 2.3rem;
+          top: 35%;
+          left: 50%;
+          z-index: 5;
+          max-width: 80%;
+          line-height: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px 2px #000000;
+          text-align: left;
+          width: 45%;
+        }
+
+        button {
+          position: absolute;
+          top: 35%;
+          z-index: 3;
+          left: 22%;
+        }
+
+        video {
+          width: 105%;
+          z-index: 2;
+          position: relative;
+          left: -5px;
+        }
       }
     }
-  }
 
-  .dummyBox {
-    display: inline-block;
-    width: 100%;
-    background-color: black;
-    height: 280px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
+    .dummyBox {
+      display: inline-block;
+      width: 100%;
+      background-color: black;
+      height: 330px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+    }
   }
 }
