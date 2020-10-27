@@ -1,0 +1,16 @@
+.testimonialsMobile {
+  width: 100%;
+  padding: 10rem 1rem 5rem 1rem;
+  background-color: #f07a3a;
+  .buttons {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .testimonialsMobile {
+    display: none;
+  }
+}

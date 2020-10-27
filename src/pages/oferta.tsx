@@ -20,7 +20,7 @@ const Offer: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <Products type={'more'} />
-      <HowWerWork />
+      <HowWerWork type={'more'} />
     </Layout>
   )
 }

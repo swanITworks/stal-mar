@@ -6,7 +6,7 @@ import TestimonialsItem from './TestimonialsItem/TestimonialsItem'
 import { graphql, useStaticQuery } from 'gatsby'
 import { itemsArea } from '../HowWeWork/HowWeWork.module.scss'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
-import * as styles from './Testimonials.module.scss'
+import * as styles from './TestimonialsMobile.module.scss'
 
 const getData = graphql`
   {
@@ -28,7 +28,7 @@ const getData = graphql`
   }
 `
 
-const Testimonials = (): JSX.Element => {
+const TestimonialsMobile = (): JSX.Element => {
   const [indexToShow, setIndexToShow] = useState(0)
   const {
     section,
@@ -52,7 +52,7 @@ const Testimonials = (): JSX.Element => {
   }
 
   return (
-    <Section>
+    <section className={styles.testimonialsMobile}>
       <SectName text={section.name} />
       <SectTitle text={section.title} />
       {arrayItems.map((item, index) => {
@@ -79,8 +79,8 @@ const Testimonials = (): JSX.Element => {
           click={() => changePhotoHandler('plus')}
         />
       </div>
-    </Section>
+    </section>
   )
 }
 
-export default Testimonials
+export default TestimonialsMobile

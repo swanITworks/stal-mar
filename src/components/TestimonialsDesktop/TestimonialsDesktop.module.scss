@@ -1,0 +1,29 @@
+.testimonialsDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .testimonialsDesktop {
+    display: inline-block;
+
+    width: 100%;
+    padding: 0rem 7rem 0rem 7rem;
+    background-color: #f07a3a;
+    .mainSection {
+      display: inline-flex;
+      .leftSide {
+        width: 65%;
+      }
+      .rightSide {
+        width: 35%;
+      }
+    }
+    .buttons {
+      margin-left: 2rem;
+      margin-top: 2rem;
+      width: 28%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

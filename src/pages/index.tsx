@@ -10,7 +10,8 @@ import FastContact from '../components/FastContactMobile/FastContactMobile'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
 import HowWeWork from '../components/HowWeWork/HowWeWork'
-import Testimonials from '../components/Testimonials/Testimonials'
+import TestimonialsMobile from '../components/TestimonialsMobile/TestimonialsMobile'
+import TestimonialsDesktop from '../components/TestimonialsDesktop/TestimonialsDesktop'
 import Blog from '../components/Blog/Blog'
 import Contact from '../components/Contact/Contact'
 import Hide from '../hoc/Hide/Hide'
@@ -33,9 +34,9 @@ const index: React.FC<PageProps> = props => {
       <VideSectionDevices />
       <VideoSection />
       <HowWeWork />
+      <TestimonialsMobile />
+      <TestimonialsDesktop />
       <Hide>
-        <HowWeWork />
-        <Testimonials />
         <Wave style={{ transform: 'rotate(180deg)' }} />
         <Blog />
         <Contact />
