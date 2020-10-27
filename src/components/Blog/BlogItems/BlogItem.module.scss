@@ -21,3 +21,9 @@
     min-height: 11vh;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .blogItem {
+    width: 30%;
+  }
+}

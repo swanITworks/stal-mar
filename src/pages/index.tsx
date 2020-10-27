@@ -36,9 +36,9 @@ const index: React.FC<PageProps> = props => {
       <HowWeWork />
       <TestimonialsMobile />
       <TestimonialsDesktop />
+      <Wave style={{ transform: 'rotate(180deg)' }} />
+      <Blog />
       <Hide>
-        <Wave style={{ transform: 'rotate(180deg)' }} />
-        <Blog />
         <Contact />
       </Hide>
     </Layout>

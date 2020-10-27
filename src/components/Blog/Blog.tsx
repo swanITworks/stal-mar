@@ -28,69 +28,122 @@ const getData = graphql`
 `
 
 const Blog = (): JSX.Element => {
-  const changePhotoHandler = type => {
-    switch (type) {
-      case 'plus':
-        if (indexToShow !== arrayItems.length - 1) {
-          setIndexToShow(indexToShow => indexToShow + 1)
-        } else setIndexToShow(0)
-        break
-
-      case 'minus':
-        if (indexToShow !== 0) {
-          setIndexToShow(indexToShow => indexToShow - 1)
-        } else setIndexToShow(arrayItems.length - 1)
-        break
-    }
-  }
-
-  const [indexToShow, setIndexToShow] = useState(0)
-
+  const paggination = 3
+  const [indexToShow, setIndexToShow] = useState(1)
   const {
     section: { name, title },
     items: { nodes: arrayItems },
   } = useStaticQuery(getData)
 
-  return (
-    <Section type={'veryLight'}>
-      <SectName type={'orange'} text={name} />
-      <SectTitle type={'dark'} text={title} />
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+  const changeHandlerMin = value => {
+    switch (value) {
+      case 'plus':
+        indexToShow < arrayItems.length
+          ? setIndexToShow(indexToShow => indexToShow + 1)
+          : setIndexToShow(1)
+        break
+
+      case 'minus':
+        indexToShow === 1
+          ? setIndexToShow(arrayItems.length)
+          : setIndexToShow(indexToShow => indexToShow - 1)
+        break
+    }
+  }
+
+  const changeHandlerMax = value => {
+    const quantityOfSites = Math.ceil(arrayItems.length / paggination)
+    switch (value) {
+      case 'plus':
+        indexToShow + paggination < quantityOfSites * paggination
+          ? setIndexToShow(indexToShow => indexToShow + paggination)
+          : setIndexToShow(1)
+        break
+
+      case 'minus':
+        indexToShow === 1
+          ? setIndexToShow(quantityOfSites * paggination - paggination + 1)
+          : setIndexToShow(indexToShow => Math.abs(indexToShow - paggination))
+        break
+    }
+  }
+
+  const mainSection = (
+    <>
+      <div className={styles.articlesListMini}>
         {arrayItems.map((item, index) => {
-          if (index === indexToShow) {
+          if (index === indexToShow - 1) {
             return (
               <BlogItem
                 key={item.title}
-                photoData={item.photo.fluid}
                 title={item.title}
+                photoData={item.photo.fluid}
                 date={item.date}
               />
             )
           }
         })}
-        <div className={styles.buttons}>
-          <ChangeButton
-            style={'dark'}
-            type={'left'}
-            click={() => changePhotoHandler('minus')}
-          />
-          <p className={styles.counter}>
-            {indexToShow + 1}/{arrayItems.length}
-          </p>
-          <ChangeButton
-            style={'dark'}
-            type={'right'}
-            click={() => changePhotoHandler('plus')}
-          />
+      </div>
+      <div className={styles.articlesListMax}>
+        {arrayItems.map((item, index) => {
+          if (
+            index === indexToShow - 1 ||
+            index === indexToShow ||
+            index === indexToShow + 1
+          ) {
+            return (
+              <BlogItem
+                key={item.title}
+                title={item.title}
+                photoData={item.photo.fluid}
+                date={item.date}
+              />
+            )
+          }
+        })}
+      </div>
+      <article className={styles.buttonsMini}>
+        <ChangeButton
+          click={() => changeHandlerMin('minus')}
+          type={'left'}
+          style={'dark'}
+        />
+        {indexToShow}/{arrayItems.length}
+        <ChangeButton
+          click={() => changeHandlerMin('plus')}
+          type={'right'}
+          style={'dark'}
+        />
+      </article>
+      <article className={styles.buttonsMax}>
+        <ChangeButton
+          click={() => changeHandlerMax('minus')}
+          type={'left'}
+          style={'dark'}
+        />
+        {Math.ceil(indexToShow / paggination)}/
+        {Math.ceil(arrayItems.length / paggination)}
+        <ChangeButton
+          click={() => changeHandlerMax('plus')}
+          type={'right'}
+          style={'dark'}
+        />
+      </article>
+    </>
+  )
+
+  return (
+    <Section
+      type={'veryLight'}
+      style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
+    >
+      <div className={styles.changeFlexBox}>
+        <div className={styles.leftSide}>
+          <SectName type={'orange'} text={name} />
+          <SectTitle type={'dark'} text={title} />
         </div>
       </div>
+      {mainSection}
     </Section>
   )
 }
