@@ -1,5 +1,7 @@
 .blogItem {
   width: 100%;
+  max-width: 450px;
+  margin: auto;
   .date {
     color: #333333;
     opacity: 0.5;
@@ -25,5 +27,6 @@
 @media only screen and (min-width: 992px) {
   .blogItem {
     width: 30%;
+    margin: 0;
   }
 }

@@ -1,3 +1,4 @@
+export const article: string;
 export const contactItem: string;
 export const icon: string;
 export const infoArea: string;

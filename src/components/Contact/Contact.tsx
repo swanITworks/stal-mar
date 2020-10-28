@@ -36,9 +36,15 @@ const Contact = () => {
 
   return (
     <Section type={'almostDark'}>
-      <SectName type={'orange'} text={section.name} />
-      <SectTitle text={section.title} />
-      <Button text={'Contact'} />
+      <div className={styles.flexContainerTop}>
+        <div className={styles.leftSide}>
+          <SectName type={'orange'} text={section.name} />
+          <SectTitle text={section.title} />
+        </div>
+        <div className={styles.rightSide}>
+          <Button text={'Contact'} />
+        </div>
+      </div>
       <div className={styles.items}>
         {arrayItems.map(item => {
           return (

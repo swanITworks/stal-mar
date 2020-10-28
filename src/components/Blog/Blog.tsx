@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import Section from '../../hoc/Section/Section'
 import SectName from '../UI/SectName/SectName'
 import SectTitle from '../UI/SectTittle/SectTitle'
 import BlogItem from './BlogItems/BlogItem'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
+import Button from '../UI/Button/Button'
 import * as styles from './Blog.module.scss'
 
 const getData = graphql`
@@ -115,20 +116,22 @@ const Blog = (): JSX.Element => {
           style={'dark'}
         />
       </article>
-      <article className={styles.buttonsMax}>
-        <ChangeButton
-          click={() => changeHandlerMax('minus')}
-          type={'left'}
-          style={'dark'}
-        />
-        {Math.ceil(indexToShow / paggination)}/
-        {Math.ceil(arrayItems.length / paggination)}
-        <ChangeButton
-          click={() => changeHandlerMax('plus')}
-          type={'right'}
-          style={'dark'}
-        />
-      </article>
+      {arrayItems.length / paggination > 1 ? (
+        <article className={styles.buttonsMax}>
+          <ChangeButton
+            click={() => changeHandlerMax('minus')}
+            type={'left'}
+            style={'dark'}
+          />
+          {Math.ceil(indexToShow / paggination)}/
+          {Math.ceil(arrayItems.length / paggination)}
+          <ChangeButton
+            click={() => changeHandlerMax('plus')}
+            type={'right'}
+            style={'dark'}
+          />
+        </article>
+      ) : null}
     </>
   )
 
@@ -141,6 +144,11 @@ const Blog = (): JSX.Element => {
         <div className={styles.leftSide}>
           <SectName type={'orange'} text={name} />
           <SectTitle type={'dark'} text={title} />
+        </div>
+        <div className={styles.rightSide}>
+          <Link to={'blog'}>
+            <Button text={'Więcej'} />
+          </Link>
         </div>
       </div>
       {mainSection}

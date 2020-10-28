@@ -4,11 +4,6 @@ import * as styles from './TestimonialsRest.module.scss'
 
 const TestomonialsRest = ({ items, toExclude }): JSX.Element => {
   const persons = [...items]
-
-  console.log(toExclude)
-
-  console.log(persons[toExclude])
-
   const toShow = persons.map((item, index) => {
     if (index !== toExclude) {
       return (
@@ -25,7 +20,7 @@ const TestomonialsRest = ({ items, toExclude }): JSX.Element => {
       )
     } else {
       return (
-        <div>
+        <div key={item.name}>
           <Img
             fluid={item.photo.fluid}
             style={{

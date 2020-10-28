@@ -1,3 +1,24 @@
 .items {
   margin-top: 3rem;
 }
+
+@media only screen and (min-width: 992px) {
+  .flexContainerTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    .leftSide {
+      width: 49%;
+    }
+    .rightSide {
+      width: 49%;
+      text-align: end;
+    }
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

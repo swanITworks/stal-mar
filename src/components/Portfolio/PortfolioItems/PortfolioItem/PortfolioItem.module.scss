@@ -3,6 +3,9 @@
   color: #ffffff;
   position: relative;
   margin-top: 2rem;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 2rem;
 }
 .image {
   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 95%);
@@ -41,6 +44,8 @@
     position: relative;
     margin-top: 2rem;
     width: 300px;
+    margin-left: 0;
+    margin-right: 0;
   }
   .image {
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 95%);
