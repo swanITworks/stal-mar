@@ -5,6 +5,7 @@ import Layout from '../hoc/Layout/Layout'
 import Section from '../hoc/Section/Section'
 import SectName from '../components/UI/SectName/SectName'
 import SectTitle from '../components/UI/SectTittle/SectTitle'
+import * as styles from './product-template.module.scss'
 
 const productTemplate = ({ data }) => {
   const {
@@ -12,15 +13,31 @@ const productTemplate = ({ data }) => {
       title,
       description: { description },
       photo: { fluid },
+      inspirations,
     },
   } = data
+
+  console.log(inspirations)
 
   return (
     <Layout>
       <Section>
         <SectTitle text={title} />
-        <p>{description}</p>
-        <Img fluid={fluid} />
+        <article className={styles.flexBoxContainer}>
+          <div className={styles.flexBoxItem}>
+            <Img fluid={fluid} />
+          </div>
+          <p className={styles.flexBoxItem}>{description}</p>
+        </article>
+        <article className={styles.inspirations}>
+          <h2>Inspiracje</h2>
+          <div className={styles.inspirationsPhotos}>
+            {inspirations.map(item => {
+              return <Img fluid={item.fluid} style={{ height: '150px' }} />
+            })}
+          </div>
+        </article>
+
         <Link to={'/oferta/'}>BACK</Link>
       </Section>
     </Layout>
@@ -39,6 +56,11 @@ export const query = graphql`
       }
       description {
         description
+      }
+      inspirations {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
       }
     }
   }

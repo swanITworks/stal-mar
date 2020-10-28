@@ -1,0 +1,41 @@
+.flexBoxContainer {
+  .flexBoxItem {
+    color: white;
+    div {
+      margin: auto;
+      max-width: 350px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.inspirations {
+  .inspirationsPhotos {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .flexBoxContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .flexBoxItem {
+      flex: 0 0 45%;
+      color: white;
+      div {
+        max-width: 450px;
+        border-radius: 10px;
+        margin-bottom: 0rem;
+      }
+    }
+  }
+}

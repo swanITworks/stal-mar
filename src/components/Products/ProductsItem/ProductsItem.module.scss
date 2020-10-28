@@ -1,17 +1,17 @@
 .productItem {
-  background-color: black;
+  background-color: #333333;
   width: 100%;
-  max-width: 450px;
+  max-width: 330px;
   margin: auto;
   color: white;
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
 
-  // h2.title {
-  //   width: 200px;
-  //   min-height: 4rem;
-  // }
+  h2.title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   button {
     bottom: 0px;
     left: 0px;

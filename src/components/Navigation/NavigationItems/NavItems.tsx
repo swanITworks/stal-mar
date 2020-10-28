@@ -2,13 +2,15 @@ import React from 'react'
 import { Link, useStaticQuery } from 'gatsby'
 import * as styles from './NavItems.module.scss'
 
-const NavItems: JSX.Element = ({ isScrolling }) => {
+const NavItems: JSX.Element = ({ isScrolling, type }) => {
   let stylesArray: string[] = []
 
-  if ((isScrolling = true)) {
+  if ((isScrolling = true) && type === undefined) {
     stylesArray = [styles.listWhenScrolling]
-  } else {
+  } else if ((isScrolling = false) && type === undefined) {
     stylesArray = [styles.listNoScrolling]
+  } else if ((type = 'footer')) {
+    stylesArray = [styles.footer]
   }
 
   return (

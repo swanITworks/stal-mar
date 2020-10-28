@@ -19,7 +19,7 @@ const ProductsItem = ({
 
       <Img
         fluid={imageData}
-        style={{ height: '0', paddingBottom: '90%', borderRadius: '2%' }}
+        style={{ height: '0', paddingBottom: '130%', borderRadius: '2%' }}
       />
 
       {type === 'more' ? (
