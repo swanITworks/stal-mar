@@ -32,9 +32,11 @@ const productTemplate = ({ data }) => {
         <article className={styles.inspirations}>
           <h2>Inspiracje</h2>
           <div className={styles.inspirationsPhotos}>
-            {inspirations.map(item => {
-              return <Img fluid={item.fluid} style={{ height: '150px' }} />
-            })}
+            {inspirations
+              ? inspirations.map(item => {
+                  return <Img fluid={item.fluid} style={{ height: '150px' }} />
+                })
+              : null}
           </div>
         </article>
 
