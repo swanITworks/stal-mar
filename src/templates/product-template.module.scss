@@ -1,4 +1,5 @@
 .flexBoxContainer {
+  font-family: 'Overpass';
   .flexBoxItem {
     color: white;
     div {
@@ -11,12 +12,28 @@
 }
 
 .inspirations {
+  .title {
+    color: white;
+    font-family: 'Overpass';
+  }
   .inspirationsPhotos {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 2rem;
 
-    div {
+    div.photoContainer {
       flex: 1 0 auto;
+      text-align: center;
+      margin: 0;
+      display: flex;
+      margin: 0.5rem;
+
+      .photoItem {
+        flex: 1 0 auto;
+        border: 1px solid #333333;
+        border-radius: 10px;
+      }
     }
   }
 }
@@ -32,9 +49,10 @@
       flex: 0 0 45%;
       color: white;
       div {
+        margin: 0;
         max-width: 450px;
         border-radius: 10px;
-        margin-bottom: 0rem;
+        border: 1px solid #333333;
       }
     }
   }

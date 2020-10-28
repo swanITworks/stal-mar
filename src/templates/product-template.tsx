@@ -6,6 +6,7 @@ import Section from '../hoc/Section/Section'
 import SectName from '../components/UI/SectName/SectName'
 import SectTitle from '../components/UI/SectTittle/SectTitle'
 import * as styles from './product-template.module.scss'
+import Photos from '../components/Banner/PhotosSection/PhotosSection'
 
 const productTemplate = ({ data }) => {
   const {
@@ -30,16 +31,25 @@ const productTemplate = ({ data }) => {
           <p className={styles.flexBoxItem}>{description}</p>
         </article>
         <article className={styles.inspirations}>
-          <h2>Inspiracje</h2>
-          <div className={styles.inspirationsPhotos}>
-            {inspirations
-              ? inspirations.map(item => {
-                  return <Img fluid={item.fluid} style={{ height: '150px' }} />
-                })
-              : null}
-          </div>
+          <h2 className={styles.title}>Inspiracje</h2>
+          {inspirations ? (
+            <div className={styles.inspirationsPhotos}>
+              {inspirations.map((item, index) => {
+                return (
+                  <div className={styles.photoContainer} id={index}>
+                    <Img
+                      fixed={item.fixed}
+                      className={styles.photoItem}
+                      onClick={() => {
+                        console.log('click')
+                      }}
+                    />
+                  </div>
+                )
+              })}
+            </div>
+          ) : null}
         </article>
-
         <Link to={'/oferta/'}>BACK</Link>
       </Section>
     </Layout>
@@ -60,8 +70,8 @@ export const query = graphql`
         description
       }
       inspirations {
-        fluid {
-          ...GatsbyContentfulFluid
+        fixed(height: 250) {
+          ...GatsbyContentfulFixed
         }
       }
     }
