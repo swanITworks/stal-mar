@@ -3,6 +3,11 @@
   font-family: 'overpass';
   margin: 1rem 2rem 1rem 3rem;
   text-align: center;
+  width: 100px;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px;
 }
 
 .logoWhenScrolling {
@@ -10,6 +15,7 @@
   font-family: 'overpass';
   margin: 0.5rem 2rem 0.5rem 3rem;
   text-align: center;
+  width: 100px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -23,9 +29,9 @@
 
 @media only screen and (min-width: 992px) {
   .logoWithOutScrolling {
-    font-size: 3rem;
+    width: 280px;
   }
   .logoWhenScrolling {
-    font-size: 2rem;
+    width: 100px;
   }
 }

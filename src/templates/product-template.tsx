@@ -7,6 +7,7 @@ import SectName from '../components/UI/SectName/SectName'
 import SectTitle from '../components/UI/SectTittle/SectTitle'
 import * as styles from './product-template.module.scss'
 import Photos from '../components/Banner/PhotosSection/PhotosSection'
+import Button from '../components/UI/Button/Button'
 
 const productTemplate = ({ data }) => {
   const {
@@ -18,7 +19,28 @@ const productTemplate = ({ data }) => {
     },
   } = data
 
-  console.log(inspirations)
+  const inspirationArticle = (
+    <article className={styles.inspirations}>
+      <h2 className={styles.title}>Inspiracje</h2>
+      <div className={styles.inspirationsPhotos}>
+        {inspirations
+          ? inspirations.map((item, index) => {
+              return (
+                <div className={styles.photoContainer} id={index}>
+                  <Img
+                    fixed={item.fixed}
+                    className={styles.photoItem}
+                    onClick={() => {
+                      console.log('click')
+                    }}
+                  />
+                </div>
+              )
+            })
+          : null}
+      </div>
+    </article>
+  )
 
   return (
     <Layout>
@@ -30,27 +52,10 @@ const productTemplate = ({ data }) => {
           </div>
           <p className={styles.flexBoxItem}>{description}</p>
         </article>
-        <article className={styles.inspirations}>
-          <h2 className={styles.title}>Inspiracje</h2>
-          {inspirations ? (
-            <div className={styles.inspirationsPhotos}>
-              {inspirations.map((item, index) => {
-                return (
-                  <div className={styles.photoContainer} id={index}>
-                    <Img
-                      fixed={item.fixed}
-                      className={styles.photoItem}
-                      onClick={() => {
-                        console.log('click')
-                      }}
-                    />
-                  </div>
-                )
-              })}
-            </div>
-          ) : null}
-        </article>
-        <Link to={'/oferta/'}>BACK</Link>
+        {inspirations ? inspirationArticle : null}
+        <Link to={'/oferta/'}>
+          <Button text={'Wróć'} type={'black'} />
+        </Link>
       </Section>
     </Layout>
   )

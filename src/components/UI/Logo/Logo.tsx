@@ -1,7 +1,8 @@
 import React from 'react'
 import * as styles from './Logo.module.scss'
+import LogoSvg from '../../../assets/logo.svg'
 
-const Logo = ({ isScrolling }): JSX.Element => {
+const Logo = ({ isScrolling, style }): JSX.Element => {
   let logoStyles: string[] = []
 
   if (isScrolling === true) {
@@ -10,7 +11,7 @@ const Logo = ({ isScrolling }): JSX.Element => {
     logoStyles = [styles.logoWithOutScrolling]
   }
 
-  return <h2 className={logoStyles.join(' ')}>Stal-Mar</h2>
+  return <LogoSvg className={logoStyles.join(' ')} style={style} />
 }
 
 export default Logo

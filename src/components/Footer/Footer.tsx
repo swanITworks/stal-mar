@@ -36,7 +36,7 @@ const Footer = (): JSX.Element => {
     >
       <div className={styles.footerContent}>
         <div className={styles.logoSocial}>
-          <Logo />
+          <Logo style={{ width: '250px' }} />
           <div>
             <h3 className={styles.title}>SOCIAL</h3>
             <FacebookIcon style={{ width: '50px' }} />
