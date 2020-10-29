@@ -52,7 +52,7 @@ const Footer = (): JSX.Element => {
           <nav>
             <ul>
               {ourProducts.map(item => (
-                <li>
+                <li key={item.slug}>
                   <Link to={'/oferta/' + item.slug}>{item.title}</Link>
                 </li>
               ))}
