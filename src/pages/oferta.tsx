@@ -15,8 +15,6 @@ const Offer: React.FC<PageProps> = ({ data }) => {
     items: { nodes },
   } = data
 
-  console.log(nodes)
-
   return (
     <Layout>
       <Products type={'more'} />

@@ -76,11 +76,18 @@
       margin-top: 2rem;
 
       div.photoContainer {
-        flex: 1 0 auto;
+        flex: 1 0 130px;
         text-align: center;
         margin: 0;
         display: flex;
         margin: 0.5rem;
+        background-color: black;
+        border-radius: 10px;
+
+        cursor: pointer;
+        :hover {
+          opacity: 0.8;
+        }
 
         .photoItem {
           flex: 1 0 auto;

@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../hoc/Layout/Layout'
 import Section from '../hoc/Section/Section'
-import SectName from '../components/UI/SectName/SectName'
 import SectTitle from '../components/UI/SectTittle/SectTitle'
 import * as styles from './product-template.module.scss'
-import Photos from '../components/Banner/PhotosSection/PhotosSection'
 import Button from '../components/UI/Button/Button'
 import changeIndexHandler from '../utils/functions'
 import ChangeButton from '../components/UI/ChangeButton/ChangeButton'
+import Modal from '../hoc/Modal/Modal'
 
 const productTemplate = ({ data }) => {
   const {
@@ -22,9 +21,38 @@ const productTemplate = ({ data }) => {
   } = data
 
   const [indexInspirationPhoto, setIndexInspirationPhoto] = useState(0)
+  const [isInspirationItemClicked, setIsInspirationItemClicked] = useState({
+    state: false,
+    index: false,
+  })
+
+  const html = document.querySelector('html')
+
+  useEffect(() => {
+    isInspirationItemClicked.state
+      ? (html.style.overflow = 'hidden')
+      : (html.style.overflow = 'visible')
+    return () => {
+      html.style.overflow = 'visible'
+    }
+  }, [isInspirationItemClicked.state])
 
   const changePhotoHandler = (state, type, length) => {
     setIndexInspirationPhoto(changeIndexHandler(state, type, length))
+  }
+
+  const isInspirationItemClickedHandler = index => {
+    if (index !== undefined) {
+      setIsInspirationItemClicked({
+        state: true,
+        index: index,
+      })
+    } else {
+      setIsInspirationItemClicked({
+        state: false,
+        index: false,
+      })
+    }
   }
 
   const inspirationArticle = (
@@ -38,7 +66,7 @@ const productTemplate = ({ data }) => {
                   key={index + 'In'}
                   className={styles.photoContainer}
                   onClick={() => {
-                    console.log(index)
+                    isInspirationItemClickedHandler(index)
                   }}
                 >
                   <Img fixed={item.fixed} className={styles.photoItem} />
@@ -51,44 +79,61 @@ const productTemplate = ({ data }) => {
         {inspirations
           ? inspirations.map((item, index) => {
               if (index === indexInspirationPhoto) {
+                const ratio = inspirations[index].fluid.aspectRatio
                 return (
-                  <div key={index} className={styles.photoContainer}>
-                    <Img fixed={item.fixed} className={styles.photoItem} />
+                  <div
+                    key={index}
+                    className={styles.photoContainer}
+                    style={{
+                      maxWidth: `calc(${ratio}*100vh)`,
+                    }}
+                  >
+                    <Img fluid={item.fluid} className={styles.photoItem} />
                   </div>
                 )
               }
             })
           : null}
-        <div className={styles.buttons}>
-          <ChangeButton
-            click={() =>
-              changePhotoHandler(
-                indexInspirationPhoto,
-                'minus',
-                inspirations.length
-              )
-            }
-          />
-          <div className={styles.info}>{`${indexInspirationPhoto + 1}  /${
-            inspirations.length
-          }`}</div>
-          <ChangeButton
-            type="right"
-            click={() =>
-              changePhotoHandler(
-                indexInspirationPhoto,
-                'plus',
-                inspirations.length
-              )
-            }
-          />
-        </div>
+        {inspirations && (
+          <div className={styles.buttons}>
+            <ChangeButton
+              click={() =>
+                changePhotoHandler(
+                  indexInspirationPhoto,
+                  'minus',
+                  inspirations.length
+                )
+              }
+            />
+            <div className={styles.info}>{`${indexInspirationPhoto + 1}  /${
+              inspirations.length
+            }`}</div>
+            <ChangeButton
+              type="right"
+              click={() =>
+                changePhotoHandler(
+                  indexInspirationPhoto,
+                  'plus',
+                  inspirations.length
+                )
+              }
+            />
+          </div>
+        )}
       </div>
     </article>
   )
 
   return (
     <Layout>
+      {isInspirationItemClicked.state ? (
+        <Modal
+          click={() => isInspirationItemClickedHandler()}
+          ratio={inspirations[isInspirationItemClicked.index].fluid.aspectRatio}
+        >
+          <Img fluid={inspirations[isInspirationItemClicked.index].fluid} />
+        </Modal>
+      ) : null}
       <Section>
         <SectTitle text={title} />
         <article className={styles.flexBoxContainer}>
@@ -97,7 +142,7 @@ const productTemplate = ({ data }) => {
           </div>
           <p className={styles.flexBoxItem}>{description}</p>
         </article>
-        {inspirationArticle}
+        {inspirations && inspirationArticle}
         <Link to={'/oferta/'}>
           <Button text={'Wróć'} type={'black'} />
         </Link>
@@ -120,7 +165,10 @@ export const query = graphql`
         description
       }
       inspirations {
-        fixed(height: 250) {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+        fixed(height: 200) {
           ...GatsbyContentfulFixed
         }
       }

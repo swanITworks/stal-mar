@@ -1,0 +1,10 @@
+.modal {
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  div {
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 459px;
+  }
+}

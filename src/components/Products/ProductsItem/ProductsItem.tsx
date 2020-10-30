@@ -42,8 +42,8 @@ const ProductsItem = ({
               fontFamily: 'Overpass',
             }}
           >
-            {features.map(item => (
-              <li>{item}</li>
+            {features.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
           {slug ? (
