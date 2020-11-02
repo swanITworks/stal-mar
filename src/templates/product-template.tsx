@@ -136,7 +136,7 @@ const productTemplate = ({ data }) => {
         </Modal>
       ) : null}
       <Section>
-        <SectTitle text={title} />
+        <SectTitle text={title} position={'first'} />
         <article className={styles.top}>
           <div className={styles.mainPhoto}>
             <Img fluid={fluid} />

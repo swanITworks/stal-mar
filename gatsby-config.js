@@ -20,6 +20,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-inline-svg`,
+    `gatsby-plugin-smoothscroll`,
 
     {
       resolve: `gatsby-source-filesystem`,

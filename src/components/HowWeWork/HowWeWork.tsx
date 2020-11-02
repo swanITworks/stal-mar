@@ -33,7 +33,7 @@ const HowWeWork = ({ type }): JSX.Element => {
   const { section, items } = useStaticQuery(getData)
 
   return (
-    <Section>
+    <Section id={'howWeWork'}>
       <div className={styles.changeFlexBox}>
         <div className={styles.leftSide}>
           <SectName text={section.name} type={'j'} />

@@ -34,7 +34,7 @@ const Footer = (): JSX.Element => {
         alignItems: 'center',
       }}
     >
-      <div className={styles.footerContent}>
+      <div id="footer" className={styles.footerContent}>
         <div className={styles.logoSocial}>
           <Logo style={{ width: '250px' }} />
           <div>

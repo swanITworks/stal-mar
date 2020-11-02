@@ -60,7 +60,7 @@ const AboutUs = (): JSX.Element => {
   } = useStaticQuery(getData)
 
   return (
-    <Section type="light" flexBox="row">
+    <Section type="light" flexBox="row" id="onas">
       <div className={styles.leftSide}>
         <SectName text={name} />
         <SectTitle text={title} />
