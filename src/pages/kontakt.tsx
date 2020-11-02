@@ -2,22 +2,14 @@ import React from 'react'
 import { PageProps } from 'gatsby'
 import Layout from '../hoc/Layout/Layout'
 import Blog from '../components/Blog/Blog'
-import Products from '../components/Products/Products'
-import HowWerWork from '../components/HowWeWork/HowWeWork'
-import ProductsItem from '../components/Products/ProductsItem/ProductsItem'
 import { graphql } from 'gatsby'
-import Button from '../components/UI/Button/Button'
-import { Link } from 'gatsby'
-import Section from '../hoc/Section/Section'
 import PageBanner from '../components/PageBanner/PageBanner'
+import Contact from '../components/Contact/Contact'
 
-const Offer = ({ data }) => {
+const blog: React.FC<PageProps> = ({ data }) => {
   const {
     pageData: { nodes },
   } = data
-
-  console.log(data)
-
   return (
     <Layout>
       <PageBanner
@@ -26,15 +18,14 @@ const Offer = ({ data }) => {
         mainPhoto={nodes[0].bannerMainPhoto.fluid}
         photos={nodes[0].bannerPhotos}
       />
-      <Products type={'more'} />
-      <HowWerWork type={'more'} />
+      <Contact />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query getPageProduct {
-    pageData: allContentfulPages(filter: { name: { eq: "oferta" } }) {
+  query getPageContact {
+    pageData: allContentfulPages(filter: { name: { eq: "kontakt" } }) {
       nodes {
         spanTitle
         title
@@ -54,4 +45,4 @@ export const query = graphql`
   }
 `
 
-export default Offer
+export default blog

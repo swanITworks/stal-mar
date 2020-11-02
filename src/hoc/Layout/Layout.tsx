@@ -23,11 +23,7 @@ const Layout = (props: MyProps): JSX.Element => {
           onClickHandler={onClickHandler}
           closeSideBar={() => setIsSideDrawerOpen(false)}
         />
-        <Banner
-          click={() => {
-            setIsSideDrawerOpen(false)
-          }}
-        />
+
         {isSideDrawerOpen ? <Backdrop click={onClickHandler} /> : null}
       </header>
       <main

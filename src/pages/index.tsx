@@ -14,6 +14,7 @@ import TestimonialsMobile from '../components/TestimonialsMobile/TestimonialsMob
 import TestimonialsDesktop from '../components/TestimonialsDesktop/TestimonialsDesktop'
 import Blog from '../components/Blog/Blog'
 import Contact from '../components/Contact/Contact'
+import Banner from '../components/Banner/Banner'
 import Hide from '../hoc/Hide/Hide'
 
 import FastContactMobile from '../components/FastContactMobile/FastContactMobile'
@@ -23,6 +24,7 @@ import VideSectionDevices from '../components/VideoSectionDevices/VideoSectionDe
 const index: React.FC<PageProps> = props => {
   return (
     <Layout>
+      <Banner />
       <Partners />
       <Achievements />
       <Wave />

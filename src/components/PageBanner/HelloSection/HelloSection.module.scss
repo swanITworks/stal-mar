@@ -1,0 +1,60 @@
+.helloSection {
+  padding: 1rem 1rem;
+  background-color: #000000;
+  article {
+    margin: 1rem 0rem;
+    h3 {
+      color: #f07566;
+      text-transform: uppercase;
+      font-family: 'Overpass';
+      margin: 1rem 0rem;
+    }
+    h1 {
+      color: white;
+      width: 90%;
+      font-family: 'overpass';
+      line-height: 3.5rem;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .helloSection {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    h3.name {
+      font-size: 1.2rem;
+    }
+    h1.title {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .helloSection {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    h3.name {
+      font-size: 1.5rem;
+    }
+    h1.title {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}

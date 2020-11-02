@@ -31,6 +31,9 @@ const NavItems: JSX.Element = ({ isScrolling, type }) => {
         <li>
           <Link to="/blog/">Blog</Link>
         </li>
+        <li>
+          <Link to="/kontakt/">Kontakt</Link>
+        </li>
       </ul>
     </nav>
   )

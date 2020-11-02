@@ -3,9 +3,9 @@ import PhotosSection from './PhotosSection/PhotosSection'
 import HelloSection from './HelloSection/HelloSection'
 import * as styles from './Banner.module.scss'
 
-const Banner = ({ click }): JSX.Element => {
+const Banner = (): JSX.Element => {
   return (
-    <section className={styles.banner} onClick={click}>
+    <section className={styles.banner}>
       <PhotosSection />
       <HelloSection />
     </section>

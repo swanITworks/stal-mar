@@ -14,6 +14,7 @@ const productTemplate = ({ data }) => {
   const {
     product: {
       title,
+      features,
       description: { description },
       photo: { fluid },
       inspirations,
@@ -136,11 +137,26 @@ const productTemplate = ({ data }) => {
       ) : null}
       <Section>
         <SectTitle text={title} />
-        <article className={styles.flexBoxContainer}>
-          <div className={styles.flexBoxItem}>
+        <article className={styles.top}>
+          <div className={styles.mainPhoto}>
             <Img fluid={fluid} />
           </div>
-          <p className={styles.flexBoxItem}>{description}</p>
+          <div className={styles.description}>
+            <p>{description}</p>
+
+            {features && (
+              <>
+                <h2 className={styles.title}>Cechy:</h2>
+                <div className={styles.features}>
+                  <ul>
+                    {features.map(item => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            )}
+          </div>
         </article>
         {inspirations && inspirationArticle}
         <Link to={'/oferta/'}>
@@ -156,6 +172,7 @@ export const query = graphql`
     product: contentfulProductsItems(slug: { eq: $slug }) {
       title
       slug
+      features
       photo {
         fluid {
           ...GatsbyContentfulFluid

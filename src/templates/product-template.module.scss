@@ -1,6 +1,6 @@
-.flexBoxContainer {
+.top {
   font-family: 'Overpass';
-  .flexBoxItem {
+  .mainPhoto {
     color: white;
     div {
       margin: auto;
@@ -8,6 +8,26 @@
       border-radius: 10px;
       margin-bottom: 1rem;
       border: 1px solid #333333;
+    }
+  }
+  .description {
+    p {
+      font-size: 1rem;
+      color: white;
+    }
+    .title {
+      color: white;
+      font-family: 'Overpass';
+      margin-top: 1rem;
+    }
+    .features {
+      margin-top: 1rem;
+      margin-left: 2rem;
+
+      ul {
+        color: white;
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -51,13 +71,13 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .flexBoxContainer {
+  .top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 2rem;
 
-    .flexBoxItem {
+    .mainPhoto {
       flex: 0 0 45%;
       color: white;
       div {
@@ -66,6 +86,10 @@
         border-radius: 10px;
         border: 1px solid #333333;
       }
+    }
+    .description {
+      flex: 0 0 45%;
+      color: white;
     }
   }
   .inspirations {
