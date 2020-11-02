@@ -27,16 +27,16 @@ const productTemplate = ({ data }) => {
     index: false,
   })
 
-  const html = document.querySelector('html')
+  //const html = document.querySelector('html')
 
-  useEffect(() => {
-    isInspirationItemClicked.state
-      ? (html.style.overflow = 'hidden')
-      : (html.style.overflow = 'visible')
-    return () => {
-      html.style.overflow = 'visible'
-    }
-  }, [isInspirationItemClicked.state])
+  // useEffect(() => {
+  //   isInspirationItemClicked.state
+  //     ? (html.style.overflow = 'hidden')
+  //     : (html.style.overflow = 'visible')
+  //   return () => {
+  //     html.style.overflow = 'visible'
+  //   }
+  // }, [isInspirationItemClicked.state])
 
   const changePhotoHandler = (state, type, length) => {
     setIndexInspirationPhoto(changeIndexHandler(state, type, length))
