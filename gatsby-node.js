@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql,actions}) =>{
 
   const { createPage } = actions
 
-  const result = await graphql(`
+  const products = await graphql(`
     query getOfferItems {
       items: allContentfulProductsItems {
         nodes {
@@ -14,18 +14,33 @@ exports.createPages = async ({ graphql,actions}) =>{
     }
   `)
 
-  console.log(result);
+  const portfolio = await graphql(`
+    query getPortfolioItems {
+      items: allContentfulPortfolioItems {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
 
-  result.data.items.nodes.forEach(item =>{
+  products.data.items.nodes.forEach(item =>{
     createPage({
       path:`/oferta/${item.slug}`,
       component: path.resolve(`src/templates/product-template.tsx`),
       context:{
         slug: item.slug,
       }
-
-
     })
   })
 
+  portfolio.data.items.nodes.forEach(item =>{
+    createPage({
+      path:`/portfolio/${item.slug}`,
+      component: path.resolve(`src/templates/portfolio-template.tsx`),
+      context:{
+        slug: item.slug,
+      }
+    })
+  })
 };

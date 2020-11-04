@@ -23,6 +23,7 @@ const getData = graphql`
       nodes {
         category
         title
+        slug
         info {
           info
         }
