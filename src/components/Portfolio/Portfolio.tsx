@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../UI/Button/Button'
 import PortfolioItem from './PortfolioItems/PortfolioItem/PortfolioItem'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import SectName from '../UI/SectName/SectName'
 import SectTitle from '../UI/SectTittle/SectTitle'
 import SectInfo from '../UI/SectInfo/SectInfo'
@@ -40,7 +40,7 @@ const getData = graphql`
     }
   }
 `
-const Portfolio = () => {
+const Portfolio = ({ type }) => {
   const {
     portfolio,
     portfolioItems: { nodes: items },
@@ -74,16 +74,38 @@ const Portfolio = () => {
           <SectTitle text={portfolio.title} />
           <SectInfo type={'transparent'} text={portfolio.info} />
         </div>
-        <div className={styles.rightSide}>
-          <Button text={'Wiecej'} type={'orange'} />
+        {type !== 'more' && (
+          <div className={styles.rightSide}>
+            <Link to="portfolio">
+              <Button text={'Wiecej'} type={'orange'} />
+            </Link>
+          </div>
+        )}
+      </div>
+      <PortfolioItems
+        device="mobile"
+        type={type}
+        toShow={indexToShow}
+        items={items}
+      />
+      <PortfolioItems
+        device="desktop"
+        type={type}
+        toShow={indexToShow}
+        items={items}
+      />
+      {type === 'more' ? null : (
+        <div className={styles.buttons}>
+          <ChangeButton
+            type={'left'}
+            click={() => changePhotoHandler('minus')}
+          />
+          <ChangeButton
+            type={'right'}
+            click={() => changePhotoHandler('plus')}
+          />
         </div>
-      </div>
-      <PortfolioItems type="mobile" toShow={indexToShow} items={items} />
-      <PortfolioItems type="device" toShow={indexToShow} items={items} />
-      <div className={styles.buttons}>
-        <ChangeButton type={'left'} click={() => changePhotoHandler('minus')} />
-        <ChangeButton type={'right'} click={() => changePhotoHandler('plus')} />
-      </div>
+      )}
     </Section>
   )
 }

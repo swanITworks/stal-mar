@@ -31,11 +31,11 @@ const getData = graphql`
   }
 `
 
-const Products = ({ type }): JSX.Element => {
+export const PureProducts = ({ type, data }): JSX.Element => {
   const {
     section: { title, name, info },
     items: { nodes: ourProducts },
-  } = useStaticQuery(getData)
+  } = data
 
   const [productToShow, setProductToShow] = useState(1)
 
@@ -175,6 +175,11 @@ const Products = ({ type }): JSX.Element => {
       {type === 'more' ? mainSectionMore : mainSection}
     </Section>
   )
+}
+
+const Products = props => {
+  const data = useStaticQuery(getData)
+  return <PureProducts {...props} data={data} />
 }
 
 export default Products

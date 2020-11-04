@@ -1,2 +1,2 @@
 export const itemsForMobile: string;
-export const itemsForDevices: string;
+export const itemsForDesktop: string;

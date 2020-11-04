@@ -2,7 +2,7 @@ import React from 'react'
 import PortfolioItem from './PortfolioItem/PortfolioItem'
 import * as styles from './PortfolioItems.module.scss'
 
-const PortfolioItems = ({ type, items, toShow }): JSX.Element => {
+const PortfolioItems = ({ device, items, toShow, type }): JSX.Element => {
   const quantityItemsOnPage = 3
 
   const printItems = (toShow, howManyItems, items) => {
@@ -30,23 +30,57 @@ const PortfolioItems = ({ type, items, toShow }): JSX.Element => {
     return toPrint
   }
 
-  switch (type) {
+  switch (device) {
     case 'mobile':
-      return (
-        <div className={styles.itemsForMobile}>
-          <PortfolioItem
-            title={items[toShow].title}
-            mainPhoto={items[toShow].mainPhoto.fluid}
-            category={items[toShow].category}
-          />
-        </div>
-      )
-    case 'device':
-      return (
-        <div className={styles.itemsForDevices}>
-          {printItems(toShow, quantityItemsOnPage, items)}
-        </div>
-      )
+      if (type === 'more') {
+        return (
+          <div className={styles.itemsForMobile}>
+            {items.map((item, index) => {
+              return (
+                <PortfolioItem
+                  key={index + item.title}
+                  title={item.title}
+                  mainPhoto={item.mainPhoto.fluid}
+                  category={item.category}
+                />
+              )
+            })}
+          </div>
+        )
+      } else {
+        return (
+          <div className={styles.itemsForMobile}>
+            <PortfolioItem
+              title={items[toShow].title}
+              mainPhoto={items[toShow].mainPhoto.fluid}
+              category={items[toShow].category}
+            />
+          </div>
+        )
+      }
+
+    case 'desktop':
+      if (type === 'more') {
+        return (
+          <div className={styles.itemsForDesktop}>
+            {items.map((item, index) => {
+              return (
+                <PortfolioItem
+                  key={index + item.title}
+                  title={item.title}
+                  mainPhoto={item.mainPhoto.fluid}
+                  category={item.category}
+                />
+              )
+            })}
+          </div>
+        )
+      } else
+        return (
+          <div className={styles.itemsForDesktop}>
+            {printItems(toShow, quantityItemsOnPage, items)}
+          </div>
+        )
   }
 }
 

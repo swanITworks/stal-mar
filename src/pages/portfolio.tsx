@@ -24,7 +24,7 @@ const Portfolio: JSX.Element = ({ data }) => {
         mainPhoto={nodes[0].bannerMainPhoto.fluid}
         photos={nodes[0].bannerPhotos}
       />
-      <PortfolioSection />
+      <PortfolioSection type={'more'} />
     </Layout>
   )
 }
