@@ -3,10 +3,11 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Section from '../../hoc/Section/Section'
 import SectName from '../UI/SectName/SectName'
 import SectTitle from '../UI/SectTittle/SectTitle'
-import BlogItem from './BlogItems/BlogItem'
+import BlogItem from './BlogItems/BlogItem/BlogItem'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
 import Button from '../UI/Button/Button'
 import * as styles from './Blog.module.scss'
+import BlogItems from './BlogItems/BlogItems'
 
 const getData = graphql`
   {
@@ -178,7 +179,11 @@ const Blog = ({ type }): JSX.Element => {
           </div>
         )}
       </div>
-      {type === 'more' ? mainSectionMore : mainSection}
+      {type === 'more' ? (
+        <BlogItems type={'more'} arrayItems={arrayItems} />
+      ) : (
+        <BlogItems arrayItems={arrayItems} />
+      )}
     </Section>
   )
 }

@@ -1,0 +1,80 @@
+.buttonsMini {
+  min-width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: 'Overpass';
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.leftSide {
+  width: 100%;
+}
+
+.articlesListMax {
+  display: none;
+}
+
+.buttonsMax {
+  display: none;
+}
+
+.articlesListMini {
+  width: 100%;
+  display: inline-block;
+}
+
+p.counter {
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .leftSide {
+    width: 50%;
+  }
+  .rightSide {
+    width: 50%;
+    align-self: flex-end;
+    justify-self: flex-end;
+    text-align: right;
+  }
+  div.changeFlexBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .articlesListMini {
+    display: none;
+  }
+  .buttonsMini {
+    display: none;
+  }
+  .articlesListMax {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .articlesListMax > :only-child {
+    margin: 0 auto 1rem auto;
+  }
+
+  .articlesListMax {
+    article:first-child:nth-last-child(2),
+    article:first-child:nth-last-child(2) ~ article {
+      margin: 0 auto 1rem auto;
+    }
+  }
+  .buttonsMax {
+    min-width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-family: 'Overpass';
+    align-self: center;
+  }
+}

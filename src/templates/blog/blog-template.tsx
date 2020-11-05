@@ -10,14 +10,16 @@ import changeIndexHandler from '../../utils/functions'
 import ChangeButton from '../../components/UI/ChangeButton/ChangeButton'
 import Modal from '../../hoc/Modal/Modal'
 import Wave from '../../assets/waveAbout.svg'
+import BlogItems from '../../components/Blog/BlogItems/BlogItems'
 
-const productTemplate = ({ data }) => {
+const productTemplate = ({ data, pageContext }) => {
   const {
     blog: {
       title,
       article: { article },
       photo: { fluid },
     },
+    items: { nodes: arrayItems },
   } = data
 
   return (
@@ -34,9 +36,12 @@ const productTemplate = ({ data }) => {
             <p>{article}</p>
           </div>
         </article>
-        <Link to={'/oferta/'}>
+        <Link to={'/blog/'}>
           <Button text={'Wróć'} type={'black'} />
         </Link>
+        <BlogItems
+          arrayItems={arrayItems.filter(item => item.slug !== pageContext.slug)}
+        />
       </Section>
     </Layout>
   )
@@ -54,6 +59,18 @@ export const query = graphql`
       }
       article {
         article
+      }
+    }
+    items: allContentfulBlogItems {
+      nodes {
+        title
+        date
+        slug
+        photo {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
       }
     }
   }
