@@ -1,7 +1,7 @@
 .blogItem {
   width: 100%;
   max-width: 450px;
-  margin: auto;
+  margin: 1rem auto;
   .date {
     color: #333333;
     opacity: 0.5;
@@ -13,7 +13,7 @@
   }
   .photo {
     border-radius: 5px;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     height: 0;
     padding-bottom: 80%;
   }
@@ -21,6 +21,10 @@
     font-family: 'Overpass';
     font-size: 1.5rem;
     min-height: 11vh;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 

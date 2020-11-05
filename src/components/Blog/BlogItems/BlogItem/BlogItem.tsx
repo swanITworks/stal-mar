@@ -24,7 +24,7 @@ const BlogItem = ({ photoData, date, title, slug }): JSX.Element => {
   return (
     <article className={styles.blogItem}>
       <Link to={`/blog/${slug}`}>
-        <div style={{ display: 'inline-block', width: '100%' }}>
+        <div style={{ width: '100%' }}>
           <Img className={styles.photo} fluid={photoData} />
         </div>
         <h3 className={styles.date}>{`${myDate.getDate()} ${
