@@ -24,10 +24,20 @@ exports.createPages = async ({ graphql,actions}) =>{
     }
   `)
 
+  const blog = await graphql(`
+    query getBlogItems {
+      items: allContentfulBlogItems {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+
   products.data.items.nodes.forEach(item =>{
     createPage({
       path:`/oferta/${item.slug}`,
-      component: path.resolve(`src/templates/product-template.tsx`),
+      component: path.resolve(`src/templates/product/product-template.tsx`),
       context:{
         slug: item.slug,
       }
@@ -37,7 +47,17 @@ exports.createPages = async ({ graphql,actions}) =>{
   portfolio.data.items.nodes.forEach(item =>{
     createPage({
       path:`/portfolio/${item.slug}`,
-      component: path.resolve(`src/templates/portfolio-template.tsx`),
+      component: path.resolve(`src/templates/portfolio/portfolio-template.tsx`),
+      context:{
+        slug: item.slug,
+      }
+    })
+  })
+
+  blog.data.items.nodes.forEach(item =>{
+    createPage({
+      path:`/blog/${item.slug}`,
+      component: path.resolve(`src/templates/blog/blog-template.tsx`),
       context:{
         slug: item.slug,
       }

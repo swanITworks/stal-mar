@@ -8,7 +8,7 @@ import SectInfo from '../UI/SectInfo/SectInfo'
 import Section from '../../hoc/Section/Section'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
 import * as styles from './Portfolio.module.scss'
-import PortfolioItems from './PortfolioItems/ProtfolioItems'
+import PortfolioItems from './PortfolioItems/PortfolioItems'
 
 const getData = graphql`
   {

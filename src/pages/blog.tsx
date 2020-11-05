@@ -17,8 +17,7 @@ const blog: React.FC<PageProps> = ({ data }) => {
         mainPhoto={nodes[0].bannerMainPhoto.fluid}
         photos={nodes[0].bannerPhotos}
       />
-
-      <Blog />
+      <Blog type="more" />
     </Layout>
   )
 }

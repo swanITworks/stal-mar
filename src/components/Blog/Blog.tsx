@@ -18,6 +18,7 @@ const getData = graphql`
       nodes {
         title
         date
+        slug
         photo {
           fluid {
             ...GatsbyContentfulFluid
@@ -28,11 +29,11 @@ const getData = graphql`
   }
 `
 
-const Blog = (): JSX.Element => {
+const Blog = ({ type }): JSX.Element => {
   const paggination = 3
   const [indexToShow, setIndexToShow] = useState(1)
   const {
-    section: { name, title },
+    section: { name, title, slug },
     items: { nodes: arrayItems },
   } = useStaticQuery(getData)
 
@@ -80,6 +81,7 @@ const Blog = (): JSX.Element => {
                 title={item.title}
                 photoData={item.photo.fluid}
                 date={item.date}
+                slug={item.slug}
               />
             )
           }
@@ -98,6 +100,7 @@ const Blog = (): JSX.Element => {
                 title={item.title}
                 photoData={item.photo.fluid}
                 date={item.date}
+                slug={item.slug}
               />
             )
           }
@@ -135,6 +138,28 @@ const Blog = (): JSX.Element => {
     </>
   )
 
+  const mainSectionMore = (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        flexWrap: 'wrap',
+      }}
+    >
+      {arrayItems.map((item, index) => {
+        return (
+          <BlogItem
+            key={item.title}
+            title={item.title}
+            photoData={item.photo.fluid}
+            date={item.date}
+            slug={item.slug}
+          />
+        )
+      })}
+    </div>
+  )
+
   return (
     <Section
       type={'veryLight'}
@@ -145,13 +170,15 @@ const Blog = (): JSX.Element => {
           <SectName type={'orange'} text={name} />
           <SectTitle type={'dark'} text={title} />
         </div>
-        <div className={styles.rightSide}>
-          <Link to={'blog'}>
-            <Button text={'Więcej'} />
-          </Link>
-        </div>
+        {type !== 'more' && (
+          <div className={styles.rightSide}>
+            <Link to={'blog'}>
+              <Button text={'Więcej'} />
+            </Link>
+          </div>
+        )}
       </div>
-      {mainSection}
+      {type === 'more' ? mainSectionMore : mainSection}
     </Section>
   )
 }

@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import Layout from '../hoc/Layout/Layout'
-import Section from '../hoc/Section/Section'
-import SectTitle from '../components/UI/SectTittle/SectTitle'
-import * as styles from './product-template.module.scss'
-import Button from '../components/UI/Button/Button'
-import changeIndexHandler from '../utils/functions'
-import ChangeButton from '../components/UI/ChangeButton/ChangeButton'
-import Modal from '../hoc/Modal/Modal'
+import Layout from '../../hoc/Layout/Layout'
+import Section from '../../hoc/Section/Section'
+import SectTitle from '../../components/UI/SectTittle/SectTitle'
+import * as styles from './portfolio-template.module.scss'
+import Button from '../../components/UI/Button/Button'
+import changeIndexHandler from '../../utils/functions'
+import ChangeButton from '../../components/UI/ChangeButton/ChangeButton'
+import Modal from '../../hoc/Modal/Modal'
+import Wave from '../../assets/waveAbout.svg'
 
 const productTemplate = ({ data }) => {
   const {
-    product: {
+    portfolio: {
       title,
-      features,
-      description: { description },
-      photo: { fluid },
-      inspirations,
+      info: { info },
+      mainPhoto: { fluid },
+      photos,
     },
   } = data
 
@@ -57,10 +57,10 @@ const productTemplate = ({ data }) => {
 
   const inspirationArticle = (
     <article className={styles.inspirations}>
-      <h2 className={styles.title}>Inspiracje</h2>
+      <h2 className={styles.title}>Zdjęcia z realizacji:</h2>
       <div className={styles.inspirationsPhotosDesktop}>
-        {inspirations
-          ? inspirations.map((item, index) => {
+        {photos
+          ? photos.map((item, index) => {
               return (
                 <div
                   key={index + 'In'}
@@ -76,10 +76,10 @@ const productTemplate = ({ data }) => {
           : null}
       </div>
       <div className={styles.inspirationsPhotosMobile}>
-        {inspirations
-          ? inspirations.map((item, index) => {
+        {photos
+          ? photos.map((item, index) => {
               if (index === indexInspirationPhoto) {
-                const ratio = inspirations[index].fluid.aspectRatio
+                const ratio = photos[index].fluid.aspectRatio
                 return (
                   <div
                     key={index}
@@ -94,28 +94,24 @@ const productTemplate = ({ data }) => {
               }
             })
           : null}
-        {inspirations && (
+        {photos && (
           <div className={styles.buttons}>
             <ChangeButton
               click={() =>
                 changePhotoHandler(
                   indexInspirationPhoto,
                   'minus',
-                  inspirations.length
+                  photos.length
                 )
               }
             />
             <div className={styles.info}>{`${indexInspirationPhoto + 1}  /${
-              inspirations.length
+              photos.length
             }`}</div>
             <ChangeButton
               type="right"
               click={() =>
-                changePhotoHandler(
-                  indexInspirationPhoto,
-                  'plus',
-                  inspirations.length
-                )
+                changePhotoHandler(indexInspirationPhoto, 'plus', photos.length)
               }
             />
           </div>
@@ -129,21 +125,23 @@ const productTemplate = ({ data }) => {
       {isInspirationItemClicked.state ? (
         <Modal
           click={() => isInspirationItemClickedHandler()}
-          ratio={inspirations[isInspirationItemClicked.index].fluid.aspectRatio}
+          ratio={photos[isInspirationItemClicked.index].fluid.aspectRatio}
         >
-          <Img fluid={inspirations[isInspirationItemClicked.index].fluid} />
+          <Img fluid={photos[isInspirationItemClicked.index].fluid} />
         </Modal>
       ) : null}
-      <Section>
+      <div style={{ backgroundColor: 'black', height: '150px' }}></div>
+      <Wave style={{ backgroundColor: 'black' }} />
+      <Section style={{ paddingTop: '0px' }}>
         <SectTitle text={title} position={'first'} />
         <article className={styles.top}>
           <div className={styles.mainPhoto}>
             <Img fluid={fluid} />
           </div>
           <div className={styles.description}>
-            <p>{description}</p>
+            <p>{info}</p>
 
-            {features && (
+            {/* {features && (
               <>
                 <h2 className={styles.title}>Cechy:</h2>
                 <div className={styles.features}>
@@ -154,11 +152,11 @@ const productTemplate = ({ data }) => {
                   </ul>
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </article>
-        {inspirations && inspirationArticle}
-        <Link to={'/oferta/'}>
+        {photos && inspirationArticle}
+        <Link to={'/portfolio/'}>
           <Button text={'Wróć'} type={'black'} />
         </Link>
       </Section>
@@ -167,20 +165,19 @@ const productTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query getSingleProduct($slug: String) {
-    product: contentfulProductsItems(slug: { eq: $slug }) {
+  query getSinglePortfolio($slug: String) {
+    portfolio: contentfulPortfolioItems(slug: { eq: $slug }) {
       title
       slug
-      features
-      photo {
+      mainPhoto {
         fluid {
           ...GatsbyContentfulFluid
         }
       }
-      description {
-        description
+      info {
+        info
       }
-      inspirations {
+      photos {
         fluid {
           ...GatsbyContentfulFluid
         }

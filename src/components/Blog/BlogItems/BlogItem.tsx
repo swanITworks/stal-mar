@@ -1,8 +1,9 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import * as styles from './BlogItem.module.scss'
+import { Link } from 'gatsby'
 
-const BlogItem = ({ photoData, date, title }): JSX.Element => {
+const BlogItem = ({ photoData, date, title, slug }): JSX.Element => {
   const myDate = new Date(date)
 
   const months = [
@@ -22,13 +23,15 @@ const BlogItem = ({ photoData, date, title }): JSX.Element => {
 
   return (
     <article className={styles.blogItem}>
-      <div style={{ display: 'inline-block', width: '100%' }}>
-        <Img className={styles.photo} fluid={photoData} />
-      </div>
-      <h3 className={styles.date}>{`${myDate.getDate()} ${
-        months[myDate.getMonth()]
-      } ${myDate.getFullYear()}`}</h3>
-      <h4 className={styles.title}>{title}</h4>
+      <Link to={`/blog/${slug}`}>
+        <div style={{ display: 'inline-block', width: '100%' }}>
+          <Img className={styles.photo} fluid={photoData} />
+        </div>
+        <h3 className={styles.date}>{`${myDate.getDate()} ${
+          months[myDate.getMonth()]
+        } ${myDate.getFullYear()}`}</h3>
+        <h4 className={styles.title}>{title}</h4>
+      </Link>
     </article>
   )
 }
