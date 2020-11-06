@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import * as styles from './BlogItem.module.scss'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import Button from '../../../UI/Button/Button'
 
 const BlogItem = ({ photoData, date, title, slug, type }): JSX.Element => {
@@ -23,7 +23,10 @@ const BlogItem = ({ photoData, date, title, slug, type }): JSX.Element => {
   ]
 
   return (
-    <article className={styles.blogItem}>
+    <article
+      onClick={() => navigate(`/blog/${slug}`)}
+      className={styles.blogItem}
+    >
       <div style={{ width: '100%' }}>
         <Img className={styles.photo} fluid={photoData} />
       </div>

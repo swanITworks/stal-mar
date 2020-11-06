@@ -18,7 +18,7 @@ const Section = ({ children, type, style, flexBox, id }): JSX.Element => {
 
   return (
     <section id={id} className={sectionStyles.join(' ')} style={{ ...style }}>
-      {children}
+      <div style={{ maxWidth: '1920px', margin: 'auto' }}>{children}</div>
     </section>
   )
 }

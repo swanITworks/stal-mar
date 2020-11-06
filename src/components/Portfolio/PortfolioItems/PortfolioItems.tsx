@@ -23,6 +23,7 @@ const PortfolioItems = ({ device, items, toShow, type }): JSX.Element => {
             mainPhoto={item.mainPhoto.fluid}
             category={item.category}
             slug={item.slug}
+            type={type}
           />
         )
       }
@@ -44,6 +45,7 @@ const PortfolioItems = ({ device, items, toShow, type }): JSX.Element => {
                   mainPhoto={item.mainPhoto.fluid}
                   category={item.category}
                   slug={item.slug}
+                  type={type}
                 />
               )
             })}
@@ -57,6 +59,7 @@ const PortfolioItems = ({ device, items, toShow, type }): JSX.Element => {
               mainPhoto={items[toShow].mainPhoto.fluid}
               category={items[toShow].category}
               slug={items[toShow].slug}
+              type={type}
             />
           </div>
         )
@@ -74,6 +77,7 @@ const PortfolioItems = ({ device, items, toShow, type }): JSX.Element => {
                   mainPhoto={item.mainPhoto.fluid}
                   category={item.category}
                   slug={item.slug}
+                  type={type}
                 />
               )
             })}

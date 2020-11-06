@@ -35,8 +35,14 @@ const ToolBar = ({
   }
 
   return (
-    <>
-      <section className={sectionStyles.join(' ')}>
+    <section className={sectionStyles.join(' ')}>
+      <div
+        style={{
+          maxWidth: '1920px',
+          margin: 'auto',
+          width: '100%',
+        }}
+      >
         <div className={topStyles.join(' ')}>
           <Logo isScrolling={isScrolling} />
           <DrawerToggle click={onClickHandler} isOpen={isSideDrawerOpen} />
@@ -45,8 +51,8 @@ const ToolBar = ({
           </div>
         </div>
         {isSideDrawerOpen ? <SideDrawer closeSideBar={closeSideBar} /> : null}
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

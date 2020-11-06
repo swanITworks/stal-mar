@@ -6,8 +6,10 @@ import * as styles from './Banner.module.scss'
 const Banner = (): JSX.Element => {
   return (
     <section className={styles.banner}>
-      <PhotosSection />
-      <HelloSection />
+      <div className={styles.content}>
+        <PhotosSection />
+        <HelloSection />
+      </div>
     </section>
   )
 }

@@ -44,9 +44,17 @@ const productTemplate = ({ data, pageContext }) => {
           click={() => {
             typeof history !== 'undefined' && history.go(-1)
           }}
-          text={'Wróć'}
+          text={'Wstecz'}
           type={'black'}
+          style={{ marginRight: '2rem' }}
         />
+        <Link to={'/blog/'}>
+          <Button
+            style={{ marginLeft: '0rem', minWidth: '164px' }}
+            text={'Blog'}
+            type={'black'}
+          />
+        </Link>
 
         <h2 className={styles.title}>Pozostałe artykuły:</h2>
         <BlogItems

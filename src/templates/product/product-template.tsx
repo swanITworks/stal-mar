@@ -135,8 +135,11 @@ const productTemplate = ({ data }) => {
           <Img fluid={inspirations[isInspirationItemClicked.index].fluid} />
         </Modal>
       ) : null}
-      <div style={{ backgroundColor: 'black', height: '150px' }}></div>
-      <Wave style={{ backgroundColor: 'black' }} />
+      <div style={{ backgroundColor: 'black', height: '70px' }}></div>
+      <Wave
+        className={styles.wave}
+        style={{ backgroundColor: '#f07a3a', transform: 'rotate(180deg)' }}
+      />
       <Section style={{ paddingTop: '0px' }}>
         <SectTitle text={title} position={'first'} />
         <article className={styles.top}>
@@ -145,7 +148,6 @@ const productTemplate = ({ data }) => {
           </div>
           <div className={styles.description}>
             <p>{description}</p>
-
             {features && (
               <>
                 <h2 className={styles.title}>Cechy:</h2>

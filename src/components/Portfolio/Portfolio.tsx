@@ -66,7 +66,7 @@ const Portfolio = ({ type }) => {
 
   return (
     <Section
-      type={'dark'}
+      type={type === 'more' ? 'almostDark' : 'dark'}
       style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
     >
       <div className={styles.changeFlexBox}>

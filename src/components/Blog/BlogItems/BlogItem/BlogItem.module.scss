@@ -2,9 +2,11 @@
   width: 100%;
   max-width: 450px;
   margin: 1rem auto;
+
   :hover {
     opacity: 0.7;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   .date {
