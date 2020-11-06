@@ -24,10 +24,13 @@ const productTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <div style={{ backgroundColor: 'black', height: '150px' }}></div>
-      <Wave style={{ backgroundColor: 'black' }} />
-      <Section style={{ paddingTop: '0px' }}>
-        <SectTitle text={title} position={'first'} />
+      <div style={{ backgroundColor: 'black', height: '70px' }}></div>
+      <Wave
+        className={styles.wave}
+        style={{ backgroundColor: 'white', transform: 'rotate(180deg)' }}
+      />
+      <Section type={'veryLight'} style={{ paddingTop: '0px' }}>
+        <SectTitle type={'dark'} text={title} position={'first'} />
         <article className={styles.top}>
           <div className={styles.mainPhoto}>
             <Img fluid={fluid} />
@@ -36,9 +39,16 @@ const productTemplate = ({ data, pageContext }) => {
             <p>{article}</p>
           </div>
         </article>
-        <Link to={'/blog/'}>
-          <Button text={'Wróć'} type={'black'} />
-        </Link>
+
+        <Button
+          click={() => {
+            typeof history !== 'undefined' && history.go(-1)
+          }}
+          text={'Wróć'}
+          type={'black'}
+        />
+
+        <h2 className={styles.title}>Pozostałe artykuły:</h2>
         <BlogItems
           arrayItems={arrayItems.filter(item => item.slug !== pageContext.slug)}
         />

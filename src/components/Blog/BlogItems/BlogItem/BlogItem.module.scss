@@ -2,6 +2,11 @@
   width: 100%;
   max-width: 450px;
   margin: 1rem auto;
+  :hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
   .date {
     color: #333333;
     opacity: 0.5;
@@ -29,6 +34,11 @@
 }
 
 @media only screen and (min-width: 992px) {
+  .buttonArea {
+    display: none;
+    width: 100%;
+    margin: auto;
+  }
   .blogItem {
     width: 30%;
     margin: 0;

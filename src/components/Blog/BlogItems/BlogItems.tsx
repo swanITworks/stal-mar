@@ -52,6 +52,7 @@ const BlogItems = ({ type, arrayItems }): JSX.Element => {
         {arrayItems.map((item, index) => {
           return (
             <BlogItem
+              type={'more'}
               key={item.title}
               title={item.title}
               photoData={item.photo.fluid}

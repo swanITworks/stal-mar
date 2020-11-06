@@ -1,3 +1,8 @@
+.wave {
+  path {
+    fill: black;
+  }
+}
 .top {
   font-family: 'Overpass';
   .mainPhoto {
@@ -13,10 +18,11 @@
   .description {
     p {
       font-size: 1rem;
-      color: white;
+      color: black;
+      font-family: 'Overpass';
     }
     .title {
-      color: white;
+      color: black;
       font-family: 'Overpass';
       margin-top: 1rem;
     }
@@ -32,42 +38,10 @@
   }
 }
 
-.inspirations {
-  .title {
-    color: white;
-    font-family: 'Overpass';
-    margin-top: 1rem;
-  }
-  .inspirationsPhotosDesktop {
-    display: none;
-  }
-
-  .inspirationsPhotosMobile {
-    display: inline-block;
-    margin: 2rem auto 1rem auto;
-    width: 100%;
-    text-align: center;
-    div.photoContainer {
-      margin: auto;
-      text-align: center;
-      .photoItem {
-        max-width: 100%;
-        margin: auto;
-        border-radius: 10px;
-        border: 1px solid #333333;
-      }
-    }
-    div.buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      margin: 1rem auto;
-      .info {
-        margin: 0 1rem;
-      }
-    }
-  }
+h2.title {
+  color: black;
+  font-family: 'Overpass';
+  margin-top: 1rem;
 }
 
 @media only screen and (min-width: 992px) {
@@ -90,38 +64,6 @@
     .description {
       flex: 0 0 45%;
       color: white;
-    }
-  }
-  .inspirations {
-    .inspirationsPhotosDesktop {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin-top: 2rem;
-
-      div.photoContainer {
-        flex: 1 0 130px;
-        text-align: center;
-        margin: 0;
-        display: flex;
-        margin: 0.5rem;
-        background-color: black;
-        border-radius: 10px;
-
-        cursor: pointer;
-        :hover {
-          opacity: 0.8;
-        }
-
-        .photoItem {
-          flex: 1 0 auto;
-          border: 1px solid #333333;
-          border-radius: 10px;
-        }
-      }
-    }
-    .inspirationsPhotosMobile {
-      display: none;
     }
   }
 }
