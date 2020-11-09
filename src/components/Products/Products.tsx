@@ -88,6 +88,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
                 title={product.title}
                 number={'0' + (index + 1)}
                 imageData={product.photo.fluid}
+                slug={product.slug}
               />
             )
           }
@@ -105,6 +106,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
                 type={type}
                 key={product.title}
                 title={product.title}
+                slug={product.slug}
                 number={'0' + (index + 1)}
                 imageData={product.photo.fluid}
               />
@@ -129,6 +131,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
   const mainSectionMore = (
     <>
       <div
+        id="offer"
         style={{
           display: 'flex',
           justifyContent: 'space-around',
@@ -165,7 +168,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
         </div>
         {type === 'more' ? null : (
           <div className={styles.rightSide}>
-            <Link to="oferta">
+            <Link to="oferta#offer">
               <Button type={'black'} />
             </Link>
           </div>

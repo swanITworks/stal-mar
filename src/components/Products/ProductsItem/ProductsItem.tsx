@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './ProductsItem.module.scss'
 import Img from 'gatsby-image'
 import Button from '../../UI/Button/Button'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 
 const ProductsItem = ({
   number,
@@ -13,7 +13,12 @@ const ProductsItem = ({
   features,
 }): JSX.Element => {
   return (
-    <article className={styles.productItem}>
+    <article
+      className={styles.productItem}
+      onClick={() => {
+        navigate(`/oferta/${slug}`)
+      }}
+    >
       <h3 className={styles.number}>{number}</h3>
       <h2 className={styles.title}>{title}</h2>
 
