@@ -28,18 +28,20 @@ const OurPartners = (): JSX.Element => {
   } = useStaticQuery(getData)
   return (
     <section className={styles.partners}>
-      <h3 className={styles.title}>{title}</h3>
-      <div className={styles.items}>
-        {arrayItems.map((item, index) => {
-          return (
-            <article key={index}>
-              <Img
-                fluid={item.logo.fluid}
-                style={{ width: '100px', filter: `grayscale(100%)` }}
-              />
-            </article>
-          )
-        })}
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
+        <div className={styles.items}>
+          {arrayItems.map((item, index) => {
+            return (
+              <article key={index}>
+                <Img
+                  fluid={item.logo.fluid}
+                  style={{ width: '100px', filter: `grayscale(100%)` }}
+                />
+              </article>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

@@ -1,16 +1,27 @@
-.leftSide {
-  width: 100%;
-}
-
-.rightSide {
-  margin: auto;
+.sectionItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .leftSide {
+    width: 100%;
+  }
+  .rightSide {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 850px) {
-  .leftSide {
-    max-width: 45%;
-  }
-  .rightSide {
-    margin: 0;
+  .sectionItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftSide {
+      max-width: 45%;
+    }
+    .rightSide {
+      max-width: 45%;
+    }
   }
 }

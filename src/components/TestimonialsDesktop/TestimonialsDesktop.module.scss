@@ -5,25 +5,30 @@
 @media only screen and (min-width: 992px) {
   .testimonialsDesktop {
     display: inline-block;
-
     width: 100%;
-    padding: 5rem 7rem 0rem 7rem;
     background-color: #f07a3a;
-    .mainSection {
-      display: inline-flex;
-      .leftSide {
-        width: 65%;
+
+    .content {
+      max-width: 1920px;
+      margin: auto;
+      padding: 5rem 7rem 0rem 7rem;
+
+      .mainSection {
+        display: inline-flex;
+        .leftSide {
+          width: 65%;
+        }
+        .rightSide {
+          width: 35%;
+        }
       }
-      .rightSide {
-        width: 35%;
+      .buttons {
+        margin-left: 2rem;
+        margin-top: 2rem;
+        width: 28%;
+        display: flex;
+        justify-content: space-between;
       }
-    }
-    .buttons {
-      margin-left: 2rem;
-      margin-top: 2rem;
-      width: 28%;
-      display: flex;
-      justify-content: space-between;
     }
   }
 }

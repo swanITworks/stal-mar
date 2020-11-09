@@ -69,12 +69,12 @@ p.counter {
     }
   }
   .buttonsMax {
-    min-width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
     font-family: 'Overpass';
     align-self: center;
+    max-width: 180px;
   }
 }

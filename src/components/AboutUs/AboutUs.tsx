@@ -61,44 +61,46 @@ const AboutUs = (): JSX.Element => {
 
   return (
     <Section type="light" flexBox="row" id="onas">
-      <div className={styles.leftSide}>
-        <SectName text={name} />
-        <SectTitle text={title} />
-        <SectInfo text={info} />
+      <div className={styles.sectionItems}>
+        <article className={styles.leftSide}>
+          <SectName text={name} />
+          <SectTitle text={title} />
+          <SectInfo text={info} />
+        </article>
+        <article
+          className={styles.rightSide}
+          style={{
+            padding: '2.5rem',
+            position: 'relative',
+            minHeight: '320px',
+            marginTop: '2.5rem',
+            minWidth: '45%',
+            maxWidth: '500px',
+          }}
+        >
+          <Image
+            fluid={man}
+            style={{
+              position: 'absolute',
+              width: '50%',
+              zIndex: 1,
+              right: 0,
+              bottom: 0,
+            }}
+          />
+          <Image
+            fluid={workshop}
+            style={{
+              position: 'absolute',
+              width: '75%',
+              zIndex: 1,
+              left: 0,
+              top: 0,
+            }}
+          />
+          <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
+        </article>
       </div>
-      <article
-        className={styles.rightSide}
-        style={{
-          padding: '2.5rem',
-          position: 'relative',
-          minHeight: '320px',
-          marginTop: '2.5rem',
-          minWidth: '45%',
-          maxWidth: '500px',
-        }}
-      >
-        <Image
-          fluid={man}
-          style={{
-            position: 'absolute',
-            width: '50%',
-            zIndex: 1,
-            right: 0,
-            bottom: 0,
-          }}
-        />
-        <Image
-          fluid={workshop}
-          style={{
-            position: 'absolute',
-            width: '75%',
-            zIndex: 1,
-            left: 0,
-            top: 0,
-          }}
-        />
-        <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
-      </article>
     </Section>
   )
 }

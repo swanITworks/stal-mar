@@ -18,7 +18,7 @@ import Banner from '../components/Banner/Banner'
 import Hide from '../hoc/Hide/Hide'
 
 import FastContactMobile from '../components/FastContactMobile/FastContactMobile'
-import FastContactDevice from '../components/FastContactDevice/FastContactDevice'
+import FastContactDevice from '../components/FastContactDesktop/FastContactDesktop'
 import VideSectionDevices from '../components/VideoSectionDevices/VideoSectionDevices'
 
 const index: React.FC<PageProps> = props => {

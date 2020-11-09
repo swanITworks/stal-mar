@@ -78,22 +78,24 @@ const Achievements = (): JSX.Element => {
       }}
       className={styles.achivements}
     >
-      <h4>{title}</h4>
-      <div className={styles.elements}>
-        {arrayItems.map((item, index) => {
-          return (
-            <AchievementsItem
-              key={index}
-              title={item.title}
-              max={item.value}
-              unit={item.unit}
-              icon={item.icon}
-              speed={item.delay}
-              count={1}
-              enterSection={enterSection}
-            ></AchievementsItem>
-          )
-        })}
+      <div className={styles.content}>
+        <h4>{title}</h4>
+        <div className={styles.elements}>
+          {arrayItems.map((item, index) => {
+            return (
+              <AchievementsItem
+                key={index}
+                title={item.title}
+                max={item.value}
+                unit={item.unit}
+                icon={item.icon}
+                speed={item.delay}
+                count={1}
+                enterSection={enterSection}
+              ></AchievementsItem>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

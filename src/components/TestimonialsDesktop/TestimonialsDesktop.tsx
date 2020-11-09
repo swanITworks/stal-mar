@@ -54,36 +54,38 @@ const TestimonialsDesktop = (): JSX.Element => {
 
   return (
     <section className={styles.testimonialsDesktop}>
-      <SectName text={section.name} />
-      <SectTitle text={section.title} />
-      <div className={styles.mainSection}>
-        <div className={styles.leftSide}>
-          {arrayItems.map((item, index) => {
-            if (indexToShow === index) {
-              return (
-                <TestimonialsDesktopItem
-                  key={item.name}
-                  name={item.name}
-                  quontation={item.quotation}
-                  photo={item.photo.fluid}
-                />
-              )
-            }
-          })}
-        </div>
-        <div className={styles.rightSide}>
-          <TestimonialsRest items={arrayItems} toExclude={indexToShow} />
-          <div className={styles.buttons}>
-            <ChangeButton
-              style={'light'}
-              type={'left'}
-              click={() => changePhotoHandler('minus')}
-            />
-            <ChangeButton
-              style={'light'}
-              type={'right'}
-              click={() => changePhotoHandler('plus')}
-            />
+      <div className={styles.content}>
+        <SectName text={section.name} />
+        <SectTitle text={section.title} />
+        <div className={styles.mainSection}>
+          <div className={styles.leftSide}>
+            {arrayItems.map((item, index) => {
+              if (indexToShow === index) {
+                return (
+                  <TestimonialsDesktopItem
+                    key={item.name}
+                    name={item.name}
+                    quontation={item.quotation}
+                    photo={item.photo.fluid}
+                  />
+                )
+              }
+            })}
+          </div>
+          <div className={styles.rightSide}>
+            <TestimonialsRest items={arrayItems} toExclude={indexToShow} />
+            <div className={styles.buttons}>
+              <ChangeButton
+                style={'light'}
+                type={'left'}
+                click={() => changePhotoHandler('minus')}
+              />
+              <ChangeButton
+                style={'light'}
+                type={'right'}
+                click={() => changePhotoHandler('plus')}
+              />
+            </div>
           </div>
         </div>
       </div>
