@@ -24,7 +24,7 @@ const HelloSection = (): JSX.Element => {
         <h3 className={styles.name}>{spanTitle}</h3>
         <h1 className={styles.title}>{helloText}</h1>
       </article>
-      <Button click={() => scrollTo('#footer')} />
+      <Button click={() => scrollTo('#offer')} />
     </section>
   )
 }

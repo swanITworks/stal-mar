@@ -19,6 +19,7 @@ const Offer = ({ data }) => {
         spanTitle={nodes[0].spanTitle}
         mainPhoto={nodes[0].bannerMainPhoto.fluid}
         photos={nodes[0].bannerPhotos}
+        anchorLink={'#offer'}
       />
       <Products type={'more'} />
       <HowWerWork type={'more'} />

@@ -133,11 +133,11 @@ export const PureProducts = ({ type, data }): JSX.Element => {
   const mainSectionMore = (
     <>
       <div
-        id="offer"
         style={{
-          display: 'flex',
-          justifyContent: 'space-around',
-          flexWrap: 'wrap',
+          display: 'grid',
+          gridTemplateRows: '1fr 1fr 1fr',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          gridGap: '3rem',
         }}
       >
         {ourProducts.map((product, index) => {
@@ -162,6 +162,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
     <Section
       type="light"
       style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
+      id="offer"
     >
       <div className={styles.changeFlexBox}>
         <div className={styles.leftSide}>
@@ -177,7 +178,6 @@ export const PureProducts = ({ type, data }): JSX.Element => {
           </div>
         )}
       </div>
-
       {type === 'more' ? mainSectionMore : mainSection}
     </Section>
   )

@@ -49,11 +49,12 @@
     display: none;
   }
   .productsListMax {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   .productsListMax > :only-child {
     margin: 0 auto 1rem auto;
