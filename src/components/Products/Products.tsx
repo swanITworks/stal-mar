@@ -16,7 +16,7 @@ const getData = graphql`
       name
       info
     }
-    items: allContentfulProductsItems {
+    items: allContentfulProductsItems(sort: { fields: priority }) {
       nodes {
         title
         slug
@@ -81,12 +81,13 @@ export const PureProducts = ({ type, data }): JSX.Element => {
       <div className={styles.productsListMini}>
         {ourProducts.map((product, index) => {
           if (index === productToShow - 1) {
+            let number = index + 1 < 10 ? '0' + (index + 1) : index + 1
             return (
               <ProductsItem
                 type={type}
                 key={product.title}
                 title={product.title}
-                number={'0' + (index + 1)}
+                number={number}
                 imageData={product.photo.fluid}
                 slug={product.slug}
               />
@@ -101,13 +102,14 @@ export const PureProducts = ({ type, data }): JSX.Element => {
             index === productToShow ||
             index === productToShow + 1
           ) {
+            let number = index + 1 < 10 ? '0' + (index + 1) : index + 1
             return (
               <ProductsItem
                 type={type}
                 key={product.title}
                 title={product.title}
                 slug={product.slug}
-                number={'0' + (index + 1)}
+                number={number}
                 imageData={product.photo.fluid}
               />
             )
@@ -139,13 +141,14 @@ export const PureProducts = ({ type, data }): JSX.Element => {
         }}
       >
         {ourProducts.map((product, index) => {
+          let number = index + 1 < 10 ? '0' + (index + 1) : index + 1
           return (
             <ProductsItem
               type={type}
               features={product.features}
               key={product.title}
               title={product.title}
-              number={'0' + (index + 1)}
+              number={number}
               imageData={product.photo.fluid}
               slug={product.slug}
             />
