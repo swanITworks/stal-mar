@@ -12,7 +12,7 @@ module.exports = {
   siteMetadata: {
     title: 'Bramy i ogrodzenia Piła',
     description:'Strona firmowa producenta stalowych bram i ogrodzeń z Piły. Oferujemy kompleksową obsługę od projektu, pomiaru, produkcji po montaż',
-    author: 'SwanITworks',
+    author: 'SwanITworks.com',
     siteUrl:'https://stal-mar.com.pl'
   },
   plugins: [
@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-inline-svg`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-react-helmet`,
 
     {
       resolve: `gatsby-source-filesystem`,

@@ -15,15 +15,18 @@ import TestimonialsDesktop from '../components/TestimonialsDesktop/TestimonialsD
 import Blog from '../components/Blog/Blog'
 import Contact from '../components/Contact/Contact'
 import Banner from '../components/Banner/Banner'
-import Hide from '../hoc/Hide/Hide'
-
 import FastContactMobile from '../components/FastContactMobile/FastContactMobile'
 import FastContactDevice from '../components/FastContactDesktop/FastContactDesktop'
 import VideSectionDevices from '../components/VideoSectionDevices/VideoSectionDevices'
+import SEO from '../components/SEO/SEO'
 
 const index: React.FC<PageProps> = props => {
   return (
     <Layout>
+      <SEO
+        title="Bramy i ogrodzenia Piła - producent"
+        description="To jest nasza strona główna"
+      />
       <Banner />
       <Partners />
       <Achievements />
