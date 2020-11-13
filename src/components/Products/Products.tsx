@@ -131,31 +131,22 @@ export const PureProducts = ({ type, data }): JSX.Element => {
   )
 
   const mainSectionMore = (
-    <>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateRows: '1fr 1fr 1fr',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          gridGap: '3rem',
-        }}
-      >
-        {ourProducts.map((product, index) => {
-          let number = index + 1 < 10 ? '0' + (index + 1) : index + 1
-          return (
-            <ProductsItem
-              type={type}
-              features={product.features}
-              key={product.title}
-              title={product.title}
-              number={number}
-              imageData={product.photo.fluid}
-              slug={product.slug}
-            />
-          )
-        })}
-      </div>
-    </>
+    <div className={styles.productsListMore}>
+      {ourProducts.map((product, index) => {
+        let number = index + 1 < 10 ? '0' + (index + 1) : index + 1
+        return (
+          <ProductsItem
+            type={type}
+            features={product.features}
+            key={product.title}
+            title={product.title}
+            number={number}
+            imageData={product.photo.fluid}
+            slug={product.slug}
+          />
+        )
+      })}
+    </div>
   )
 
   return (

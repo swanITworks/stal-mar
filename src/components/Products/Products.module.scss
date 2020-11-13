@@ -27,6 +27,11 @@
   width: 100%;
 }
 
+.productsListMore {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (min-width: 992px) {
   .leftSide {
     width: 50%;
@@ -75,5 +80,11 @@
     align-self: center;
     max-width: 180px;
     margin: auto;
+  }
+  .productsListMore {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3rem;
   }
 }
