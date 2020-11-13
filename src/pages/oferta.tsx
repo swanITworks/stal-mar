@@ -4,6 +4,7 @@ import Products from '../components/Products/Products'
 import HowWerWork from '../components/HowWeWork/HowWeWork'
 import { graphql } from 'gatsby'
 import PageBanner from '../components/PageBanner/PageBanner'
+import SEO from '../components/SEO/SEO'
 
 const Offer = ({ data }) => {
   const {
@@ -14,6 +15,10 @@ const Offer = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title="Oferta"
+        description="Oferta firmy Stal-Mar bramy i ogrodzenia"
+      />
       <PageBanner
         title={nodes[0].title}
         spanTitle={nodes[0].spanTitle}

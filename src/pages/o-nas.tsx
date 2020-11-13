@@ -9,6 +9,7 @@ import TestimonialsDesktop from '../components/TestimonialsDesktop/TestimonialsD
 import Wave from '../assets/waveAbout.svg'
 import Achievements from '../components/Achievements/Achievements'
 import { graphql } from 'gatsby'
+import SEO from '../components/SEO/SEO'
 
 const AboutUs: React.FC<PageProps> = ({ data }) => {
   const {
@@ -16,6 +17,7 @@ const AboutUs: React.FC<PageProps> = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO title="O nas" description="Opis działalność firmy Stal-Mar" />
       <PageBanner
         title={nodes[0].title}
         spanTitle={nodes[0].spanTitle}

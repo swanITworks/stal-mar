@@ -4,6 +4,7 @@ import Layout from '../hoc/Layout/Layout'
 import Blog from '../components/Blog/Blog'
 import { graphql } from 'gatsby'
 import PageBanner from '../components/PageBanner/PageBanner'
+import SEO from '../components/SEO/SEO'
 
 const blog: React.FC<PageProps> = ({ data }) => {
   const {
@@ -11,6 +12,10 @@ const blog: React.FC<PageProps> = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO
+        title="Blog"
+        description="Ta strona zawiera nowości oraz ciekawe artykuły z firmy Stal-Mar bramy i ogrodzenia Piła"
+      />
       <PageBanner
         title={nodes[0].title}
         spanTitle={nodes[0].spanTitle}

@@ -23,7 +23,10 @@ import SEO from '../components/SEO/SEO'
 const index: React.FC<PageProps> = props => {
   return (
     <Layout>
-      <SEO title="Start" description="To jest nasza strona główna" />
+      <SEO
+        title="Start"
+        description="To jest strona główna firmy Stal-Mar bramy i ogrodzenia Piła"
+      />
       <Banner />
       <Partners />
       <Achievements />

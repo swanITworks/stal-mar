@@ -11,6 +11,7 @@ import ChangeButton from '../../components/UI/ChangeButton/ChangeButton'
 import Modal from '../../hoc/Modal/Modal'
 import Wave from '../../assets/waveAbout.svg'
 import BlogItems from '../../components/Blog/BlogItems/BlogItems'
+import SEO from '../../components/SEO/SEO'
 
 const productTemplate = ({ data, pageContext }) => {
   const {
@@ -24,6 +25,7 @@ const productTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <SEO title={`${title} | Blog`} description={article} />
       <div style={{ backgroundColor: 'black', height: '70px' }}></div>
       <Wave
         className={styles.wave}

@@ -11,6 +11,7 @@ import PortfolioSection from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
 import { graphql } from 'gatsby'
 import PageBanner from '../components/PageBanner/PageBanner'
+import SEO from '../components/SEO/SEO'
 
 const Portfolio: JSX.Element = ({ data }) => {
   const {
@@ -18,6 +19,10 @@ const Portfolio: JSX.Element = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO
+        title="Portfolio"
+        description="Projekty wykonane przez firmę Stal-Mar w Pile oraz okolicach"
+      />
       <PageBanner
         title={nodes[0].title}
         spanTitle={nodes[0].spanTitle}

@@ -10,6 +10,7 @@ import changeIndexHandler from '../../utils/functions'
 import ChangeButton from '../../components/UI/ChangeButton/ChangeButton'
 import Modal from '../../hoc/Modal/Modal'
 import Wave from '../../assets/waveAbout.svg'
+import SEO from '../../components/SEO/SEO'
 
 const productTemplate = ({ data }) => {
   const {
@@ -122,6 +123,7 @@ const productTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={`${title} | Portfolio`} description={info} />
       {isInspirationItemClicked.state ? (
         <Modal
           click={() => isInspirationItemClickedHandler()}

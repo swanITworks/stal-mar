@@ -5,6 +5,7 @@ import Blog from '../components/Blog/Blog'
 import { graphql } from 'gatsby'
 import PageBanner from '../components/PageBanner/PageBanner'
 import Contact from '../components/Contact/Contact'
+import SEO from '../components/SEO/SEO'
 
 const blog: React.FC<PageProps> = ({ data }) => {
   const {
@@ -12,6 +13,10 @@ const blog: React.FC<PageProps> = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO
+        title="Kontakt"
+        description="Dane kontaktowe do firmy Stal-Mar bramy i ogrodzenia Piła"
+      />
       <PageBanner
         title={nodes[0].title}
         spanTitle={nodes[0].spanTitle}

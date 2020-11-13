@@ -1,10 +1,15 @@
 import React from 'react'
 import Layout from '../hoc/Layout/Layout'
+import SEO from '../components/SEO/SEO'
 
 const Error = (): JSX.Element => {
   return (
     <Layout>
-      <h1>Hello from error page</h1>
+      <SEO
+        title="Błąd"
+        description="Ta strona nie istnieje, zapraszamy na strone główną"
+      />
+      <h1>Ta strona nie istnieje</h1>
     </Layout>
   )
 }
