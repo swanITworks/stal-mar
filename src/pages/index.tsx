@@ -23,10 +23,7 @@ import SEO from '../components/SEO/SEO'
 const index: React.FC<PageProps> = props => {
   return (
     <Layout>
-      <SEO
-        title="Bramy i ogrodzenia Piła - producent"
-        description="To jest nasza strona główna"
-      />
+      <SEO title="Start" description="To jest nasza strona główna" />
       <Banner />
       <Partners />
       <Achievements />
