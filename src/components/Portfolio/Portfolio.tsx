@@ -37,6 +37,9 @@ const getData = graphql`
             ...GatsbyContentfulFluid
           }
         }
+        categories {
+          title
+        }
       }
     }
   }

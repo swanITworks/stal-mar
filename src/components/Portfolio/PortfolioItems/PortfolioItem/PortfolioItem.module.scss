@@ -37,9 +37,9 @@
 .textArea {
   z-index: 3;
   position: absolute;
-  bottom: 10%;
+  bottom: 20px;
   color: #ffffff;
-  padding: 1rem;
+
   h2.category {
     color: #f07566;
     text-transform: uppercase;
@@ -82,7 +82,7 @@
   .textArea {
     z-index: 3;
     position: absolute;
-    bottom: 10%;
+    bottom: 20px;
     color: #ffffff;
     padding: 1rem;
     :hover {

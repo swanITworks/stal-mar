@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import { Link, navigate } from 'gatsby'
 import Button from '../../../UI/Button/Button'
 
-const PortfolioItem = ({ title, mainPhoto, category, slug, type }) => {
+const PortfolioItem = ({ title, mainPhoto, categories, slug, type }) => {
   let articleStyles = [styles.portfolioItem]
 
   if (type === 'more') {
@@ -19,7 +19,12 @@ const PortfolioItem = ({ title, mainPhoto, category, slug, type }) => {
     >
       <Img className={styles.image} fluid={mainPhoto}></Img>
       <div className={styles.textArea}>
-        <h2 className={styles.category}>{category}</h2>
+        {categories.map(item => (
+          <h2 key={item.title} className={styles.category}>
+            {item.title}
+          </h2>
+        ))}
+
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.buttonArea}>
           <Link to={`/portfolio/${slug}`}>
