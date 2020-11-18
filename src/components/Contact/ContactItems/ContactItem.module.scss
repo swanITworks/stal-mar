@@ -14,6 +14,10 @@ article.article {
       border-radius: 80px;
       display: flex;
       justify-content: center;
+      img {
+        width: 48px;
+        height: 78px;
+      }
     }
     .infoArea {
       display: flex;

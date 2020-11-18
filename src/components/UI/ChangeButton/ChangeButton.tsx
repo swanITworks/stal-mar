@@ -20,8 +20,14 @@ const ChangeButton = ({ style, type, click }): JSX.Element => {
   }
 
   return (
-    <button className={arrayButtonStyles.join(' ')} onClick={click}>
-      <div className={arrayDivStyles.join(' ')}></div>
+    <button
+      className={arrayButtonStyles.join(' ')}
+      onClick={click}
+      aria-label="change-item"
+    >
+      <div className={arrayDivStyles.join(' ')}>
+        <span aria-hidden="true">change element</span>
+      </div>
     </button>
   )
 }

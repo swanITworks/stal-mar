@@ -16,12 +16,18 @@ div.right {
   min-width: 10px;
   min-height: 10px;
   transform: translateX(-1px) rotate(45deg);
+  span {
+    display: none;
+  }
 }
 
 div.left {
   min-width: 10px;
   min-height: 10px;
   transform: translateX(1px) rotate(-135deg);
+  span {
+    display: none;
+  }
 }
 
 div.lightColor {
