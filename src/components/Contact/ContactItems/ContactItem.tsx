@@ -6,7 +6,7 @@ const ContactItem = ({ icon, contactData, adittionalInfo }) => {
     <article className={styles.article}>
       <div className={styles.contactItem}>
         <div className={styles.icon}>
-          <img src={icon}></img>
+          <img src={icon} alt={adittionalInfo}></img>
         </div>
         <div className={styles.infoArea}>
           <h3 className={styles.contactData}>{contactData}</h3>

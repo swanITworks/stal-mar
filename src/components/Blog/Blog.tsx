@@ -102,6 +102,7 @@ const Blog = ({ type }): JSX.Element => {
                 key={item.title}
                 title={item.title}
                 photoData={item.photo.fluid}
+                alt={item.photo.title}
                 date={item.date}
                 slug={item.slug}
               />
@@ -157,6 +158,7 @@ const Blog = ({ type }): JSX.Element => {
             photoData={item.photo.fluid}
             date={item.date}
             slug={item.slug}
+            alt={item.photo.title}
           />
         )
       })}
