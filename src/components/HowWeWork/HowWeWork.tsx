@@ -23,6 +23,7 @@ const getData = graphql`
           fluid {
             ...GatsbyContentfulFluid
           }
+          title
         }
       }
     }
@@ -57,6 +58,7 @@ const HowWeWork = ({ type }): JSX.Element => {
             title={item.title}
             info={item.info}
             photo={item.photo.fluid}
+            alt={item.photo.title}
             type={type}
           />
         ))}

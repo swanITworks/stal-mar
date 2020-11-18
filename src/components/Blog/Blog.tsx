@@ -24,6 +24,7 @@ const getData = graphql`
           fluid {
             ...GatsbyContentfulFluid
           }
+          title
         }
       }
     }
@@ -83,6 +84,7 @@ const Blog = ({ type }): JSX.Element => {
                 photoData={item.photo.fluid}
                 date={item.date}
                 slug={item.slug}
+                alt={item.photo.title}
               />
             )
           }

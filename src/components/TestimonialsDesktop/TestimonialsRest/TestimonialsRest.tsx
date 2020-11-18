@@ -15,6 +15,7 @@ const TestomonialsRest = ({ items, toExclude }): JSX.Element => {
               width: '50px',
               filter: 'grayscale(100%)',
             }}
+            alt={item.photo.title}
           />
         </div>
       )
@@ -28,6 +29,7 @@ const TestomonialsRest = ({ items, toExclude }): JSX.Element => {
               width: '50px',
               filter: 'grayscale(100%)',
             }}
+            alt={item.photo.title}
           />
           <div
             style={{

@@ -56,6 +56,7 @@ const BlogItems = ({ type, arrayItems }): JSX.Element => {
               key={item.title}
               title={item.title}
               photoData={item.photo.fluid}
+              alt={item.photo.title}
               date={item.date}
               slug={item.slug}
             />
@@ -74,6 +75,7 @@ const BlogItems = ({ type, arrayItems }): JSX.Element => {
                   key={item.title}
                   title={item.title}
                   photoData={item.photo.fluid}
+                  alt={item.photo.title}
                   date={item.date}
                   slug={item.slug}
                 />
@@ -93,6 +95,7 @@ const BlogItems = ({ type, arrayItems }): JSX.Element => {
                   key={item.title}
                   title={item.title}
                   photoData={item.photo.fluid}
+                  alt={item.photo.title}
                   date={item.date}
                   slug={item.slug}
                 />

@@ -4,7 +4,7 @@ import * as styles from './BlogItem.module.scss'
 import { Link, navigate } from 'gatsby'
 import Button from '../../../UI/Button/Button'
 
-const BlogItem = ({ photoData, date, title, slug, type }): JSX.Element => {
+const BlogItem = ({ photoData, date, title, slug, type, alt }): JSX.Element => {
   const myDate = new Date(date)
 
   const months = [
@@ -28,7 +28,7 @@ const BlogItem = ({ photoData, date, title, slug, type }): JSX.Element => {
       className={styles.blogItem}
     >
       <div style={{ width: '100%' }}>
-        <Img className={styles.photo} fluid={photoData} />
+        <Img className={styles.photo} fluid={photoData} alt={alt} />
       </div>
       <h3 className={styles.date}>{`${myDate.getDate()} ${
         months[myDate.getMonth()]

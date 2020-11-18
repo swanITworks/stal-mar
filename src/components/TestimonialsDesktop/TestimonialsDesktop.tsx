@@ -23,6 +23,7 @@ const getData = graphql`
           fluid {
             ...GatsbyContentfulFluid
           }
+          title
         }
       }
     }
@@ -67,6 +68,7 @@ const TestimonialsDesktop = (): JSX.Element => {
                     name={item.name}
                     quontation={item.quotation}
                     photo={item.photo.fluid}
+                    alt={item.photo.title}
                   />
                 )
               }

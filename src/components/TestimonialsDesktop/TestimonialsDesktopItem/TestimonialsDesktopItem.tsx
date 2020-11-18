@@ -2,13 +2,13 @@ import React from 'react'
 import * as styles from './TestimonialsDesktopItem.module.scss'
 import Img from 'gatsby-image'
 
-const TestimonialsItem = ({ photo, name, quontation }): JSX.Element => {
+const TestimonialsItem = ({ photo, name, quontation, alt }): JSX.Element => {
   return (
     <article className={styles.item}>
       <div
         style={{ display: 'inlineBlock', width: '55%', alignSelf: 'center' }}
       >
-        <Img fluid={photo} className={styles.photo} />
+        <Img fluid={photo} className={styles.photo} alt={alt} />
       </div>
       <div>
         <p className={styles.quontation}>
