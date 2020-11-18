@@ -87,6 +87,7 @@ const AboutUs = (): JSX.Element => {
               right: 0,
               bottom: 0,
             }}
+            alt="meżczyzna montuje ogrodzenie na działce w Pile"
           />
           <Image
             fluid={workshop}
@@ -97,8 +98,13 @@ const AboutUs = (): JSX.Element => {
               left: 0,
               top: 0,
             }}
+            alt="kobiety w warsztacie analizują plany bramy i ogrodzenia"
           />
-          <Image fluid={backgroundAbout} style={{ position: 'relative' }} />
+          <Image
+            fluid={backgroundAbout}
+            style={{ position: 'relative' }}
+            alt="pracownik tnie piłą element ogrodzenia"
+          />
         </article>
       </div>
     </Section>

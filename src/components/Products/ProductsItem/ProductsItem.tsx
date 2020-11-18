@@ -11,6 +11,7 @@ const ProductsItem = ({
   slug,
   type,
   features,
+  alt,
 }): JSX.Element => {
   return (
     <article
@@ -25,6 +26,7 @@ const ProductsItem = ({
       <Img
         fluid={imageData}
         style={{ height: '0', paddingBottom: '130%', borderRadius: '2%' }}
+        alt={alt}
       />
 
       {type === 'more' ? (

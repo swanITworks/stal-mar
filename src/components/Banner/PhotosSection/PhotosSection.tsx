@@ -64,11 +64,20 @@ const Photos = (): JSX.Element => {
           className={styles.topLeft}
           style={{ width: '100%' }}
           fluid={fence}
+          alt="zliżenie przy zachodzie słońca na stalowy panel ogrodzeniowy okalającą lotnisko"
         />
       </div>
       <div className={styles.secondColumn}>
-        <Img className={styles.topRight} fluid={cutSteel} />
-        <Img className={styles.bottomRight} fluid={rails} />
+        <Img
+          className={styles.topRight}
+          fluid={cutSteel}
+          alt="pracownik docina element bramy"
+        />
+        <Img
+          className={styles.bottomRight}
+          fluid={rails}
+          alt="balustarda mostu w nocy"
+        />
       </div>
     </BackgroundImage>
   )

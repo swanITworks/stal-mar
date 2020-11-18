@@ -20,7 +20,10 @@ const ImageSection = () => {
 
   return (
     <div className={styles.imageSection}>
-      <Img fluid={fastContact.personPhoto.fluid} />
+      <Img
+        fluid={fastContact.personPhoto.fluid}
+        alt="pracownik z młotkiem gotowy na montaż bramy i ogrodzeń"
+      />
     </div>
   )
 }

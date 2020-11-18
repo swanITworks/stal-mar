@@ -31,11 +31,13 @@ const getData = graphql`
           fluid(maxHeight: 500) {
             ...GatsbyContentfulFluid
           }
+          title
         }
         photos {
           fluid {
             ...GatsbyContentfulFluid
           }
+          title
         }
         categories {
           title

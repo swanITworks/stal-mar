@@ -25,6 +25,7 @@ const getData = graphql`
           fluid {
             ...GatsbyContentfulFluid
           }
+          title
         }
       }
     }
@@ -90,6 +91,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
                 number={number}
                 imageData={product.photo.fluid}
                 slug={product.slug}
+                alt={product.photo.title}
               />
             )
           }
@@ -111,6 +113,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
                 slug={product.slug}
                 number={number}
                 imageData={product.photo.fluid}
+                alt={product.photo.title}
               />
             )
           }
@@ -143,6 +146,7 @@ export const PureProducts = ({ type, data }): JSX.Element => {
             number={number}
             imageData={product.photo.fluid}
             slug={product.slug}
+            alt={product.photo.title}
           />
         )
       })}
