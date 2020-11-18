@@ -21,7 +21,6 @@ const getData = graphql`
       sort: { fields: title, order: ASC }
     ) {
       nodes {
-        category
         title
         slug
         info {
