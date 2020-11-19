@@ -11,7 +11,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Bramy i ogrodzenia Piła',
-    description:'Strona firmowa producenta stalowych bram i ogrodzeń z Piły. Oferujemy kompleksową obsługę od projektu, pomiaru, produkcji po montaż',
+    description:'Strona firmowa producenta bram i ogrodzeń z Piły. Oferujemy kompleksową obsługę od projektu, pomiaru, produkcji po montaż oraz serwis',
     author: 'SwanITworks.com',
     siteUrl:'http://stal-mar.com.pl',
     image:'/thumbnails.jpg'

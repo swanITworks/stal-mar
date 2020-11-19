@@ -5,6 +5,7 @@ import HowWerWork from '../components/HowWeWork/HowWeWork'
 import { graphql } from 'gatsby'
 import PageBanner from '../components/PageBanner/PageBanner'
 import SEO from '../components/SEO/SEO'
+import WaveSvg from '../components/UI/WaveSvg/WaveSvg'
 
 const Offer = ({ data }) => {
   const {

@@ -10,6 +10,7 @@ import Wave from '../assets/waveAbout.svg'
 import Achievements from '../components/Achievements/Achievements'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO/SEO'
+import WaveSvg from '../components/UI/WaveSvg/WaveSvg'
 
 const AboutUs: React.FC<PageProps> = ({ data }) => {
   const {
@@ -27,7 +28,7 @@ const AboutUs: React.FC<PageProps> = ({ data }) => {
       <About />
       <TestimonialsMobile />
       <TestimonialsDesktop />
-      <Wave style={{ transform: 'rotate(180deg)' }} />
+      <WaveSvg type="light" rotate />
       <Achievements />
       <Partners />
     </Layout>

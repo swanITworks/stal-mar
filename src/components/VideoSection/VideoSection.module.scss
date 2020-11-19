@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 .videoSection {
-  background-color: #f07a3a;
+  background-color: $lightSectionBackGroundColor;
   z-index: 1;
   width: 100%;
   position: relative;

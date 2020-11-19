@@ -4,7 +4,6 @@ import Layout from '../hoc/Layout/Layout'
 import Partners from '../components/Partners/Partners'
 import Achievements from '../components/Achievements/Achievements'
 import AboutUs from '../components/AboutUs/AboutUs'
-import Wave from '../assets/waveAbout.svg'
 import Products from '../components/Products/Products'
 import FastContact from '../components/FastContactMobile/FastContactMobile'
 import Portfolio from '../components/Portfolio/Portfolio'
@@ -19,18 +18,20 @@ import FastContactMobile from '../components/FastContactMobile/FastContactMobile
 import FastContactDevice from '../components/FastContactDesktop/FastContactDesktop'
 import VideSectionDevices from '../components/VideoSectionDevices/VideoSectionDevices'
 import SEO from '../components/SEO/SEO'
+import WaveSvg from '../components/UI/WaveSvg/WaveSvg'
 
 const index: React.FC<PageProps> = props => {
   return (
     <Layout>
       <SEO
-        title="Start"
-        description="To jest strona główna firmy Stal-Mar bramy i ogrodzenia Piła"
+        title="Stal-Mar | Home"
+        description="Jesteśmy pasjonatami branży, montujemy i produkujemy bramy, ogrodzenia, balustardy. Nasz teren działania to Piła i okolice. Do każdego projektu podchodzimy z pełnym zaangażowaniem. Stal-Mar to gwarancja wysokiej jakości i terminowości usług."
       />
       <Banner />
       <Partners />
       <Achievements />
-      <Wave />
+      <WaveSvg type="light" />
+
       <AboutUs />
       <Products />
       <FastContactMobile />
@@ -41,7 +42,7 @@ const index: React.FC<PageProps> = props => {
       <HowWeWork />
       <TestimonialsMobile />
       <TestimonialsDesktop />
-      <Wave style={{ transform: 'rotate(180deg)' }} />
+      <WaveSvg type="light" rotate />
       <Blog />
       <Contact />
     </Layout>

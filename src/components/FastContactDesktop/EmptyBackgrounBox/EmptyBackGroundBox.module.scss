@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 .emptyBackGroundBox {
   display: none;
 }
@@ -6,7 +8,7 @@
   .emptyBackGroundBox {
     display: inline-block;
     width: 100%;
-    background-color: #f07a3a;
+    background-color: $lightSectionBackGroundColor;
     position: relative;
     top: 0px;
     height: 200px;

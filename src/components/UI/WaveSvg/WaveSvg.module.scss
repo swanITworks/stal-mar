@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.waveLight {
+  background-color: white;
+  path {
+    fill: $lightSectionBackGroundColor;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
