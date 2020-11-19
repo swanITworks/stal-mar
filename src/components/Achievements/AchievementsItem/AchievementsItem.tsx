@@ -34,10 +34,10 @@ const AchievementsItem = (props): JSX.Element => {
 
   const info = (
     <>
-      <h6 className={styles.blob}>
+      <h3 className={styles.blob}>
         {intCon} {unit}
-      </h6>
-      <h5 className={styles.blob}>{title}</h5>
+      </h3>
+      <h4 className={styles.blob}>{title}</h4>
     </>
   )
 

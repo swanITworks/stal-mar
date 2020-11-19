@@ -1,12 +1,14 @@
+@import '../../../styles/variables';
+
 h2.sectName {
   font-family: 'Overpass';
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 900;
 }
 
 h2.changeColor {
-  color: #f07566;
+  color: $lightSectionBackGroundColor;
 }

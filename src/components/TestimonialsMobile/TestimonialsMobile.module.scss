@@ -1,7 +1,9 @@
+@import '../../styles/variables';
+
 .testimonialsMobile {
   width: 100%;
   padding: 10rem 1rem 5rem 1rem;
-  background-color: #f07a3a;
+  background-color: $lightSectionBackGroundColor;
 
   .buttons {
     width: 28%;

@@ -5,7 +5,6 @@ import Partners from '../components/Partners/Partners'
 import Achievements from '../components/Achievements/Achievements'
 import AboutUs from '../components/AboutUs/AboutUs'
 import Products from '../components/Products/Products'
-import FastContact from '../components/FastContactMobile/FastContactMobile'
 import Portfolio from '../components/Portfolio/Portfolio'
 import VideoSection from '../components/VideoSection/VideoSection'
 import HowWeWork from '../components/HowWeWork/HowWeWork'
@@ -31,7 +30,6 @@ const index: React.FC<PageProps> = props => {
       <Partners />
       <Achievements />
       <WaveSvg type="light" />
-
       <AboutUs />
       <Products />
       <FastContactMobile />

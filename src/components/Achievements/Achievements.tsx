@@ -79,7 +79,7 @@ const Achievements = (): JSX.Element => {
       className={styles.achivements}
     >
       <div className={styles.content}>
-        <h4>{title}</h4>
+        <h2>{title}</h2>
         <div className={styles.elements}>
           {arrayItems.map((item, index) => {
             return (

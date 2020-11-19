@@ -126,8 +126,11 @@ export const PureProducts = ({ type, data }): JSX.Element => {
       </article>
       <article className={styles.buttonsMax}>
         <ChangeButton click={() => changeHandlerMax('minus')} type={'left'} />
-        {Math.ceil(productToShow / paggination)}/
-        {Math.ceil(ourProducts.length / paggination)}
+        <div>
+          {Math.ceil(productToShow / paggination)}/
+          {Math.ceil(ourProducts.length / paggination)}
+        </div>
+
         <ChangeButton click={() => changeHandlerMax('plus')} type={'right'} />
       </article>
     </>

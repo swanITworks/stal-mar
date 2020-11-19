@@ -29,7 +29,7 @@ const OurPartners = (): JSX.Element => {
   return (
     <section className={styles.partners}>
       <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.items}>
           {arrayItems.map((item, index) => {
             return (
