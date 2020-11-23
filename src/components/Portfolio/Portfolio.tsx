@@ -45,11 +45,15 @@ const getData = graphql`
     }
   }
 `
-const Portfolio = ({ type }) => {
-  const {
+const Portfolio = ({ type, category }) => {
+  let {
     portfolio,
     portfolioItems: { nodes: items },
   } = useStaticQuery(getData)
+
+  console.log(category)
+  console.log(items)
+
   const [indexToShow, setIndexToShow] = useState(0)
 
   const changePhotoHandler = type => {

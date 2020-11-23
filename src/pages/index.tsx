@@ -24,7 +24,7 @@ const index: React.FC<PageProps> = props => {
     <Layout>
       <SEO
         title="Stal-Mar | Home"
-        description="Jesteśmy pasjonatami branży, montujemy i produkujemy bramy, ogrodzenia, balustardy. Nasz teren działania to Piła i okolice. Do każdego projektu podchodzimy z pełnym zaangażowaniem. Stal-Mar to gwarancja wysokiej jakości i terminowości usług."
+        description="Jesteśmy pasjonatami branży, montujemy i produkujemy: bramy, ogrodzenia, balustardy. Nasz teren działania to Piła i okolice. Do każdego projektu podchodzimy z pełnym zaangażowaniem. Stal-Mar to gwarancja wysokiej jakości i terminowości usług."
       />
       <Banner />
       <Partners />

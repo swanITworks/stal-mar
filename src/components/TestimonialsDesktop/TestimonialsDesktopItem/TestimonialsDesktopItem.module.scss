@@ -14,19 +14,19 @@
       min-width: 300px;
     }
 
-    .quontation {
-      font-family: 'Overpass';
-      font-size: 1rem;
-      min-height: 20vh;
-      line-height: 1.7rem;
-      z-index: 2;
-      color: #ffffff;
-      margin-bottom: 1rem;
-      text-align: left;
-      order: 1;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
+    // .quontation {
+    //   font-family: 'Overpass';
+    //   font-size: 1rem;
+    //   min-height: 20vh;
+    //   line-height: 1.7rem;
+    //   z-index: 2;
+    //   color: #ffffff;
+    //   margin-bottom: 1rem;
+    //   text-align: left;
+    //   order: 1;
+    //   font-size: 1.05rem;
+    //   font-weight: 600;
+    // }
 
     .name {
       font-family: 'Overpass';
@@ -40,5 +40,16 @@
 
   q {
     quotes: '„' '“';
+    font-family: 'Overpass';
+    font-size: 1rem;
+    min-height: 20vh;
+    line-height: 1.7rem;
+    z-index: 2;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: left;
+    order: 1;
+    font-size: 1.35rem;
+    font-weight: 400;
   }
 }

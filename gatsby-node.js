@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql,actions}) =>{
         nodes {
           slug
         }
+        distinct(field: categories___title)
       }
     }
   `)
@@ -33,6 +34,12 @@ exports.createPages = async ({ graphql,actions}) =>{
       }
     }
   `)
+
+ 
+
+  console.log(portfolio.data.items.distinct);
+
+
 
   products.data.items.nodes.forEach(item =>{
     createPage({
@@ -55,6 +62,7 @@ exports.createPages = async ({ graphql,actions}) =>{
   })
 
   blog.data.items.nodes.forEach(item =>{
+
     createPage({
       path:`/blog/${item.slug}`,
       component: path.resolve(`src/templates/blog/blog-template.tsx`),
@@ -63,4 +71,17 @@ exports.createPages = async ({ graphql,actions}) =>{
       }
     })
   })
+
+  portfolio.data.items.distinct.forEach(category => {
+
+    createPage({
+      path:`portfolio/${category.replace(/\s/g,'-').toLowerCase().replace(/[ó]/g,"o")}`,
+      component: path.resolve(`src/templates/category/category-template.tsx`),
+      context:{
+        category
+      }
+    })
+  })
+
+
 };

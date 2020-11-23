@@ -9,6 +9,10 @@ const WaveSvg = ({ type, rotate }): JSX.Element => {
     waveStyles.push(styles.waveLight)
   }
 
+  if (type === 'dark') {
+    waveStyles.push(styles.waveDark)
+  }
+
   if (rotate) {
     waveStyles.push(styles.rotate)
   }

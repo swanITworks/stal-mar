@@ -7,6 +7,20 @@
   }
 }
 
+.waveLight {
+  background-color: white;
+  path {
+    fill: $lightSectionBackGroundColor;
+  }
+}
+
+.waveDark {
+  background-color: $lightSectionBackGroundColor;
+  path {
+    fill: $menuAndFootterBackGroundColor;
+  }
+}
+
 .rotate {
   transform: rotate(180deg);
 }

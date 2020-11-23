@@ -9,8 +9,8 @@ import Button from '../../components/UI/Button/Button'
 import changeIndexHandler from '../../utils/functions'
 import ChangeButton from '../../components/UI/ChangeButton/ChangeButton'
 import Modal from '../../hoc/Modal/Modal'
-import Wave from '../../assets/waveAbout.svg'
 import SEO from '../../components/SEO/SEO'
+import WaveSvg from '../../components/UI/WaveSvg/WaveSvg'
 
 const productTemplate = ({ data }) => {
   const {
@@ -133,10 +133,7 @@ const productTemplate = ({ data }) => {
         </Modal>
       ) : null}
       <div style={{ backgroundColor: 'black', height: '70px' }}></div>
-      <Wave
-        className={styles.wave}
-        style={{ backgroundColor: '#f07a3a', transform: 'rotate(180deg)' }}
-      />
+      <WaveSvg type="dark" rotate />
       <Section type={'orange'} style={{ paddingTop: '0px' }}>
         <SectTitle text={title} position={'first'} />
         <article className={styles.top}>
