@@ -73,12 +73,12 @@ exports.createPages = async ({ graphql,actions}) =>{
   })
 
   portfolio.data.items.distinct.forEach(category => {
-
+    const categoryPath = category.replace(/\s/g,'-').toLowerCase().replace(/[ó]/g,"o")
     createPage({
-      path:`portfolio/${category.replace(/\s/g,'-').toLowerCase().replace(/[ó]/g,"o")}`,
+      path:`portfolio/${categoryPath}`,
       component: path.resolve(`src/templates/category/category-template.tsx`),
       context:{
-        category
+        category,
       }
     })
   })

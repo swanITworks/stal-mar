@@ -15,19 +15,21 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .leftSide {
-    width: 50%;
-  }
-  .rightSide {
-    width: 50%;
-    align-self: flex-end;
-    justify-self: flex-end;
-    text-align: right;
-  }
   div.changeFlexBox {
     width: 100%;
     display: flex;
     flex-direction: row;
+
+    .leftSide {
+      width: 50%;
+    }
+    .rightSide {
+      display: flex;
+      border: '1px solid red';
+      width: 50%;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
   }
   .itemsForDevices {
     display: flex;

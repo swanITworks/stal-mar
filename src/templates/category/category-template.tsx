@@ -13,17 +13,49 @@ import VideoSection from '../../components/VideoSection/VideoSection'
 import PageBanner from '../../components/PageBanner/PageBanner'
 import SEO from '../../components/SEO/SEO'
 
-const CategoryTemplate = (): JSX.Element => {
+const CategoryTemplate = ({ data, pageContext }): JSX.Element => {
+  const {
+    pageData: { nodes },
+  } = data
+
+  console.log(data)
   return (
     <Layout>
       <SEO
         title="Portfolio"
         description="Projekty wykonane przez firmę Stal-Mar w Pile oraz okolicach"
       />
-
-      <PortfolioSection type={'more'} category={'Bramy Przesuwne'} />
+      <PageBanner
+        title={nodes[0].title}
+        spanTitle={nodes[0].spanTitle}
+        mainPhoto={nodes[0].bannerMainPhoto.fluid}
+        photos={nodes[0].bannerPhotos}
+      />
+      <PortfolioSection type={'more'} category={pageContext.category} />
     </Layout>
   )
 }
+
+export const query = graphql`
+  query getPagePortfolioSiteData {
+    pageData: allContentfulPages(filter: { name: { eq: "portfolio" } }) {
+      nodes {
+        spanTitle
+        title
+        name
+        bannerMainPhoto {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+        bannerPhotos {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+    }
+  }
+`
 
 export default CategoryTemplate

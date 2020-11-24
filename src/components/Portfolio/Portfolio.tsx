@@ -9,6 +9,7 @@ import Section from '../../hoc/Section/Section'
 import ChangeButton from '../UI/ChangeButton/ChangeButton'
 import * as styles from './Portfolio.module.scss'
 import PortfolioItems from './PortfolioItems/PortfolioItems'
+import Filtr from './Filtr/Filtr'
 
 const getData = graphql`
   {
@@ -20,6 +21,7 @@ const getData = graphql`
     portfolioItems: allContentfulPortfolioItems(
       sort: { fields: title, order: ASC }
     ) {
+      distinct(field: categories___title)
       nodes {
         title
         slug
@@ -48,11 +50,20 @@ const getData = graphql`
 const Portfolio = ({ type, category }) => {
   let {
     portfolio,
-    portfolioItems: { nodes: items },
+    portfolioItems: { nodes: items, distinct: categories },
   } = useStaticQuery(getData)
 
-  console.log(category)
-  console.log(items)
+  let itemsByCategory = []
+
+  items.forEach(portfolioItem => {
+    if (
+      portfolioItem.categories.find(categoryItem => {
+        return categoryItem.title === category
+      })
+    ) {
+      itemsByCategory.push(portfolioItem)
+    }
+  })
 
   const [indexToShow, setIndexToShow] = useState(0)
 
@@ -83,11 +94,15 @@ const Portfolio = ({ type, category }) => {
           <SectTitle text={portfolio.title} />
           <SectInfo type={'transparent'} text={portfolio.info} />
         </div>
-        {type !== 'more' && (
+        {type !== 'more' ? (
           <div className={styles.rightSide}>
             <Link to="portfolio">
               <Button text={'Wiecej'} type={'orange'} />
             </Link>
+          </div>
+        ) : (
+          <div className={styles.rightSide}>
+            <Filtr categories={categories} choosenCategory={category} />
           </div>
         )}
       </div>
@@ -95,13 +110,13 @@ const Portfolio = ({ type, category }) => {
         device="mobile"
         type={type}
         toShow={indexToShow}
-        items={items}
+        items={category ? itemsByCategory : items}
       />
       <PortfolioItems
         device="desktop"
         type={type}
         toShow={indexToShow}
-        items={items}
+        items={category ? itemsByCategory : items}
       />
       {type === 'more' ? null : (
         <div className={styles.buttons}>
